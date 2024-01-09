@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "653490858374",
+    "project_id": "larvae-classification",
+    "storage_bucket": "larvae-classification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653490858374:android:f71f273030d631bd532407",
+        "android_client_info": {
+          "package_name": "com.example.larvae_classification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXk9HGPaaO_86Il9lZgG4c4am7bgKXGuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
