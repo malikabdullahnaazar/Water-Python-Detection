@@ -1,4 +1,4 @@
-# larvae_classification
+# water_pathogen_detection
 
 A new Flutter project.
 

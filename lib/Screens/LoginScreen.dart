@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:larvae_classification/Screens/HomeScreen2.dart';
-import 'package:larvae_classification/commonUtils/Buton.dart';
-import 'package:larvae_classification/commonUtils/InputField.dart';
+import 'package:water_pathogen_detection/Screens/HomeScreen2.dart';
+import 'package:water_pathogen_detection/Screens/SignUpScreen2.dart';
+import 'package:water_pathogen_detection/commonUtils/Buton.dart';
+import 'package:water_pathogen_detection/commonUtils/InputField.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:larvae_classification/FirebaseServices/FirebaseServices.dart';
+import 'package:water_pathogen_detection/FirebaseServices/FirebaseServices.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,18 +20,21 @@ class _LoginScreenState extends State<LoginScreen> {
   final FirebaseServices _auth = FirebaseServices();
 
   void login() async {
-    print('hello');
     String email = _emailController.text;
     String password = _passwordController.text;
-    try {
-      User? user = await _auth.signInwithEmailAndpassword(email, password);
-      if (user != null) {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const HomeScreen2()));
-      }
-    } catch (e) {
-      print('${e.toString()}');
-    }
+
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const HomeScreen2()));
+
+    // try {
+    //   User? user = await _auth.signInwithEmailAndpassword(email, password);
+    //   if (user != null) {
+    //     Navigator.push(context,
+    //         MaterialPageRoute(builder: (context) => const HomeScreen2()));
+    //   }
+    // } catch (e) {
+    //   print('${e.toString()}');
+    // }
   }
 
   @override
@@ -43,8 +47,8 @@ class _LoginScreenState extends State<LoginScreen> {
           width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
-              Color(0xffB81736),
-              Color(0xff281537),
+              Color.fromARGB(255, 52, 170, 162),
+              Color.fromARGB(255, 14, 11, 16),
             ]),
           ),
           child: const Padding(
@@ -70,62 +74,69 @@ class _LoginScreenState extends State<LoginScreen> {
             width: double.infinity,
             child: Padding(
               padding: const EdgeInsets.only(left: 18.0, right: 18),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const InputField(
-                    lbltxt: 'Email',
-                    hnttxt: 'Enter Email',
-                    icon: Icons.person,
-                    kybrdtype: TextInputType.emailAddress,
-                  ),
-                  const InputField(
-                    lbltxt: 'Password',
-                    hnttxt: 'Enter Password',
-                    icon: Icons.visibility_off,
-                    kybrdtype: TextInputType.text,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                        color: Color(0xff281537),
-                      ),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const InputField(
+                      lbltxt: 'Email',
+                      hnttxt: 'Enter Email',
+                      icon: Icons.person,
+                      kybrdtype: TextInputType.emailAddress,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 70,
-                  ),
-                  InkWell(
-                    onTap: () => login(),
-                    child: Container(
-                      height: 55,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        gradient: const LinearGradient(colors: [
-                          Color(0xffB81736),
-                          Color(0xff281537),
-                        ]),
-                      ),
-                      child: const Center(
+                    const InputField(
+                      lbltxt: 'Password',
+                      hnttxt: 'Enter Password',
+                      icon: Icons.visibility_off,
+                      kybrdtype: TextInputType.text,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Align(
+                      alignment: Alignment.centerRight,
+                      child: InkWell(
                         child: Text(
-                          'SIGN IN',
+                          'Forgot Password?',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                            color: Color.fromARGB(255, 200, 24, 24),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      height: 70,
+                    ),
+                    InkWell(
+                      onTap: () => login(),
+                      child: Container(
+                        height: 55,
+                        width: 350,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          gradient: const LinearGradient(colors: [
+                            Color.fromARGB(255, 52, 170, 162),
+                            Color.fromARGB(255, 14, 11, 16),
+                          ]),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'SIGN IN',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

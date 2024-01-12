@@ -17,7 +17,6 @@ class PictureScreen extends StatefulWidget {
 class _PictureScreenState extends State<PictureScreen> {
   @override
   void initState() {
- 
     super.initState();
     loadModel();
   }
@@ -26,10 +25,15 @@ class _PictureScreenState extends State<PictureScreen> {
 
   Future loadModel() async {
     String? res = await Tflite.loadModel(
-      model: "assets/best_float32.tflite",
-      labels: "assets/metadata.txt",
-      // useGpuDelegate: true,
-    );
+        model: "assets/best_float32.tflite",
+        labels: "assets/metadata.txt",
+        numThreads: 1, // defaults to 1
+        isAsset:
+            true, // defaults to true, set to false to load resources outside assets
+        useGpuDelegate:
+            false // defaults to false, set to true to use GPU delegate
+
+        );
     print("Model loading status,$res");
   }
 
@@ -74,8 +78,8 @@ class _PictureScreenState extends State<PictureScreen> {
             width: double.infinity,
             decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [
-                Color(0xffB81736),
-                Color(0xff281537),
+                Color.fromARGB(255, 52, 170, 162),
+                Color.fromARGB(255, 14, 11, 16),
               ]),
             ),
           ),

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "653490858374",
-    "project_id": "larvae-classification",
-    "storage_bucket": "larvae-classification.appspot.com"
+    "project_number": "427216208951",
+    "project_id": "water-pathogen-detection",
+    "storage_bucket": "water-pathogen-detection.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:653490858374:android:f71f273030d631bd532407",
+        "mobilesdk_app_id": "1:427216208951:android:18515f094d770eae0dabb2",
         "android_client_info": {
           "package_name": "com.example.larvae_classification"
         }
@@ -15,7 +15,26 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCXk9HGPaaO_86Il9lZgG4c4am7bgKXGuA"
+          "current_key": "AIzaSyDznIO6tPC983HQxuYFRk5QDGdpc46zZR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427216208951:android:f293544cdb0ff7a10dabb2",
+        "android_client_info": {
+          "package_name": "com.example.water_pathogen_detection"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDznIO6tPC983HQxuYFRk5QDGdpc46zZR4"
         }
       ],
       "services": {

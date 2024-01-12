@@ -1,10 +1,40 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'SignUpScreen2.dart';
 import 'LoginScreen.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
+  Future<void> _handleGoogleSignIn() async {
+    try {
+      GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+
+      final GoogleSignInAccount? googleSignInAccount =
+          await _googleSignIn.signIn();
+      if (googleSignInAccount != null) {
+        // Successfully signed in, now obtain the GoogleSignInAuthentication
+        final GoogleSignInAuthentication googleSignInAuthentication =
+            await googleSignInAccount.authentication;
+
+        // Get the Google sign-in credentials
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          accessToken: googleSignInAuthentication.accessToken,
+          idToken: googleSignInAuthentication.idToken,
+        );
+
+        // Sign in to Firebase with the Google credentials
+        // Replace this with your Firebase authentication logic
+        // Example: await FirebaseAuth.instance.signInWithCredential(credential);
+      } else {
+        // User canceled the sign-in process
+        print('Google Sign-In canceled');
+      }
+    } catch (error) {
+      print('Error during Google Sign-In: $error');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +44,17 @@ class WelcomeScreen extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
-          Color(0xffB81736),
+          Color.fromARGB(255, 52, 170, 162),
           Color(0xff281537),
         ])),
         child: Column(children: [
           const Padding(
-            padding: EdgeInsets.only(top: 200.0),
-            child: Image(image: AssetImage('assets/images/logo.png')),
+            padding: EdgeInsets.only(top: 100.0),
+            child:
+                Image(image: AssetImage('assets/images/img_flutter_logo.png')),
           ),
           const SizedBox(
-            height: 100,
+            height: 50,
           ),
           const Text(
             'Welcome Back',
@@ -59,7 +90,13 @@ class WelcomeScreen extends StatelessWidget {
             height: 30,
           ),
           GestureDetector(
-            onTap: () {
+            onTap: () async {
+              // try {
+              //   await _handleGoogleSignIn();
+              //   print("hello");
+              // } catch (error) {
+              //   print('Error during Google Sign-In: $error');
+              // }
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const RegScreen()));
             },
@@ -82,7 +119,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
           ),
-         const SizedBox(height:20),
+          const SizedBox(height: 20),
           const Text(
             'Login with Social Media',
             style: TextStyle(fontSize: 17, color: Colors.white),
@@ -97,48 +134,54 @@ class WelcomeScreen extends StatelessWidget {
                 height: 40,
                 width: 80,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.all(Radius.circular(30))
-                ),
-                child: ShaderMask(
-                  blendMode: BlendMode.srcIn,
-                    shaderCallback: (Rect bounds) {
-                      
-                      return const LinearGradient(
-                        colors: <Color>[
-                          Colors.black,
-                          Colors.red,
-                        ],
-                      ).createShader(bounds);
-                    },
-                    child: const  Icon(FontAwesomeIcons.facebookF,size: 24.0, )),
-              ),
-             const  SizedBox(width: 20,),
-              Container(
-                height: 40,
-                width: 80,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.all(Radius.circular(30))
-
-                ),
+                    color: Colors.white,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.all(Radius.circular(30))),
                 child: ShaderMask(
                     blendMode: BlendMode.srcIn,
                     shaderCallback: (Rect bounds) {
                       return const LinearGradient(
                         colors: <Color>[
-                          Colors.black,
-                          Colors.red,
+                          Color.fromARGB(255, 52, 170, 162),
+                          Color.fromARGB(255, 14, 11, 16),
                         ],
                       ).createShader(bounds);
                     },
-                    child:const  Icon(FontAwesomeIcons.google,size: 20.0,)),
+                    child: const Icon(
+                      FontAwesomeIcons.facebookF,
+                      size: 24.0,
+                    )),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Container(
+                height: 40,
+                width: 80,
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.all(Radius.circular(30))),
+                child: ShaderMask(
+                    blendMode: BlendMode.srcIn,
+                    shaderCallback: (Rect bounds) {
+                      return const LinearGradient(
+                        colors: <Color>[
+                          Color.fromARGB(255, 52, 170, 162),
+                          Color.fromARGB(255, 14, 11, 16),
+                        ],
+                      ).createShader(bounds);
+                    },
+                    child: GestureDetector(
+                      onDoubleTap: () async {},
+                      child: const Icon(
+                        FontAwesomeIcons.google,
+                        size: 20.0,
+                      ),
+                    )),
               ),
             ],
           ),
-       
         ]),
       ),
     );

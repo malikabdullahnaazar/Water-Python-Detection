@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,38 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBzWa7V5Nf7EPjuVJ6Rk810O0RwqT0MB4I',
-    appId: '1:653490858374:web:dfd5ea1c4d26803a532407',
-    messagingSenderId: '653490858374',
-    projectId: 'larvae-classification',
-    authDomain: 'larvae-classification.firebaseapp.com',
-    storageBucket: 'larvae-classification.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCXk9HGPaaO_86Il9lZgG4c4am7bgKXGuA',
-    appId: '1:653490858374:android:f71f273030d631bd532407',
-    messagingSenderId: '653490858374',
-    projectId: 'larvae-classification',
-    storageBucket: 'larvae-classification.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBgZR_QbBxhRp5YVexZn4n-gkbd2KCjd6E',
-    appId: '1:653490858374:ios:981e62df85953901532407',
-    messagingSenderId: '653490858374',
-    projectId: 'larvae-classification',
-    storageBucket: 'larvae-classification.appspot.com',
-    iosBundleId: 'com.example.larvaeClassification',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBgZR_QbBxhRp5YVexZn4n-gkbd2KCjd6E',
-    appId: '1:653490858374:ios:93418d9f531f018b532407',
-    messagingSenderId: '653490858374',
-    projectId: 'larvae-classification',
-    storageBucket: 'larvae-classification.appspot.com',
-    iosBundleId: 'com.example.larvaeClassification.RunnerTests',
+    apiKey: 'AIzaSyDznIO6tPC983HQxuYFRk5QDGdpc46zZR4',
+    appId: '1:427216208951:android:f293544cdb0ff7a10dabb2',
+    messagingSenderId: '427216208951',
+    projectId: 'water-pathogen-detection',
+    storageBucket: 'water-pathogen-detection.appspot.com',
   );
 }

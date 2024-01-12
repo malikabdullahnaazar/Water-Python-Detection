@@ -1,6 +1,6 @@
 {
-    "name": "larvae_classification",
-    "short_name": "larvae_classification",
+    "name": "water_pathogen_detection",
+    "short_name": "water_pathogen_detection",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
