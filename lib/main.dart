@@ -1,12 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:water_pathogen_detection/Screens/Demo.dart';
-import 'package:water_pathogen_detection/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection/Screens/LoginScreen.dart';
-import 'package:water_pathogen_detection/Screens/PictureScreen.dart';
-import 'package:water_pathogen_detection/Screens/ProfileScreen.dart';
 import 'package:water_pathogen_detection/Screens/WelcomeScreen.dart';
-import 'package:firebase_app_check/firebase_app_check.dart';
 // import 'package:water_pathogen_detection/Screens/LoginScreen.dart';
 // import 'package:water_pathogen_detection/Screens/Signup.dart';
 // import 'package:camera/camera.dart';
@@ -19,7 +13,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  FirebaseAppCheck.instance.activate();
   runApp(const MyApp());
 }
 

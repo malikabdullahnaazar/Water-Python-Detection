@@ -23,18 +23,20 @@ class _LoginScreenState extends State<LoginScreen> {
     String email = _emailController.text;
     String password = _passwordController.text;
 
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const HomeScreen2()));
+    // Navigator.push(
+    // context, MaterialPageRoute(builder: (context) => const HomeScreen2()));
 
-    // try {
-    //   User? user = await _auth.signInwithEmailAndpassword(email, password);
-    //   if (user != null) {
-    //     Navigator.push(context,
-    //         MaterialPageRoute(builder: (context) => const HomeScreen2()));
-    //   }
-    // } catch (e) {
-    //   print('${e.toString()}');
-    // }
+    print(email);
+    print(password);
+    try {
+      User? user = await _auth.signInwithEmailAndpassword(email, password);
+      if (user != null) {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const HomeScreen2()));
+      }
+    } catch (e) {
+      print('${e.toString()}');
+    }
   }
 
   @override
@@ -93,10 +95,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const Align(
-                      alignment: Alignment.centerRight,
-                      child: InkWell(
-                        child: Text(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        const Text(
                           'Forgot Password?',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -104,7 +106,23 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: Color.fromARGB(255, 200, 24, 24),
                           ),
                         ),
-                      ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const RegScreen()));
+                          },
+                          child: const Text(
+                            "/Don't have account",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                              color: Color.fromARGB(255, 200, 24, 24),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 70,

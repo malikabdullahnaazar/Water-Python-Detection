@@ -1,11 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:tflite/tflite.dart';
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:flutter_vision/flutter_vision.dart';
 
 class PictureScreen extends StatefulWidget {
   final Uint8List? image;
+
   final File? selectedImage;
 
   const PictureScreen({this.image, this.selectedImage, super.key});
@@ -15,43 +16,55 @@ class PictureScreen extends StatefulWidget {
 }
 
 class _PictureScreenState extends State<PictureScreen> {
+  late FlutterVision _vision;
   @override
   void initState() {
     super.initState();
     loadModel();
+    _vision = FlutterVision();
   }
 
   late List _results = [];
 
-  Future loadModel() async {
-    String? res = await Tflite.loadModel(
-        model: "assets/best_float32.tflite",
-        labels: "assets/metadata.txt",
-        numThreads: 1, // defaults to 1
-        isAsset:
-            true, // defaults to true, set to false to load resources outside assets
-        useGpuDelegate:
-            false // defaults to false, set to true to use GPU delegate
-
-        );
-    print("Model loading status,$res");
+  Future<void> loadModel() async {
+    // String? res = await vision.loadYoloModel(
+    //   labels: 'assets/labelss.txt',
+    //   modelPath: 'assets/yolov5n.tflite',
+    //   modelVersion: "yolov8",
+    //   quantization: false,
+    //   numThreads: 1,
+    //   useGpu: false,
+    // );
+    // print("Model loading status: $res");
+    await _vision.loadYoloModel(
+        labels: 'assets/metadata.txt',
+        modelPath: 'assets/best_float32.tflite',
+        modelVersion: "yolov8",
+        quantization: false,
+        numThreads: 1,
+        useGpu: false);
   }
 
   Future imageClassification(File selectedImage) async {
     print('Welcome, ${selectedImage}');
-    var recognitions = await Tflite.detectObjectOnImage(
-        path: selectedImage.path,
-        model: "YOLO",
-        threshold: 0.3,
-        imageMean: 0.0,
-        imageStd: 255.0,
-        numResultsPerClass: 1);
+    Uint8List byte = await selectedImage!.readAsBytes();
+    final image = await decodeImageFromList(byte);
+    final imageHeight = image.height;
+    final imageWidth = image.width;
 
+    var recognitions = await _vision.yoloOnImage(
+        bytesList: byte,
+        imageHeight: imageHeight,
+        imageWidth: imageWidth,
+        iouThreshold: 0.8,
+        confThreshold: 0.4,
+        classThreshold: 0.7);
+    var prediction;
     if (recognitions != null) {
       if (recognitions.isNotEmpty) {
         // Continue with processing predictions
-        var prediction = recognitions[0];
-        print('Prediction: $prediction');
+        prediction = recognitions[0];
+        print('Prediction: $recognitions');
         setState(() {
           _results = [prediction['label'], prediction['confidence']];
         });
@@ -61,11 +74,15 @@ class _PictureScreenState extends State<PictureScreen> {
         });
       }
     } else {
+      print('Prediction: $recognitions');
+
       // Handle the case where recognitions is null
       setState(() {
         _results = ['Error: Recognitions is null'];
       });
     }
+    print(_results);
+    print("abc$recognitions");
   }
 
   @override
