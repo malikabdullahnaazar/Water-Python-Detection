@@ -15,9 +15,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final FirebaseServices _auth = FirebaseServices();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  late FirebaseServices _auth;
 
   void login() async {
     String email = _emailController.text;
@@ -25,17 +25,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
     // Navigator.push(
     // context, MaterialPageRoute(builder: (context) => const HomeScreen2()));
-
-    print(email);
-    print(password);
+    print(email + password);
     try {
+      _auth = FirebaseServices();
       User? user = await _auth.signInwithEmailAndpassword(email, password);
       if (user != null) {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const HomeScreen2()));
       }
     } catch (e) {
-      print('${e.toString()}');
+      print('abc${e.toString()}');
     }
   }
 
@@ -80,17 +79,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const InputField(
+                    InputField(
+                      controller: _emailController,
                       lbltxt: 'Email',
                       hnttxt: 'Enter Email',
                       icon: Icons.person,
                       kybrdtype: TextInputType.emailAddress,
                     ),
-                    const InputField(
+                    InputField(
                       lbltxt: 'Password',
                       hnttxt: 'Enter Password',
                       icon: Icons.visibility_off,
                       kybrdtype: TextInputType.text,
+                      controller: _passwordController,
                     ),
                     const SizedBox(
                       height: 20,

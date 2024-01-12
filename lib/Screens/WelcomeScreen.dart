@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:water_pathogen_detection/Screens/HomeScreen2.dart';
 import 'SignUpScreen2.dart';
 import 'LoginScreen.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
@@ -7,7 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
-  Future<void> _handleGoogleSignIn() async {
+  Future<bool> _handleGoogleSignIn() async {
     try {
       GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
 
@@ -27,12 +28,17 @@ class WelcomeScreen extends StatelessWidget {
         // Sign in to Firebase with the Google credentials
         // Replace this with your Firebase authentication logic
         // Example: await FirebaseAuth.instance.signInWithCredential(credential);
+
+        // If Firebase sign-in is successful, return true
+        return true;
       } else {
         // User canceled the sign-in process
         print('Google Sign-In canceled');
+        return false;
       }
     } catch (error) {
       print('Error during Google Sign-In: $error');
+      return false;
     }
   }
 
@@ -91,12 +97,6 @@ class WelcomeScreen extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () async {
-              // try {
-              //   await _handleGoogleSignIn();
-              //   print("hello");
-              // } catch (error) {
-              //   print('Error during Google Sign-In: $error');
-              // }
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const RegScreen()));
             },
@@ -155,14 +155,30 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-              Container(
-                height: 40,
-                width: 80,
-                decoration: const BoxDecoration(
+              GestureDetector(
+                onTap: () async {
+                  try {
+                    bool signInSuccess = await _handleGoogleSignIn();
+                    if (signInSuccess) {
+                      // Navigate to HomeScreen2
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeScreen2()),
+                      );
+                    }
+                  } catch (error) {
+                    print('Error during Google Sign-In: $error');
+                  }
+                },
+                child: Container(
+                  height: 40,
+                  width: 80,
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.all(Radius.circular(30))),
-                child: ShaderMask(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  child: ShaderMask(
                     blendMode: BlendMode.srcIn,
                     shaderCallback: (Rect bounds) {
                       return const LinearGradient(
@@ -172,14 +188,13 @@ class WelcomeScreen extends StatelessWidget {
                         ],
                       ).createShader(bounds);
                     },
-                    child: GestureDetector(
-                      onDoubleTap: () async {},
-                      child: const Icon(
-                        FontAwesomeIcons.google,
-                        size: 20.0,
-                      ),
-                    )),
-              ),
+                    child: const Icon(
+                      FontAwesomeIcons.google,
+                      size: 20.0,
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ]),

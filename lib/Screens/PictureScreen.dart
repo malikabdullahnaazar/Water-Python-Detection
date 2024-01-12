@@ -27,15 +27,6 @@ class _PictureScreenState extends State<PictureScreen> {
   late List _results = [];
 
   Future<void> loadModel() async {
-    // String? res = await vision.loadYoloModel(
-    //   labels: 'assets/labelss.txt',
-    //   modelPath: 'assets/yolov5n.tflite',
-    //   modelVersion: "yolov8",
-    //   quantization: false,
-    //   numThreads: 1,
-    //   useGpu: false,
-    // );
-    // print("Model loading status: $res");
     await _vision.loadYoloModel(
         labels: 'assets/metadata.txt',
         modelPath: 'assets/best_float32.tflite',
