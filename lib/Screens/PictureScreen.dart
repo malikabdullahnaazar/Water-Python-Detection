@@ -28,9 +28,9 @@ class _PictureScreenState extends State<PictureScreen> {
 
   Future<void> loadModel() async {
     await _vision.loadYoloModel(
-        labels: 'assets/metadata.txt',
+        labels: 'assets/labels.txt',
         modelPath: 'assets/best_float32.tflite',
-        modelVersion: "yolov8",
+        modelVersion: "yolov5",
         quantization: false,
         numThreads: 1,
         useGpu: false);
@@ -40,16 +40,17 @@ class _PictureScreenState extends State<PictureScreen> {
     print('Welcome, ${selectedImage}');
     Uint8List byte = await selectedImage!.readAsBytes();
     final image = await decodeImageFromList(byte);
-    final imageHeight = image.height;
-    final imageWidth = image.width;
+    print(image);
+    final imageHeight = 640;
+    final imageWidth = 640;
 
     var recognitions = await _vision.yoloOnImage(
         bytesList: byte,
         imageHeight: imageHeight,
         imageWidth: imageWidth,
-        iouThreshold: 0.8,
-        confThreshold: 0.4,
-        classThreshold: 0.7);
+        iouThreshold: 0,
+        confThreshold: 0,
+        classThreshold: 0);
     var prediction;
     if (recognitions != null) {
       if (recognitions.isNotEmpty) {

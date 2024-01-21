@@ -56,8 +56,10 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(children: [
           const Padding(
             padding: EdgeInsets.only(top: 100.0),
-            child:
-                Image(image: AssetImage('assets/images/img_flutter_logo.png')),
+            child: Image(
+                image: AssetImage('assets/images/img_flutter_logo.gif'),
+                height: 200,
+                width: 200),
           ),
           const SizedBox(
             height: 50,

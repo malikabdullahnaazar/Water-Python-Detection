@@ -56,7 +56,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
         children: [
           Container(
             width: double.infinity,
-            height: 350,
+            height: 300,
             decoration: const BoxDecoration(
                 gradient: LinearGradient(colors: [
                   Color.fromARGB(255, 52, 170, 162),
@@ -71,14 +71,22 @@ class _HomeScreen2State extends State<HomeScreen2> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Safe water, smart detection.',
-                    style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+                  Row(
+                    children: [
+                      Text(
+                        'Safe water, smart \ndetection.',
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Icon(FontAwesomeIcons.bacteria),
+                    ],
                   ),
-                  SizedBox(height: 39),
+                  SizedBox(height: 19),
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Follow us on")),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -151,7 +159,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                         children: [
                                           TableCell(
                                             child: Image.asset(
-                                              'assets/images/img_flutter_logo.png',
+                                              'assets/images/img_flutter_logo.gif',
                                               height: 65,
                                               width: 50,
                                             ),
