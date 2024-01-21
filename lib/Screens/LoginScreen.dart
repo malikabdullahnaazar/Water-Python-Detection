@@ -6,6 +6,7 @@ import 'package:water_pathogen_detection/commonUtils/Buton.dart';
 import 'package:water_pathogen_detection/commonUtils/InputField.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:water_pathogen_detection/FirebaseServices/FirebaseServices.dart';
+import 'package:water_pathogen_detection/commonUtils/constancts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -32,6 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
       if (user != null) {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const HomeScreen2()));
+      } else {
+        const SnackBar(content: Text('User not found'));
       }
     } catch (e) {
       print('abc${e.toString()}');
@@ -48,8 +51,8 @@ class _LoginScreenState extends State<LoginScreen> {
           width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
-              Color.fromARGB(255, 52, 170, 162),
-              Color.fromARGB(255, 14, 11, 16),
+              primaryColor,
+              secondaryColor,
             ]),
           ),
           child: const Padding(
@@ -58,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
               'Hello\nSign in!',
               style: TextStyle(
                   fontSize: 30,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -99,14 +102,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        const Text(
-                          'Forgot Password?',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                            color: Color.fromARGB(255, 200, 24, 24),
-                          ),
-                        ),
                         InkWell(
                           onTap: () {
                             Navigator.push(
@@ -115,11 +110,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                     builder: (context) => const RegScreen()));
                           },
                           child: const Text(
-                            "/Don't have account",
+                            "Don't have account?",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 17,
-                              color: Color.fromARGB(255, 200, 24, 24),
+                              color: Colors.blue,
                             ),
                           ),
                         ),
@@ -136,8 +131,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                           gradient: const LinearGradient(colors: [
-                            Color.fromARGB(255, 52, 170, 162),
-                            Color.fromARGB(255, 14, 11, 16),
+                            primaryColor,
+                            secondaryColor,
                           ]),
                         ),
                         child: const Center(
@@ -146,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                color: Colors.white),
+                                color: Colors.black),
                           ),
                         ),
                       ),

@@ -2,9 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:water_pathogen_detection/Screens/WelcomeScreen.dart';
-// import 'package:water_pathogen_detection/Screens/LoginScreen.dart';
-// import 'package:water_pathogen_detection/Screens/Signup.dart';
-// import 'package:camera/camera.dart';
 import 'package:water_pathogen_detection/firebase_options.dart';
 
 // List<CameraDescription> cameras;
@@ -27,15 +24,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Water Pathogen Detection',
       theme: ThemeData(
-        fontFamily: ('inter'),
+        fontFamily: ('Poppins'),
         useMaterial3: true,
       ),
       darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: const WelcomeScreen(),
+      home: WelcomeScreen(),
     );
   }
 }

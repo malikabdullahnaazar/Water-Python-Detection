@@ -8,48 +8,71 @@ class InputField extends StatefulWidget {
   final IconData? icon;
   final EdgeInsetsGeometry? padding;
 
-  const InputField(
-      {this.controller,
-      this.lbltxt,
-      this.hnttxt,
-      this.kybrdtype,
-      this.padding,
-      this.icon,
-      super.key});
+  const InputField({
+    this.controller,
+    this.lbltxt,
+    this.hnttxt,
+    this.kybrdtype,
+    this.padding,
+    this.icon,
+    super.key,
+  });
 
   @override
   State<InputField> createState() => _InputFieldState();
 }
 
 class _InputFieldState extends State<InputField> {
+  bool isPasswordVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return TextField(
-        keyboardType: widget.kybrdtype,
-        controller: widget.controller,
-        decoration: InputDecoration(
-            suffixIcon: Icon(
-              widget.icon,
-              color: Colors.grey,
-              size: 24,
-            ),
-            labelText: widget.lbltxt,
-            labelStyle: const TextStyle(
-              color: Color.fromARGB(255, 200, 24, 24),
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-            hintText: widget.hnttxt,
-            border: const UnderlineInputBorder(
-              borderSide: BorderSide(
-                  color: Colors.black, width: 1.0), // Default border color
-              borderRadius: BorderRadius.all(Radius.circular(12)),
-            ),
-            focusedBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(
-                  color: Colors.black, width: 1.0), // Focused border color
-              borderRadius: BorderRadius.all(Radius.circular(12)),
-            ),
-            contentPadding: const EdgeInsets.symmetric(horizontal: 20.0)));
+      keyboardType: widget.kybrdtype,
+      controller: widget.controller,
+      obscureText: !isPasswordVisible, // Toggle visibility based on the state
+      decoration: InputDecoration(
+        suffixIcon: widget.icon == Icons.visibility_off
+            ? GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isPasswordVisible = !isPasswordVisible;
+                  });
+                },
+                child: Icon(
+                  isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                  color: Colors.black,
+                  size: 24,
+                ),
+              )
+            : Icon(
+                widget.icon,
+                color: Colors.black,
+                size: 24,
+              ),
+        labelText: widget.lbltxt,
+        labelStyle: const TextStyle(
+          color: Colors.black,
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+        hintText: widget.hnttxt,
+        border: const UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.black,
+            width: 1.0,
+          ), // Default border color
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+        ),
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.black,
+            width: 1.0,
+          ), // Focused border color
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+        ),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20.0),
+      ),
+    );
   }
 }

@@ -50,14 +50,23 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
-
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
+        debug {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
+  }
+  packagingOptions {
+    dexOptions {
+      preDexLibraries = true
+    }
+  }
+   
     aaptOptions {
             noCompress 'tflite'
             noCompress 'lite'
