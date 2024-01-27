@@ -77,11 +77,23 @@ class FirebaseServices {
     );
   }
 
-  Future<void> signOut() async {
+  Future<bool> signOut(context) async {
     try {
       await _auth.signOut();
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Logout Successfully'),
+        backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+        showCloseIcon: true,
+      ));
+      return true;
     } catch (e) {
-      print("${e.toString()}");
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Logout Faild'),
+        backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+        showCloseIcon: true,
+      ));
+      print("aaaa${e.toString()}");
+      return false;
     }
   }
 
