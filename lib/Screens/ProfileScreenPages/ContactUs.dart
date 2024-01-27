@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
-import 'package:water_pathogen_detection/commonUtils/constancts.dart';
+import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
 
 class ContactUs extends StatelessWidget {
   const ContactUs({Key? key});
@@ -291,15 +291,15 @@ class ContactUs extends StatelessWidget {
                           color: Colors.black,
                           weight: 66,
                         ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          " 2024 Water Pathogen Detection. All rights reserved.",
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(10, 0, 0, 1),
+                          child: Text(
+                            " 2024 Water Pathogen Detection. All rights reserved.",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ],

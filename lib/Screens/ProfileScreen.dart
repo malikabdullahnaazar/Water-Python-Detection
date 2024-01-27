@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
-import 'package:water_pathogen_detection/Screens/ProfileScreenPages/ContactUs.dart';
-import 'package:water_pathogen_detection/Screens/ProfileScreenPages/FAQ.dart';
-import 'package:water_pathogen_detection/Screens/ProfileScreenPages/Help.dart';
-import 'package:water_pathogen_detection/commonUtils/Constancts.dart';
+import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/ContactUs.dart';
+import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/FAQ.dart';
+import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/Help.dart';
+import 'package:water_pathogen_detection_system/Screens/Results.dart';
+import 'package:water_pathogen_detection_system/Screens/SettingsPage.dart';
+import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 
 class ProfleScreen extends StatefulWidget {
   const ProfleScreen({super.key});
@@ -26,7 +28,9 @@ class _ProfleScreenState extends State<ProfleScreen> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: const Icon(
                 FontAwesomeIcons.arrowLeft,
                 size: 24,
@@ -138,7 +142,13 @@ class _ProfleScreenState extends State<ProfleScreen> {
                           "icon": Icons.favorite_rounded,
                           "title": "My Saved",
                           "rightIcon": Icons.chevron_right,
-                          "onClick": () => {}
+                          "onClick": () => {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            MySavedResultsPage()))
+                              }
                         },
 
                         {
@@ -148,7 +158,7 @@ class _ProfleScreenState extends State<ProfleScreen> {
                           "onClick": () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const ContactUs()))
+                                  builder: (context) => const SettingsPage()))
                         },
                         {
                           "icon": Icons.contact_mail,

@@ -1,45 +1,36 @@
 {
   "project_info": {
-    "project_number": "427216208951",
-    "project_id": "water-pathogen-detection",
-    "storage_bucket": "water-pathogen-detection.appspot.com"
+    "project_number": "1034583528733",
+    "project_id": "water-pathogen-detection-90a2a",
+    "storage_bucket": "water-pathogen-detection-90a2a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:427216208951:android:18515f094d770eae0dabb2",
-        "android_client_info": {
-          "package_name": "com.example.larvae_classification"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDznIO6tPC983HQxuYFRk5QDGdpc46zZR4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:427216208951:android:f293544cdb0ff7a10dabb2",
+        "mobilesdk_app_id": "1:1034583528733:android:0b1f56cb9a1bad2d24bdf4",
         "android_client_info": {
           "package_name": "com.example.water_pathogen_detection"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1034583528733-nji20hscpkapi1vh6s4dpq8epgovpis5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDznIO6tPC983HQxuYFRk5QDGdpc46zZR4"
+          "current_key": "AIzaSyBpOGSXKnCoeZrUkPnLISig5kf7ZCzc9tA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034583528733-nji20hscpkapi1vh6s4dpq8epgovpis5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

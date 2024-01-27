@@ -53,10 +53,10 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDznIO6tPC983HQxuYFRk5QDGdpc46zZR4',
-    appId: '1:427216208951:android:f293544cdb0ff7a10dabb2',
-    messagingSenderId: '427216208951',
-    projectId: 'water-pathogen-detection',
-    storageBucket: 'water-pathogen-detection.appspot.com',
+    apiKey: 'AIzaSyBpOGSXKnCoeZrUkPnLISig5kf7ZCzc9tA',
+    appId: '1:1034583528733:android:0b1f56cb9a1bad2d24bdf4',
+    messagingSenderId: '1034583528733',
+    projectId: 'water-pathogen-detection-90a2a',
+    storageBucket: 'water-pathogen-detection-90a2a.appspot.com',
   );
 }

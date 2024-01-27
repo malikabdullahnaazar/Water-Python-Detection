@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter_vision/flutter_vision.dart';
+import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
+import 'package:water_pathogen_detection_system/commonUtils/Utils.dart';
 
 class PictureScreen extends StatefulWidget {
   final Uint8List? image;
-
   final File? selectedImage;
 
   const PictureScreen({this.image, this.selectedImage, super.key});
@@ -16,65 +17,88 @@ class PictureScreen extends StatefulWidget {
 }
 
 class _PictureScreenState extends State<PictureScreen> {
-  late FlutterVision _vision;
+  FlutterVision vision = FlutterVision();
   @override
   void initState() {
     super.initState();
     loadModel();
-    _vision = FlutterVision();
   }
 
   late List _results = [];
 
-  Future<void> loadModel() async {
-    await _vision.loadYoloModel(
-        labels: 'assets/labels.txt',
-        modelPath: 'assets/best_float32.tflite',
-        modelVersion: "yolov5",
+  Future loadModel() async {
+    await vision.loadYoloModel(
+        labels: "assets/metadata.txt",
+        modelPath: "assets/best_float32.tflite",
+        modelVersion: "yolov8",
         quantization: false,
         numThreads: 1,
         useGpu: false);
   }
 
-  Future imageClassification(File selectedImage) async {
-    print('Welcome, ${selectedImage}');
-    Uint8List byte = await selectedImage!.readAsBytes();
-    final image = await decodeImageFromList(byte);
-    print(image);
-    final imageHeight = 640;
-    final imageWidth = 640;
+  Future imageClassification(image) async {
+    print('Welcome, ${image}');
+    try {
+      var recognitions = await vision.yoloOnImage(
+        bytesList: image,
+        imageHeight: image.height,
+        imageWidth: image.width,
+        iouThreshold: 0.8,
+        confThreshold: 0.4,
+        classThreshold: 0.7,
+      );
 
-    var recognitions = await _vision.yoloOnImage(
-        bytesList: byte,
-        imageHeight: imageHeight,
-        imageWidth: imageWidth,
-        iouThreshold: 0,
-        confThreshold: 0,
-        classThreshold: 0);
-    var prediction;
-    if (recognitions != null) {
-      if (recognitions.isNotEmpty) {
-        // Continue with processing predictions
-        prediction = recognitions[0];
-        print('Prediction: $recognitions');
-        setState(() {
-          _results = [prediction['label'], prediction['confidence']];
-        });
+      if (recognitions != null) {
+        if (recognitions.isNotEmpty) {
+          // Continue with processing predictions
+          var prediction = recognitions[0];
+          print('Prediction: $prediction');
+          setState(() {
+            _results = [prediction['label'], prediction['confidence']];
+          });
+
+          // Show a Snackbar with the prediction results
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Prediction: ${prediction['label']}'),
+            ),
+          );
+        } else {
+          setState(() {
+            _results = ['No prediction'];
+          });
+
+          // Show a Snackbar indicating no prediction
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('No prediction'),
+            ),
+          );
+        }
       } else {
+        // Handle the case where recognitions is null
         setState(() {
-          _results = ['No prediction'];
+          _results = ['Error: Recognitions is null'];
         });
-      }
-    } else {
-      print('Prediction: $recognitions');
 
-      // Handle the case where recognitions is null
-      setState(() {
-        _results = ['Error: Recognitions is null'];
-      });
+        // Show a Snackbar for the error
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Error: Recognitions is null'),
+          ),
+        );
+      }
+    } catch (error) {
+      // Handle any unexpected errors
+      print('Error: $error');
+
+      // Show a Snackbar for the error
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error: $error'),
+        ),
+      );
     }
-    print(_results);
-    print("abc$recognitions");
   }
 
   @override
@@ -86,10 +110,7 @@ class _PictureScreenState extends State<PictureScreen> {
             height: double.infinity,
             width: double.infinity,
             decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-                Color.fromARGB(255, 52, 170, 162),
-                Color.fromARGB(255, 14, 11, 16),
-              ]),
+              gradient: LinearGradient(colors: [primaryColor, secondaryColor]),
             ),
           ),
           Align(
@@ -132,7 +153,7 @@ class _PictureScreenState extends State<PictureScreen> {
                         ),
                   const SizedBox(height: 20),
                   InkWell(
-                    onTap: () => {imageClassification(widget.selectedImage!)},
+                    onTap: () => {imageClassification(widget.image!)},
                     child: Container(
                       height: 55,
                       width: 300,
@@ -151,7 +172,7 @@ class _PictureScreenState extends State<PictureScreen> {
                     ),
                   ),
                   Container(
-                    child: Text(_results.isNotEmpty ? '$_results' : 'Nothing'),
+                    child: Text(_results.isNotEmpty ? '$_results' : ''),
                   )
                 ],
               ),

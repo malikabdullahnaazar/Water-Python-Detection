@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:water_pathogen_detection/FirebaseServices/FirebaseServices.dart';
-import 'package:water_pathogen_detection/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection/commonUtils/constancts.dart';
+import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
+import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
+import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
 import 'SignUpScreen2.dart';
 import 'LoginScreen.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
@@ -16,7 +16,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     void signInWithGoogle() async {
       try {
-        UserCredential? user = await _auth.signInWithGoogle();
+        bool user = await _auth.signInWithGoogle(context);
         if (user != null) {
           const snackBar = SnackBar(
             content: Text('Logged in successfully'),

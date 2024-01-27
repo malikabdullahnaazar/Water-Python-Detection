@@ -15,29 +15,33 @@ class InputField extends StatefulWidget {
     this.kybrdtype,
     this.padding,
     this.icon,
-    super.key,
-  });
+    Key? key, // Added key parameter
+  }) : super(key: key); // Corrected the super constructor
 
   @override
   State<InputField> createState() => _InputFieldState();
 }
 
 class _InputFieldState extends State<InputField> {
-  bool isPasswordVisible = false;
+  bool isPasswordVisible = true;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       keyboardType: widget.kybrdtype,
       controller: widget.controller,
-      obscureText: !isPasswordVisible, // Toggle visibility based on the state
+      obscureText: widget.icon == Icons.visibility_off
+          ? !isPasswordVisible
+          : false, // Toggle visibility based on the state only for password fields
       decoration: InputDecoration(
         suffixIcon: widget.icon == Icons.visibility_off
             ? GestureDetector(
                 onTap: () {
-                  setState(() {
-                    isPasswordVisible = !isPasswordVisible;
-                  });
+                  if (widget.icon == Icons.visibility_off) {
+                    setState(() {
+                      isPasswordVisible = !isPasswordVisible;
+                    });
+                  }
                 },
                 child: Icon(
                   isPasswordVisible ? Icons.visibility : Icons.visibility_off,

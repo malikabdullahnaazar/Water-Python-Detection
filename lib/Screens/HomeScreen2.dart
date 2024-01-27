@@ -2,10 +2,12 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
-import 'package:water_pathogen_detection/Screens/PictureScreen.dart';
+import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
+import 'package:water_pathogen_detection_system/Screens/PictureScreen.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:water_pathogen_detection/Screens/ProfileScreen.dart';
+import 'package:water_pathogen_detection_system/Screens/ProfileScreen.dart';
+import 'package:water_pathogen_detection_system/Screens/Results.dart';
+import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 
 class HomeScreen2 extends StatefulWidget {
   const HomeScreen2({super.key});
@@ -21,26 +23,26 @@ class _HomeScreen2State extends State<HomeScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       bottomNavigationBar: BottomNavigationBar(
           unselectedItemColor: Colors.black,
           unselectedFontSize: 16,
-          selectedFontSize: 19,
-          selectedItemColor: const Color.fromARGB(255, 200, 24, 24),
+          selectedFontSize: 16,
           items: [
             BottomNavigationBarItem(
-                icon: IconButton(
-                    onPressed: () {
-                      pickImageFromCamera();
-                    },
-                    icon: const Icon(Icons.home)),
+                icon:
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
                 label: 'Home'),
             BottomNavigationBarItem(
                 icon: IconButton(
                     onPressed: () {
-                      pickImage();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BlogScreen()));
                     },
-                    icon: const Icon(Icons.history_edu_rounded)),
-                label: 'Hostory'),
+                    icon: const Icon(Icons.article_outlined)),
+                label: 'Blogs'),
             BottomNavigationBarItem(
                 icon: IconButton(
                     onPressed: () {
@@ -54,151 +56,334 @@ class _HomeScreen2State extends State<HomeScreen2> {
           ]),
       body: Stack(
         children: [
-          Container(
-            width: double.infinity,
-            height: 300,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Color.fromARGB(255, 52, 170, 162),
-                  Color(0xff281537),
-                ]),
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(50),
-                    bottomRight: Radius.circular(50))),
-            child: const Center(
-                child: Padding(
-              padding: EdgeInsets.all(30.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Safe water, smart \ndetection.',
-                        style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Icon(FontAwesomeIcons.bacteria),
-                    ],
-                  ),
-                  SizedBox(height: 19),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Follow us on")),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.facebook,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        size: 30,
-                      ),
-                      Icon(
-                        FontAwesomeIcons.github,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        size: 30,
-                      ),
-                      Icon(
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        FontAwesomeIcons.discord,
-                        size: 30,
-                      )
-                    ],
-                  )
-                ],
+          Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                height: 350,
+                decoration: const BoxDecoration(
+                    gradient:
+                        LinearGradient(colors: [primaryColor, secondaryColor]),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(50),
+                        bottomRight: Radius.circular(50))),
               ),
-            )),
+              Padding(
+                padding: const EdgeInsets.only(top: 60, left: 20),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 50,
+                      height: 50,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: const Image(
+                            image: AssetImage(
+                                'assets/images/img_flutter_logo.gif'),
+                          )),
+                    ),
+                    const SizedBox(width: 10),
+                    const Text(
+                      "Water Pathogen Detection  ",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 130, left: 27),
+                child: Container(
+                    child: Card(
+                        elevation: 8,
+                        shadowColor: Colors.grey,
+                        child: Container(
+                            width: 300,
+                            height: 170,
+                            decoration: const BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                )),
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Clean Water Sharp Tech Detecting Danger, Ensuring Safety!",
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.black),
+                                    ),
+                                    const SizedBox(height: 20),
+                                    Container(
+                                      width: 130,
+                                      height: 50,
+                                      decoration: const BoxDecoration(
+                                        gradient: LinearGradient(colors: [
+                                          primaryColor,
+                                          secondaryColor
+                                        ]),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                      ),
+                                      child: Align(
+                                          alignment: Alignment.center,
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          BlogScreen()));
+                                            },
+                                            child: const Text(
+                                              "Learn more",
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          )),
+                                    )
+                                  ],
+                                ))))),
+              ),
+            ],
           ),
           Padding(
-            padding: const EdgeInsets.only(
-                top: 360, left: 10, right: 10, bottom: 10),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: const EdgeInsets.symmetric(),
-                    child: Text(
-                      'Project Details',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 8,
-                    shadowColor: Colors.grey,
-                    child: Container(
-                      width: 400,
-                      height: 350,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListView.builder(
-                                shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount:
-                                    40, // Replace with the number of items you want
-                                itemBuilder: (BuildContext context, int index) {
-                                  return Table(
-                                    children: [
-                                      TableRow(
+              padding: const EdgeInsets.only(
+                  top: 360, left: 10, right: 10, bottom: 10),
+              child: Card(
+                elevation: 8,
+                shadowColor: Colors.grey,
+                child: Container(
+                  width: 400,
+                  height: 350,
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      )),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InkWell(
+                                onTap: () => pickImageFromCamera(),
+                                child: Card(
+                                    elevation: 8,
+                                    shadowColor: Colors.black,
+                                    child: Container(
+                                      width: 90,
+                                      height: 90,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
-                                          TableCell(
-                                            child: Image.asset(
-                                              'assets/images/img_flutter_logo.gif',
-                                              height: 65,
-                                              width: 50,
+                                          ShaderMask(
+                                              blendMode: BlendMode.srcIn,
+                                              shaderCallback: (Rect bounds) {
+                                                return const LinearGradient(
+                                                  colors: <Color>[
+                                                    primaryColor,
+                                                    secondaryColor
+                                                  ],
+                                                ).createShader(bounds);
+                                              },
+                                              child: const Icon(
+                                                  Icons.camera_alt_outlined,
+                                                  size: 22)),
+                                          const SizedBox(height: 4),
+                                          const Text(
+                                            'Camera',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 14,
                                             ),
-                                          ),
-                                          const Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Healthy bacteria',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 20),
-                                              ),
-                                              Text(
-                                                'Found in healthy Water.',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 13),
-                                              ),
-                                            ],
                                           ),
                                         ],
                                       ),
+                                    ))),
+                            const SizedBox(width: 8),
+                            InkWell(
+                              onTap: () => pickImage(),
+                              child: Card(
+                                elevation: 8,
+                                shadowColor: Colors.black,
+                                child: Container(
+                                  width: 90,
+                                  height: 90,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      ShaderMask(
+                                          blendMode: BlendMode.srcIn,
+                                          shaderCallback: (Rect bounds) {
+                                            return const LinearGradient(
+                                              colors: <Color>[
+                                                primaryColor,
+                                                secondaryColor
+                                              ],
+                                            ).createShader(bounds);
+                                          },
+                                          child: const Icon(Icons.image,
+                                              size: 22)),
+                                      const SizedBox(height: 4),
+                                      const Text(
+                                        'Gallery',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14,
+                                        ),
+                                      ),
                                     ],
-                                  );
-                                },
+                                  ),
+                                ),
                               ),
-                            ],
-                          ),
+                            ),
+                            const SizedBox(width: 8),
+                            InkWell(
+                              child: Card(
+                                  elevation: 8,
+                                  shadowColor: Colors.black,
+                                  child: Container(
+                                    width: 90,
+                                    height: 90,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        ShaderMask(
+                                            blendMode: BlendMode.srcIn,
+                                            shaderCallback: (Rect bounds) {
+                                              return const LinearGradient(
+                                                colors: <Color>[
+                                                  primaryColor,
+                                                  secondaryColor
+                                                ],
+                                              ).createShader(bounds);
+                                            },
+                                            child: const Icon(Icons.leaderboard,
+                                                size: 22)),
+                                        const SizedBox(height: 4),
+                                        InkWell(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        MySavedResultsPage()));
+                                          },
+                                          child: const Text(
+                                            'Results',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )),
+                            ),
+                          ],
                         ),
                       ),
-                    ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20, right: 20, top: 40),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "Latest Article",
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            ShaderMask(
+                                blendMode: BlendMode.srcIn,
+                                shaderCallback: (Rect bounds) {
+                                  return const LinearGradient(
+                                    colors: <Color>[primaryColor, primaryColor],
+                                  ).createShader(bounds);
+                                },
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                BlogScreen()));
+                                  },
+                                  child: const Text(
+                                    "See all",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                )),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                          padding:
+                              EdgeInsets.only(left: 10, right: 20, top: 10),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BlogScreen()));
+                            },
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 70,
+                                  height: 70,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/img_image_16.png'),
+                                          fit: BoxFit.fill)),
+                                ),
+                                Container(
+                                    child: Text(
+                                  "The 25 Healthiest Fruits you can Eat,\nAccording to a Nutritionist",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black),
+                                ))
+                              ],
+                            ),
+                          ))
+                    ],
                   ),
-                ],
-              ),
-            ),
-          ),
+                ),
+              )),
         ],
       ),
     );

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:water_pathogen_detection/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection/Screens/SignUpScreen2.dart';
-import 'package:water_pathogen_detection/commonUtils/Buton.dart';
-import 'package:water_pathogen_detection/commonUtils/InputField.dart';
+import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
+import 'package:water_pathogen_detection_system/Screens/SignUpScreen2.dart';
+import 'package:water_pathogen_detection_system/commonUtils/Buton.dart';
+import 'package:water_pathogen_detection_system/commonUtils/InputField.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:water_pathogen_detection/FirebaseServices/FirebaseServices.dart';
-import 'package:water_pathogen_detection/commonUtils/constancts.dart';
+import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
+import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,25 +20,56 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   late FirebaseServices _auth;
+  bool _isLoading = false;
 
   void login() async {
+    setState(() {
+      _isLoading = true;
+    });
     String email = _emailController.text;
     String password = _passwordController.text;
 
-    // Navigator.push(
-    // context, MaterialPageRoute(builder: (context) => const HomeScreen2()));
-    print(email + password);
+    if (email.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Invalid Email or Password!"),
+        ),
+      );
+      setState(() {
+        _isLoading = false;
+      });
+    }
     try {
       _auth = FirebaseServices();
       User? user = await _auth.signInwithEmailAndpassword(email, password);
       if (user != null) {
-        Navigator.push(context,
+        Navigator.pushReplacement(
+            context, // Use pushReplacement instead of push
             MaterialPageRoute(builder: (context) => const HomeScreen2()));
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Login Successful'),
+          backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+          showCloseIcon: true,
+        ));
       } else {
-        const SnackBar(content: Text('User not found'));
+        setState(() {
+          _isLoading = false;
+        });
+        _auth.showErrorMessageSnackbar('User not found');
       }
     } catch (e) {
-      print('abc${e.toString()}');
+      setState(() {
+        _isLoading = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Invalid Credentials or Check Internet Connection'),
+          backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+          showCloseIcon: true,
+        ),
+      );
+      print('abcd${e.toString()}');
+      _auth.showErrorMessageSnackbar(e.toString());
     }
   }
 
@@ -89,6 +121,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       icon: Icons.person,
                       kybrdtype: TextInputType.emailAddress,
                     ),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     InputField(
                       lbltxt: 'Password',
                       hnttxt: 'Enter Password',
@@ -135,14 +170,19 @@ class _LoginScreenState extends State<LoginScreen> {
                             secondaryColor,
                           ]),
                         ),
-                        child: const Center(
-                          child: Text(
-                            'SIGN IN',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                color: Colors.black),
-                          ),
+                        child: Center(
+                          child: _isLoading
+                              ? LoadingAnimationWidget.staggeredDotsWave(
+                                  color: Colors.white,
+                                  size: 20,
+                                )
+                              : const Text(
+                                  'SIGN IN',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      color: Colors.black),
+                                ),
                         ),
                       ),
                     ),

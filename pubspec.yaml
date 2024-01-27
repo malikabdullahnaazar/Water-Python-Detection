@@ -1,5 +1,5 @@
-name: water_pathogen_detection
-description: A new Flutter project.
+name: water_pathogen_detection_system
+description: The Water Pathogen Detection system is a comprehensive solution designed to identify and mitigate the presence of pathogens in water sources. This innovative technology addresses the critical need for ensuring the safety and quality of water for various applications, including drinking water, agricultural irrigation, and industrial processes.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -44,10 +44,13 @@ dependencies:
   google_sign_in: ^6.2.1
   image_picker: ^1.0.7
   outline_gradient_button: ^2.0.1+1
+  loading_animation_widget: ^1.2.0+4
+  faker: ^2.1.0 
   flutter_vision: ^1.1.4
   # tflite_flutter: ^0.10.4
   # tflite: ^1.1.2
   font_awesome_icon_class: ^0.0.6
+
 
     
 
@@ -55,26 +58,13 @@ dev_dependencies:
   flutter_test:
       sdk: flutter
   flutter_lints: ^3.0.1
-  
   flutter_launcher_icons: "^0.13.1"
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo-removebg-preview.png"
+  min_sdk_android: 21 #
 
-flutter_launcher_icons:
-    android: "launcher_icon"
-    ios: true
-    image_path: "assets/images/logo-removebg-preview.png"
-    min_sdk_android: 21 # android min sdk min:16, default 21
-    web:
-      generate: true
-      image_path: "assets/images/logo-removebg-preview.png"
-      background_color: "#hexcode"
-      theme_color: "#hexcode"
-    windows:
-      generate: true
-      image_path: "assets/images/logo-removebg-preview.png"
-      icon_size: 48 # min:48, max:256, default: 48
-    macos:
-      generate: true
-      image_path: "assets/images/logo-removebg-preview.png"
   
   
 

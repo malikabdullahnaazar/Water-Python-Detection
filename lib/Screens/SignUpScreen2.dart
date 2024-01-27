@@ -1,95 +1,107 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:water_pathogen_detection/FirebaseServices/FirebaseServices.dart';
-import 'package:water_pathogen_detection/Screens/LoginScreen.dart';
-import 'package:water_pathogen_detection/commonUtils/InputField.dart';
-import 'package:water_pathogen_detection/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection/commonUtils/constancts.dart';
+import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
+import 'package:water_pathogen_detection_system/Screens/LoginScreen.dart';
+import 'package:water_pathogen_detection_system/commonUtils/InputField.dart';
+import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
+import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
-class RegScreen extends StatelessWidget {
+class RegScreen extends StatefulWidget {
   const RegScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    TextEditingController _userController = TextEditingController();
-    TextEditingController _emailController = TextEditingController();
-    TextEditingController _passwordController = TextEditingController();
-    TextEditingController _confirmPasswordController = TextEditingController();
-    FirebaseServices _auth = FirebaseServices();
+  _RegScreenState createState() => _RegScreenState();
+}
 
-    @override
-    void dispose() {
-      _emailController.dispose();
-      _userController.dispose();
-      _passwordController.dispose();
-      _confirmPasswordController.dispose();
+class _RegScreenState extends State<RegScreen> {
+  TextEditingController _userController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmPasswordController = TextEditingController();
+  FirebaseServices _auth = FirebaseServices();
+  bool _isLoading = false;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _userController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
+  }
+
+  void _signUp(BuildContext context) async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    String username = _userController.text;
+    String password = _passwordController.text;
+    String email = _emailController.text;
+    String confirmPassword = _confirmPasswordController.text;
+
+    // Validate the input
+    if (username.isEmpty ||
+        email.isEmpty ||
+        password.isEmpty ||
+        confirmPassword.isEmpty) {
+      // Show appropriate Snack Bar based on validation result
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("All fields are required"),
+        ),
+      );
+      setState(() {
+        _isLoading = false;
+      });
+      return;
     }
 
-    void SignUp() async {
-      String username = _userController.text;
-      String password = _passwordController.text;
-      String email = _emailController.text;
-      String confirmPassword = _confirmPasswordController.text;
-
-      // Validate the input
-      if (username.isEmpty) {
-        const snackBar = SnackBar(
-          content: Text("Please enter a username"),
-          behavior: SnackBarBehavior.fixed,
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        return;
-      }
-
-      if (email.isEmpty) {
-        const snackBar = SnackBar(
-          content: Text("Please enter an email"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        return;
-      }
-
-      if (password.isEmpty) {
-        const snackBar = SnackBar(
-          content: Text("Please enter a password"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        return;
-      }
-
-      if (confirmPassword.isEmpty) {
-        const snackBar = SnackBar(
-          content: Text("Please confirm your password"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        return;
-      }
-
-      if (password != confirmPassword) {
-        const snackBar = SnackBar(
+    if (password != confirmPassword) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
           content: Text("Passwords do not match"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        return;
-      }
-
-      // Create the user
-      User? user = await _auth.signUpwithEmailAndpassword(email, password);
-      if (user != null) {
-        const snackBar = SnackBar(
-          content: Text("Successfully registered"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const HomeScreen2()));
-      } else {
-        const snackBar = SnackBar(
-          content: Text("Error: Try again"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-      }
+        ),
+      );
+      setState(() {
+        _isLoading = false;
+      });
+      return;
     }
 
+    // Create the user
+    User? user = await _auth.signUpwithEmailAndpassword(email, password);
+    if (user != null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Successfully registered"),
+        ),
+      );
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        (route) => false,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Registration Successful'),
+        backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+        showCloseIcon: true,
+      ));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Error: Try again"),
+        ),
+      );
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
@@ -176,7 +188,7 @@ class RegScreen extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            SignUp();
+                            _signUp(context);
                           },
                           child: Container(
                             height: 55,
@@ -188,15 +200,20 @@ class RegScreen extends StatelessWidget {
                                 secondaryColor,
                               ]),
                             ),
-                            child: const Center(
-                              child: Text(
-                                'SIGN UP',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                ),
-                              ),
+                            child: Center(
+                              child: _isLoading
+                                  ? LoadingAnimationWidget.staggeredDotsWave(
+                                      color: Colors.white,
+                                      size: 20,
+                                    )
+                                  : const Text(
+                                      'SIGN UP',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                      ),
+                                    ),
                             ),
                           ),
                         ),
@@ -231,11 +248,13 @@ class RegScreen extends StatelessWidget {
                             child: Column(
                               children: [
                                 Image(
-                                    image: AssetImage(
-                                        "assets/images/logo-removebg-preview.png"),
-                                    width: 70,
-                                    color: Colors.black,
-                                    height: 70),
+                                  image: AssetImage(
+                                    "assets/images/logo-removebg-preview.png",
+                                  ),
+                                  width: 70,
+                                  color: Colors.black,
+                                  height: 70,
+                                ),
                                 const SizedBox(height: 10),
                                 Text(
                                   '© 2024 Water Pathogen Detection. All rights reserved.',
