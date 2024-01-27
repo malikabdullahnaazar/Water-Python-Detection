@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
 import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/ContactUs.dart';
 import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/FAQ.dart';
@@ -8,9 +8,10 @@ import 'package:water_pathogen_detection_system/Screens/Results.dart';
 import 'package:water_pathogen_detection_system/Screens/SettingsPage.dart';
 import 'package:water_pathogen_detection_system/Screens/WelcomeScreen.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfleScreen extends StatefulWidget {
-  const ProfleScreen({super.key});
+  const ProfleScreen({Key? key}) : super(key: key);
 
   @override
   State<ProfleScreen> createState() => _ProfleScreenState();
@@ -18,6 +19,7 @@ class ProfleScreen extends StatefulWidget {
 
 class _ProfleScreenState extends State<ProfleScreen> {
   late FirebaseServices _auth;
+  late User? _user;
 
   final List<Map<String, dynamic>> data2 = [
     {"icon": Icons.leaderboard, "heading1": "Results", "heading2": "216"},
@@ -26,168 +28,196 @@ class _ProfleScreenState extends State<ProfleScreen> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    _auth = FirebaseServices();
+    _loadUserData();
+  }
+
+  void _loadUserData() {
+    User? currentUser = FirebaseAuth.instance.currentUser;
+    setState(() {
+      _user = currentUser;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBody: true,
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                FontAwesomeIcons.arrowLeft,
-                size: 24,
-                color: Colors.white,
-              )),
+      extendBody: true,
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            FontAwesomeIcons.arrowLeft,
+            size: 24,
+            color: Colors.white,
+          ),
         ),
-        body: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: MediaQuery.sizeOf(context).height,
-              decoration: const BoxDecoration(
-                  gradient:
-                      LinearGradient(colors: [primaryColor, secondaryColor]),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10))),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 80),
-                  SizedBox(
-                    width: 90,
-                    height: 90,
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: const Image(
-                          image: AssetImage('assets/images/img_image_16.png'),
-                        )),
+      ),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(colors: [primaryColor, secondaryColor]),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 80),
+                CircleAvatar(
+                  radius: 45,
+                  backgroundImage: _user?.photoURL != null
+                      ? NetworkImage(_user!.photoURL!)
+                      : AssetImage('assets/images/avatar.png')
+                          as ImageProvider<Object>?,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  _user?.displayName ?? '',
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-                  const SizedBox(
-                    height: 10,
+                ),
+                Text(
+                  _user?.email ?? '',
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white,
                   ),
-                  const Text(
-                    'Malik Abdullah',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                  const Text(
-                    'malikabdullah@gmail.com',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.white),
-                  ),
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 330,
-                        height: 60,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: data2.length,
-                          itemBuilder: (context, index) => Container(
-                            width: 100,
-                            height: 60,
-                            child: Column(
-                              children: [
-                                Icon(
-                                  data2[index]["icon"] as IconData,
-                                  size: 20,
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 330,
+                      height: 60,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: data2.length,
+                        itemBuilder: (context, index) => Container(
+                          width: 100,
+                          height: 60,
+                          child: Column(
+                            children: [
+                              Icon(
+                                data2[index]["icon"] as IconData,
+                                size: 20,
+                                color: Colors.black,
+                              ),
+                              Text(
+                                data2[index]["heading1"],
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
                                   color: Colors.black,
                                 ),
-                                Text(
-                                  data2[index]["heading1"],
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black,
-                                  ),
+                              ),
+                              Text(
+                                data2[index]["heading2"],
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                 ),
-                                Text(
-                                  data2[index]["heading2"],
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          separatorBuilder: (context, index) =>
-                              const VerticalDivider(
-                            color: Colors.grey, // Customize the color as needed
-                            thickness: 1, // Customize the thickness as needed
+                              ),
+                            ],
                           ),
                         ),
+                        separatorBuilder: (context, index) =>
+                            const VerticalDivider(
+                          color: Colors.grey, // Customize the color as needed
+                          thickness: 1, // Customize the thickness as needed
+                        ),
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 60),
-                  Expanded(
-                      child: SingleChildScrollView(
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 60),
+                Expanded(
+                  child: SingleChildScrollView(
                     child: Container(
                       decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20)),
-                          color: Colors.white),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
+                        color: Colors.white,
+                      ),
                       child: CustomColumn(
                         data: [
                           {
                             "icon": Icons.favorite_rounded,
                             "title": "My Saved",
                             "rightIcon": Icons.chevron_right,
-                            "onClick": () => {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              MySavedResultsPage()))
-                                }
+                            "onClick": () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MySavedResultsPage(),
+                                  ),
+                                ),
                           },
-
                           {
                             "icon": Icons.settings,
                             "title": "Setting",
                             "rightIcon": Icons.chevron_right,
                             "onClick": () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SettingsPage()))
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const SettingsPage(),
+                                  ),
+                                ),
                           },
                           {
                             "icon": Icons.contact_mail,
                             "title": "Contact us",
                             "rightIcon": Icons.chevron_right,
                             "onClick": () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const ContactUs()))
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const ContactUs(),
+                                  ),
+                                ),
                           },
                           {
                             "icon": Icons.question_answer,
                             "title": "FAQ",
                             "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => FAQ()))
+                            "onClick": () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FAQ(),
+                                  ),
+                                ),
                           },
                           {
                             "icon": Icons.help,
                             "title": "Help",
                             "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => Help()))
+                            "onClick": () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Help(),
+                                  ),
+                                ),
                           },
                           {
                             "icon": Icons.logout,
@@ -197,23 +227,25 @@ class _ProfleScreenState extends State<ProfleScreen> {
                               _auth = FirebaseServices();
                               _auth.signOut(context);
 
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => WelcomeScreen()));
-                            }
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => WelcomeScreen(),
+                                ),
+                              );
+                            },
                           },
-
-                          // Add more items as needed
                         ],
                       ),
                     ),
-                  ))
-                ],
-              ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -235,19 +267,21 @@ class CustomColumn extends StatelessWidget {
               onTap: item["onClick"],
               child: ListTile(
                 leading: ShaderMask(
-                    blendMode: BlendMode.srcIn,
-                    shaderCallback: (Rect bounds) {
-                      return const LinearGradient(
-                        colors: <Color>[Colors.black, Colors.black],
-                      ).createShader(bounds);
-                    },
-                    child: Icon(item["icon"] as IconData, size: 20)),
+                  blendMode: BlendMode.srcIn,
+                  shaderCallback: (Rect bounds) {
+                    return const LinearGradient(
+                      colors: <Color>[Colors.black, Colors.black],
+                    ).createShader(bounds);
+                  },
+                  child: Icon(item["icon"] as IconData, size: 20),
+                ),
                 title: Text(
                   item["title"] as String,
                   style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w800,
-                      color: Color.fromARGB(255, 87, 85, 85)),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w800,
+                    color: Color.fromARGB(255, 87, 85, 85),
+                  ),
                 ),
                 trailing: Icon(
                   item["rightIcon"] as IconData,
@@ -256,7 +290,7 @@ class CustomColumn extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
       ],
     );
   }

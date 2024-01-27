@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1034583528733-6qoau70qqupbda86oukhdc1i34i4sqma.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.water_pathogen_detection",
+            "certificate_hash": "0f6d495bd3bfd085347434f7ed12a56465beab31"
+          }
+        },
+        {
           "client_id": "1034583528733-nji20hscpkapi1vh6s4dpq8epgovpis5.apps.googleusercontent.com",
           "client_type": 3
         }
