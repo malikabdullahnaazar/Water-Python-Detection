@@ -1,0 +1,82 @@
+description: Ultralytics best model trained on /content/drive/MyDrive/Pythagon_Dataset/config.yaml
+author: Ultralytics
+date: '2024-03-31T13:12:18.376520'
+version: 8.1.38
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: Escherichia coli
+  1: Gomphonema drutelingense
+  2: Encyonema ventricosum
+  3: Achnanthidium biasolettianum
+  4: Gomphonema olivaceum
+  5: Cymbella cantonatii
+  6: Achnanthidium minutissimum
+  7: Navicula cryptotenella
+  8: Adlafia minuscula
+  9: Encyonema silesiacum
+  10: Diatoma moniliformis
+  11: Gomphonema minutum
+  12: Nitzschia linearis
+  13: Navicula capitatoradiata
+  14: Didymosphenia geminata
+  15: Cymbella excisa var. procera
+  16: Cymbella excisa
+  17: Gomphonema tergestinum
+  18: Fragilaria recapitellata
+  19: Amphora pediculus
+  20: Planothidium lanceolatum
+  21: Halamphora veneta
+  22: Navicula tripunctata
+  23: Cymbopleura amphicephala
+  24: Diploneis fontanella
+  25: Gomphonema micropus
+  26: Nitzschia palea
+  27: Pantocsekiella ocellata
+  28: Denticula kuetzingii
+  29: Navicula trivialis
+  30: Navicula cryptotenelloides
+  31: Nitzschia hantzschiana
+  32: Halamphora paraveneta
+  33: Navicula cryptocephala
+  34: Hantzschiana abundans
+  35: Cymbella excisa var. subcapitata
+  36: Epithemia goeppertiana
+  37: Luticola nivalis
+  38: Frustulia vulgaris
+  39: Epithemia argus
+  40: Pinnularia brebissonii
+  41: Cocconeis pseudolineata
+  42: Nitzschia archibaldii
+  43: Humidophila perpusilla
+  44: Planothidium frequentissimum
+  45: Surirella brebissonii var. kuetzingii
+  46: Meridion circulare
+  47: Gomphonema calcifugum
+  48: Gomphonema pumilum var. rigidum
+  49: Gomphonema supertergestinum
+  50: Surella minuta
+  51: Gomphonema exilissimum
+  52: Navicula reichardtiana
+  53: Navicula upsaliensis
+  54: Navicula gregaria
+  55: Amphora inariensis
+  56: Navicula moskalii
+  57: Neidiomorpha binodiformis
+  58: Navicula lanceolata
+  59: Stauroneis blazenciciae
+  60: Nitzschia recta
+  61: Rhoicosphenia abbreviata
+  62: Diatoma mesodon
+  63: Humidophila contenta
+  64: Sellaphora radiosa
+  65: Sellaphora saugerresii
+  66: Gomphonema pumilum
+  67: Caloneis lancettula
+  68: Navicula novaesiberica
