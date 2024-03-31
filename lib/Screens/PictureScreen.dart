@@ -27,6 +27,15 @@ class _PictureScreenState extends State<PictureScreen> {
   late List _results = [];
 
   Future loadModel() async {
+    // final model = LocalYoloModel(
+    //     id: id,
+    //     task: Task.detect /* or Task.classify */,
+    //     format: Format.tflite /* or Format.coreml*/,
+    //     modelPath: modelPath,
+    //     metadataPath: metadataPath,
+    //   );
+//     final objectDetector = ObjectDetector(model: model);
+// await objectDetector.loadModel();
     await vision.loadYoloModel(
         labels: "assets/metadata.txt",
         modelPath: "assets/best_float32.tflite",
@@ -39,6 +48,7 @@ class _PictureScreenState extends State<PictureScreen> {
   Future imageClassification(image) async {
     print('Welcome, ${image}');
     try {
+      // objectDetector.detect(imagePath: imagePath)
       var recognitions = await vision.yoloOnImage(
         bytesList: image,
         imageHeight: image.height,
