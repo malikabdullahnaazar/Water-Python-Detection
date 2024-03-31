@@ -259,7 +259,7 @@ class _RegScreenState extends State<RegScreen> {
                                 Text(
                                   '© 2024 Water Pathogen Detection. All rights reserved.',
                                   style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 10,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
                                   ),

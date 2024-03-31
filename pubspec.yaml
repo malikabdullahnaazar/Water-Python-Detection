@@ -47,9 +47,10 @@ dependencies:
   loading_animation_widget: ^1.2.0+4
   faker: ^2.1.0 
   flutter_vision: ^1.1.4
-  # tflite_flutter: ^0.10.4
+  tflite_flutter: ^0.10.4 
   # tflite: ^1.1.2
   font_awesome_icon_class: ^0.0.6
+  # ultralytics_yolo: ^0.0.2
 
 
     
