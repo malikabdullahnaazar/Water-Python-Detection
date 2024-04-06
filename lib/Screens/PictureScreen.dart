@@ -1,113 +1,76 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:typed_data';
-import 'package:flutter_vision/flutter_vision.dart';
+import 'package:flutter/material.dart';
+import 'package:ultralytics_yolo/ultralytics_yolo.dart';
+import 'package:ultralytics_yolo/yolo_model.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
-import 'package:water_pathogen_detection_system/commonUtils/Utils.dart';
+import 'dart:io' as io;
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:flutter/services.dart';
 
 class PictureScreen extends StatefulWidget {
   final Uint8List? image;
   final File? selectedImage;
 
-  const PictureScreen({this.image, this.selectedImage, super.key});
+  const PictureScreen({Key? key, this.image, this.selectedImage})
+      : super(key: key);
 
   @override
   State<PictureScreen> createState() => _PictureScreenState();
 }
 
 class _PictureScreenState extends State<PictureScreen> {
-  FlutterVision vision = FlutterVision();
+  late ObjectDetector _objectDetector;
+  List<dynamic> _results = [];
+
   @override
   void initState() {
     super.initState();
-    loadModel();
+    loadModel().then((_) {
+      print("Model loaded successfully");
+    }).catchError((error) {
+      print("Error loading model: $error");
+    });
   }
 
-  late List _results = [];
+  Future<void> loadModel() async {
+    final modelPath = await _copy('assets/best_int8.tflite');
+    final metadataPath = await _copy('assets/metadata.yaml');
+    final model = LocalYoloModel(
+      id: '',
+      task: Task.detect,
+      format: Format.tflite,
+      modelPath: modelPath,
+      metadataPath: metadataPath,
+    );
 
-  Future loadModel() async {
-    // final model = LocalYoloModel(
-    //     id: id,
-    //     task: Task.detect /* or Task.classify */,
-    //     format: Format.tflite /* or Format.coreml*/,
-    //     modelPath: modelPath,
-    //     metadataPath: metadataPath,
-    //   );
-//     final objectDetector = ObjectDetector(model: model);
-// await objectDetector.loadModel();
-    await vision.loadYoloModel(
-        labels: "assets/metadata.txt",
-        modelPath: "assets/best_float32.tflite",
-        modelVersion: "yolov8",
-        quantization: false,
-        numThreads: 1,
-        useGpu: false);
+    _objectDetector = ObjectDetector(model: model);
+    await _objectDetector.loadModel();
   }
 
-  Future imageClassification(image) async {
-    print('Welcome, ${image}');
+  Future<String> _copy(String assetPath) async {
+    final path = '${(await getApplicationSupportDirectory()).path}/$assetPath';
+    await io.Directory(dirname(path)).create(recursive: true);
+    final file = io.File(path);
+    if (!await file.exists()) {
+      final byteData = await rootBundle.load(assetPath);
+      await file.writeAsBytes(byteData.buffer
+          .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
+    }
+    return file.path;
+  }
+
+  Future<void> imageClassification(String imagepath) async {
     try {
-      // objectDetector.detect(imagePath: imagePath)
-      var recognitions = await vision.yoloOnImage(
-        bytesList: image,
-        imageHeight: image.height,
-        imageWidth: image.width,
-        iouThreshold: 0.8,
-        confThreshold: 0.4,
-        classThreshold: 0.7,
-      );
-
-      if (recognitions != null) {
-        if (recognitions.isNotEmpty) {
-          // Continue with processing predictions
-          var prediction = recognitions[0];
-          print('Prediction: $prediction');
-          setState(() {
-            _results = [prediction['label'], prediction['confidence']];
-          });
-
-          // Show a Snackbar with the prediction results
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Prediction: ${prediction['label']}'),
-            ),
-          );
-        } else {
-          setState(() {
-            _results = ['No prediction'];
-          });
-
-          // Show a Snackbar indicating no prediction
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('No prediction'),
-            ),
-          );
-        }
-      } else {
-        // Handle the case where recognitions is null
-        setState(() {
-          _results = ['Error: Recognitions is null'];
-        });
-
-        // Show a Snackbar for the error
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Error: Recognitions is null'),
-          ),
-        );
-      }
+      print("Prediction started");
+      final res = await _objectDetector.detect(imagePath: imagepath);
+      setState(() {
+        _results = res!;
+        print("Prediction: $res");
+      });
     } catch (error) {
-      // Handle any unexpected errors
-      print('Error: $error');
-
-      // Show a Snackbar for the error
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Error: $error'),
-        ),
-      );
+      print(error);
     }
   }
 
@@ -131,14 +94,15 @@ class _PictureScreenState extends State<PictureScreen> {
                   Align(
                     alignment: Alignment.topLeft,
                     child: IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Icon(
-                          Icons.arrow_back,
-                          color: Colors.white,
-                          size: 40,
-                        )),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
@@ -148,41 +112,48 @@ class _PictureScreenState extends State<PictureScreen> {
                           width: 350,
                           height: 500,
                           decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: FileImage(widget.selectedImage!)),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(40))),
+                            image: DecorationImage(
+                              image: MemoryImage(widget.image!),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(40)),
+                          ),
                         )
                       : Container(
                           width: 350,
                           height: 500,
                           decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(40))),
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(Radius.circular(40)),
+                          ),
                         ),
                   const SizedBox(height: 20),
                   InkWell(
-                    onTap: () => {imageClassification(widget.image!)},
+                    onTap: () =>
+                        imageClassification(widget.selectedImage!.path),
                     child: Container(
                       height: 55,
                       width: 300,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.white),
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
+                      ),
                       child: const Center(
                         child: Text(
                           'DETECT',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.black),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
                   Container(
-                    child: Text(_results.isNotEmpty ? '$_results' : ''),
+                    child: Text(
+                        _results.isNotEmpty ? '$_results' : 'no prediction'),
                   )
                 ],
               ),

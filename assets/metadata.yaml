@@ -1,82 +1,92 @@
-description: Ultralytics best model trained on /content/drive/MyDrive/Pythagon_Dataset/config.yaml
+description: Ultralytics YOLOv8n model trained on coco.yaml
 author: Ultralytics
-date: '2024-03-31T13:12:18.376520'
-version: 8.1.38
-license: AGPL-3.0 License (https://ultralytics.com/license)
-docs: https://docs.ultralytics.com
+license: AGPL-3.0 https://ultralytics.com/license
+date: '2023-11-30T10:16:15.604065'
+version: 8.0.215
 stride: 32
 task: detect
 batch: 1
 imgsz:
-- 640
-- 640
+- 320
+- 320
 names:
-  0: Escherichia coli
-  1: Gomphonema drutelingense
-  2: Encyonema ventricosum
-  3: Achnanthidium biasolettianum
-  4: Gomphonema olivaceum
-  5: Cymbella cantonatii
-  6: Achnanthidium minutissimum
-  7: Navicula cryptotenella
-  8: Adlafia minuscula
-  9: Encyonema silesiacum
-  10: Diatoma moniliformis
-  11: Gomphonema minutum
-  12: Nitzschia linearis
-  13: Navicula capitatoradiata
-  14: Didymosphenia geminata
-  15: Cymbella excisa var. procera
-  16: Cymbella excisa
-  17: Gomphonema tergestinum
-  18: Fragilaria recapitellata
-  19: Amphora pediculus
-  20: Planothidium lanceolatum
-  21: Halamphora veneta
-  22: Navicula tripunctata
-  23: Cymbopleura amphicephala
-  24: Diploneis fontanella
-  25: Gomphonema micropus
-  26: Nitzschia palea
-  27: Pantocsekiella ocellata
-  28: Denticula kuetzingii
-  29: Navicula trivialis
-  30: Navicula cryptotenelloides
-  31: Nitzschia hantzschiana
-  32: Halamphora paraveneta
-  33: Navicula cryptocephala
-  34: Hantzschiana abundans
-  35: Cymbella excisa var. subcapitata
-  36: Epithemia goeppertiana
-  37: Luticola nivalis
-  38: Frustulia vulgaris
-  39: Epithemia argus
-  40: Pinnularia brebissonii
-  41: Cocconeis pseudolineata
-  42: Nitzschia archibaldii
-  43: Humidophila perpusilla
-  44: Planothidium frequentissimum
-  45: Surirella brebissonii var. kuetzingii
-  46: Meridion circulare
-  47: Gomphonema calcifugum
-  48: Gomphonema pumilum var. rigidum
-  49: Gomphonema supertergestinum
-  50: Surella minuta
-  51: Gomphonema exilissimum
-  52: Navicula reichardtiana
-  53: Navicula upsaliensis
-  54: Navicula gregaria
-  55: Amphora inariensis
-  56: Navicula moskalii
-  57: Neidiomorpha binodiformis
-  58: Navicula lanceolata
-  59: Stauroneis blazenciciae
-  60: Nitzschia recta
-  61: Rhoicosphenia abbreviata
-  62: Diatoma mesodon
-  63: Humidophila contenta
-  64: Sellaphora radiosa
-  65: Sellaphora saugerresii
-  66: Gomphonema pumilum
-  67: Caloneis lancettula
-  68: Navicula novaesiberica
+  0: person
+  1: bicycle
+  2: car
+  3: motorcycle
+  4: airplane
+  5: bus
+  6: train
+  7: truck
+  8: boat
+  9: traffic light
+  10: fire hydrant
+  11: stop sign
+  12: parking meter
+  13: bench
+  14: bird
+  15: cat
+  16: dog
+  17: horse
+  18: sheep
+  19: cow
+  20: elephant
+  21: bear
+  22: zebra
+  23: giraffe
+  24: backpack
+  25: umbrella
+  26: handbag
+  27: tie
+  28: suitcase
+  29: frisbee
+  30: skis
+  31: snowboard
+  32: sports ball
+  33: kite
+  34: baseball bat
+  35: baseball glove
+  36: skateboard
+  37: surfboard
+  38: tennis racket
+  39: bottle
+  40: wine glass
+  41: cup
+  42: fork
+  43: knife
+  44: spoon
+  45: bowl
+  46: banana
+  47: apple
+  48: sandwich
+  49: orange
+  50: broccoli
+  51: carrot
+  52: hot dog
+  53: pizza
+  54: donut
+  55: cake
+  56: chair
+  57: couch
+  58: potted plant
+  59: bed
+  60: dining table
+  61: toilet
+  62: tv
+  63: laptop
+  64: mouse
+  65: remote
+  66: keyboard
+  67: cell phone
+  68: microwave
+  69: oven
+  70: toaster
+  71: sink
+  72: refrigerator
+  73: book
+  74: clock
+  75: vase
+  76: scissors
+  77: teddy bear
+  78: hair drier
+  79: toothbrush
