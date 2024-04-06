@@ -68,7 +68,10 @@ android {
       preDexLibraries = true
     }
   }
-   
+   aaptOptions {
+        noCompress 'tflite'
+        noCompress 'lite'
+    }
     
 }
 

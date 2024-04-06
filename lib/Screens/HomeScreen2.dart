@@ -398,10 +398,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
         selectedImage = File(returnImage.path);
         image = selectedImage!.readAsBytesSync();
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    PictureScreen(image: image, selectedImage: selectedImage)));
+            context, MaterialPageRoute(builder: (context) => PictureScreen()));
       });
     } else
       return;
@@ -415,10 +412,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
         selectedImage = File(returnImage.path);
         image = selectedImage!.readAsBytesSync();
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    PictureScreen(image: image, selectedImage: selectedImage)));
+            context, MaterialPageRoute(builder: (context) => PictureScreen()));
       });
     } else
       return;
