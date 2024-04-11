@@ -65,29 +65,36 @@ class _PictureScreenState extends State<PictureScreen> {
   Future<void> imageClassification(String imagepath) async {
     try {
       print("Started image classification...");
-      img.Image? image = await _loadImage('assets/1790.png');
+      img.Image? image = await _loadImage(imagepath);
       final input = _preProcess(image!);
-      // Correctly set up the output buffer to match the model's expected output shap
+      // Correctly set up the output buffer to match the model's expected output shape
       final outputBuffer =
           TensorBuffer.createFixedSize([1, 73, 2100], TfLiteType.float32);
       _interpreter.run([input], outputBuffer);
       var a = outputBuffer.getDoubleList();
       var labels = await rootBundle.loadString('assets/labels.txt');
       List<String> labelList = labels.split('\n');
+      List<double> confidences = a.map((value) => value.abs()).toList();
       int maxIndex = a.indexOf(a.reduce((a, b) => a > b ? a : b));
       String label = labelList[maxIndex];
+      double confidence = confidences[maxIndex];
       int predictionTime = DateTime.now().millisecondsSinceEpoch -
           DateTime.now().millisecondsSinceEpoch;
       print('Prediction time: $predictionTime ms');
-      print('Prediction : $label');
+      print('Prediction: $label (${confidence.toStringAsFixed(3)})');
     } catch (error) {
       print('Error during image classification: $error');
     }
   }
 
   Future<img.Image?> _loadImage(String imagePath) async {
-    final imageData = await rootBundle.load(imagePath);
-    return img.decodeImage(imageData.buffer.asUint8List());
+    final File imageFile = File(imagePath);
+    if (!await imageFile.exists()) {
+      print('File does not exist: $imagePath');
+      return null;
+    }
+    final Uint8List imageData = await imageFile.readAsBytes();
+    return img.decodeImage(imageData);
   }
 
   @override
