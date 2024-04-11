@@ -46,7 +46,7 @@ class _PictureScreenState extends State<PictureScreen> {
     var pred = _classifier.predict(imageInput);
 
     setState(() {
-      this.category = pred;
+      // this.category = pred;
     });
   }
 
