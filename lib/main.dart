@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection_system/Screens/LoginScreen.dart';
 import 'package:water_pathogen_detection_system/Screens/WelcomeScreen.dart';
 import 'package:water_pathogen_detection_system/firebase_options.dart';
 

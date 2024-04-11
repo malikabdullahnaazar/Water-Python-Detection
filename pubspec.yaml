@@ -51,6 +51,7 @@ dependencies:
   tflite_flutter_helper: ^0.2.1
   # tflite: ^1.1.2
   font_awesome_icon_class: ^0.0.6
+  collection: ^1.15.0
   # ultralytics_yolo: ^0.0.2
   path_provider: ^2.1.2
 
