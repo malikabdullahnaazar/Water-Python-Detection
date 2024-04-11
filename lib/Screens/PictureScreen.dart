@@ -70,14 +70,16 @@ class _PictureScreenState extends State<PictureScreen> {
       // Correctly set up the output buffer to match the model's expected output shap
       final outputBuffer =
           TensorBuffer.createFixedSize([1, 73, 2100], TfLiteType.float32);
-      // final output = List<num>.filled(1 * 84 * 8400, 0).reshape([1, 84, 8400]);
-
-      int predictionTimeStart = DateTime.now().millisecondsSinceEpoch;
       _interpreter.run([input], outputBuffer);
-      int predictionTime =
-          DateTime.now().millisecondsSinceEpoch - predictionTimeStart;
+      var a = outputBuffer.getDoubleList();
+      var labels = await rootBundle.loadString('assets/labels.txt');
+      List<String> labelList = labels.split('\n');
+      int maxIndex = a.indexOf(a.reduce((a, b) => a > b ? a : b));
+      String label = labelList[maxIndex];
+      int predictionTime = DateTime.now().millisecondsSinceEpoch -
+          DateTime.now().millisecondsSinceEpoch;
       print('Prediction time: $predictionTime ms');
-      // print('Prediction results: $output');
+      print('Prediction : $label');
     } catch (error) {
       print('Error during image classification: $error');
     }
