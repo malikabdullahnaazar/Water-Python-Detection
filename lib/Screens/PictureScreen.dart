@@ -1,12 +1,13 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:ultralytics_yolo/ultralytics_yolo.dart';
-import 'package:ultralytics_yolo/yolo_model.dart';
+import 'package:tflite_flutter/tflite_flutter.dart';
+import 'package:image/image.dart' as img;
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 import 'dart:io' as io;
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 import 'package:flutter/services.dart';
 
 class PictureScreen extends StatefulWidget {
@@ -21,9 +22,8 @@ class PictureScreen extends StatefulWidget {
 }
 
 class _PictureScreenState extends State<PictureScreen> {
-  late ObjectDetector _objectDetector;
   List<dynamic> _results = [];
-
+  late Interpreter _interpreter;
   @override
   void initState() {
     super.initState();
@@ -34,44 +34,58 @@ class _PictureScreenState extends State<PictureScreen> {
     });
   }
 
-  Future<void> loadModel() async {
-    final modelPath = await _copy('assets/best_int8.tflite');
-    final metadataPath = await _copy('assets/metadata.yaml');
-    final model = LocalYoloModel(
-      id: '',
-      task: Task.detect,
-      format: Format.tflite,
-      modelPath: modelPath,
-      metadataPath: metadataPath,
-    );
+  List<List<List<num>>> _preProcess(img.Image image) {
+    final imgResized = img.copyResize(image, width: 320, height: 320);
 
-    _objectDetector = ObjectDetector(model: model);
-    await _objectDetector.loadModel();
+    return convertImageToMatrix(imgResized);
   }
 
-  Future<String> _copy(String assetPath) async {
-    final path = '${(await getApplicationSupportDirectory()).path}/$assetPath';
-    await io.Directory(dirname(path)).create(recursive: true);
-    final file = io.File(path);
-    if (!await file.exists()) {
-      final byteData = await rootBundle.load(assetPath);
-      await file.writeAsBytes(byteData.buffer
-          .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
-    }
-    return file.path;
+  List<List<List<num>>> convertImageToMatrix(img.Image image) {
+    return List.generate(
+      image.height,
+      (y) => List.generate(
+        image.width,
+        (x) {
+          final pixel = image.getPixel(x, y);
+          // Extract RGB components from the pixel
+          final int r = img.getRed(pixel);
+          final int g = img.getGreen(pixel);
+          final int b = img.getBlue(pixel);
+          // Normalize the RGB components to the range [0, 1]
+          return [r / 255.0, g / 255.0, b / 255.0];
+        },
+      ),
+    );
+  }
+
+  Future<void> loadModel() async {
+    _interpreter = await Interpreter.fromAsset('yolov8n_int8.tflite');
   }
 
   Future<void> imageClassification(String imagepath) async {
     try {
-      print("Prediction started");
-      final res = await _objectDetector.detect(imagePath: imagepath);
-      setState(() {
-        _results = res!;
-        print("Prediction: $res");
-      });
+      print("Started image classification...");
+      img.Image? image = await _loadImage('assets/1790.png');
+      final input = _preProcess(image!);
+      // Correctly set up the output buffer to match the model's expected output shap
+      final outputBuffer =
+          TensorBuffer.createFixedSize([1, 73, 2100], TfLiteType.float32);
+      // final output = List<num>.filled(1 * 84 * 8400, 0).reshape([1, 84, 8400]);
+
+      int predictionTimeStart = DateTime.now().millisecondsSinceEpoch;
+      _interpreter.run([input], outputBuffer);
+      int predictionTime =
+          DateTime.now().millisecondsSinceEpoch - predictionTimeStart;
+      print('Prediction time: $predictionTime ms');
+      // print('Prediction results: $output');
     } catch (error) {
-      print(error);
+      print('Error during image classification: $error');
     }
+  }
+
+  Future<img.Image?> _loadImage(String imagePath) async {
+    final imageData = await rootBundle.load(imagePath);
+    return img.decodeImage(imageData.buffer.asUint8List());
   }
 
   @override

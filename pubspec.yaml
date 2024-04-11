@@ -47,19 +47,21 @@ dependencies:
   loading_animation_widget: ^1.2.0+4
   faker: ^2.1.0 
   # flutter_vision: ^1.1.4
-  # tflite_flutter: ^0.10.4 
+  tflite_flutter: ^0.9.0
+  tflite_flutter_helper: ^0.2.1
   # tflite: ^1.1.2
   font_awesome_icon_class: ^0.0.6
-  ultralytics_yolo: ^0.0.2
+  # ultralytics_yolo: ^0.0.2
   path_provider: ^2.1.2
 
     
 
 dev_dependencies:
   flutter_test:
-      sdk: flutter
+    sdk: flutter
   flutter_lints: ^3.0.1
-  flutter_launcher_icons: "^0.13.1"
+  flutter_launcher_icons: "^0.11.0"
+  image: ">=3.0.2 <5.0.0"
 flutter_icons:
   android: "launcher_icon"
   ios: true
