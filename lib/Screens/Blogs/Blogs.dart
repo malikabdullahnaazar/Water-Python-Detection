@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, non_constant_identifier_names, dead_code
+// ignore_for_file: file_names, non_constant_identifier_names
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,13 +17,13 @@ class Blogs extends StatefulWidget {
 
 class _BlogsScreenState extends State<Blogs> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  // final String admin_id = "malikabdullah130037@gmail.com";
-  final String admin_id = "Malik@gmail.com";
+  final String admin_id = "malikabdullah130037@gmail.com";
+  // final String admin_id = "Malik@gmail.com";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: true
+      floatingActionButton: _auth.currentUser?.email == admin_id
           ? FloatingActionButton(
               onPressed: () {
                 Navigator.push(
