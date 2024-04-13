@@ -58,7 +58,7 @@ class _InputFieldState extends State<InputField> {
                 size: 24,
               ),
         labelText: widget.lbltxt,
-        labelStyle: widget.isBlogsTextField!
+        labelStyle: widget.isBlogsTextField
             ? const TextStyle(
                 color: primaryColor,
                 fontSize: 16,
@@ -70,7 +70,7 @@ class _InputFieldState extends State<InputField> {
                 fontWeight: FontWeight.bold,
               ),
         hintText: widget.hnttxt,
-        border: widget.isBlogsTextField!
+        border: widget.isBlogsTextField
             ? const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.black,
@@ -85,7 +85,7 @@ class _InputFieldState extends State<InputField> {
                 ), // Default border color
                 borderRadius: BorderRadius.all(Radius.circular(12)),
               ),
-        focusedBorder: widget.isBlogsTextField!
+        focusedBorder: widget.isBlogsTextField
             ? const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: primaryColor,

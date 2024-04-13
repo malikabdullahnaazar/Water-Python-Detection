@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
@@ -9,6 +11,7 @@ class Help extends StatelessWidget {
       'question': 'What is the Water Pathogen Detection System for?',
       'answer':
           'The Water Pathogen Detection System is designed to identify and analyze waterborne pathogens using advanced detection techniques, ensuring water safety for various applications such as drinking water quality assessment and environmental monitoring.',
+      // ignore: deprecated_member_use
       'icon': FontAwesomeIcons.tint,
     },
     {
@@ -98,7 +101,7 @@ class Help extends StatelessWidget {
                               size: 20,
                               color: Theme.of(context).primaryColor,
                             ),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             Expanded(
                               child: Text(
                                 data[index]["question"],

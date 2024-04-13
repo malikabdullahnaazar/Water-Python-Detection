@@ -289,7 +289,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        MySavedResultsPage()));
+                                                        const MySavedResultsPage()));
                                           },
                                           child: const Text(
                                             'Results',
