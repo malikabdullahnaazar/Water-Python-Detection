@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
+import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 
 class SingleBlog extends StatelessWidget {
   final String? photoUrl;
@@ -21,15 +22,15 @@ class SingleBlog extends StatelessWidget {
           icon: const Icon(
             FontAwesomeIcons.arrowLeft,
             size: 24,
-            color: Colors.white,
+            color: primaryColor,
           ),
         ),
-        title: const Text(
-          "Blogs",
-          style: TextStyle(
+        title: Text(
+          title ?? "Blog",
+          style: const TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: primaryColor,
           ),
         ),
       ),
@@ -57,7 +58,7 @@ class SingleBlog extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: primaryColor,
                   letterSpacing: 1,
                 ),
               ),
@@ -69,7 +70,7 @@ class SingleBlog extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                    color: primaryColor,
                   ),
                 ),
               ),

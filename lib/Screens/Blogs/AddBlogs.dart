@@ -42,7 +42,6 @@ class _BlogsState extends State<AddBlogs> {
           image!,
           _titleController.text.capitalize(),
         );
-
         ShowSnackBar(res, context);
       } else {
         ShowSnackBar("Please Select Image", context);

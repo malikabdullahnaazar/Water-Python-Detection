@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, use_function_type_syntax_for_parameters
 
 import "package:cloud_firestore/cloud_firestore.dart";
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,11 +10,9 @@ import 'package:uuid/uuid.dart';
 class FirestoreMethods {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth auth = FirebaseAuth.instance;
-
   Future<String> uploadBlogs(
       String description, Uint8List file, String title) async {
-    String res = "Some error can be occur";
-
+    String res = "Some error occurred";
     try {
       String photoUrl = await StorageMethod().BlogImage("Blogs", file, true);
       String postId = const Uuid().v1();

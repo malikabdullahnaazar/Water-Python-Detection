@@ -4,11 +4,13 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
+import 'package:water_pathogen_detection_system/Screens/Blogs/SingleBlog.dart';
 import 'package:water_pathogen_detection_system/Screens/PictureScreen.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:water_pathogen_detection_system/Screens/ProfileScreen.dart';
 import 'package:water_pathogen_detection_system/Screens/Results.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomeScreen2 extends StatefulWidget {
   const HomeScreen2({super.key});
@@ -349,34 +351,65 @@ class _HomeScreen2State extends State<HomeScreen2> {
                       Padding(
                           padding: const EdgeInsets.only(
                               left: 10, right: 20, top: 10),
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Blogs()));
-                            },
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 70,
-                                  height: 70,
-                                  decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              'assets/images/img_image_16.png'),
-                                          fit: BoxFit.fill)),
+                          child: StreamBuilder<QuerySnapshot>(
+                            stream: FirebaseFirestore.instance
+                                .collection("Blogs posts")
+                                .orderBy('DatePublished', descending: true)
+                                .limit(1)
+                                .snapshots(),
+                            builder: (context, snapshot) {
+                              if (!snapshot.hasData) {
+                                return const Center(
+                                    child: CircularProgressIndicator());
+                              }
+                              var document = snapshot.data!.docs.first.data()
+                                  as Map<String, dynamic>;
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SingleBlog(
+                                              description:
+                                                  document['Description'],
+                                              title: document['Title'],
+                                              photoUrl: document['PostUrl'])));
+                                },
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 35,
+                                      backgroundImage:
+                                          NetworkImage(document['PostUrl']),
+                                    ),
+                                    const SizedBox(width: 40),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            document['Title'],
+                                            style: const TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black),
+                                          ),
+                                          Text(
+                                            document['Description'],
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w300,
+                                                color: Colors.grey[600]),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
                                 ),
-                                const Text(
-                                  "The 25 Healthiest Fruits you can Eat,\nAccording to a Nutritionist",
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                )
-                              ],
-                            ),
+                              );
+                            },
                           ))
                     ],
                   ),
