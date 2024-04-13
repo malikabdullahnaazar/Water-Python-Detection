@@ -1,4 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 
 class InputField extends StatefulWidget {
   final TextEditingController? controller;
@@ -7,7 +10,7 @@ class InputField extends StatefulWidget {
   final TextInputType? kybrdtype;
   final IconData? icon;
   final EdgeInsetsGeometry? padding;
-
+  final bool isBlogsTextField;
   const InputField({
     this.controller,
     this.lbltxt,
@@ -15,9 +18,9 @@ class InputField extends StatefulWidget {
     this.kybrdtype,
     this.padding,
     this.icon,
-    Key? key, // Added key parameter
-  }) : super(key: key); // Corrected the super constructor
-
+    this.isBlogsTextField = false, // Set default value to false
+    super.key, // Added key parameter
+  }); // Corrected the super constructor
   @override
   State<InputField> createState() => _InputFieldState();
 }
@@ -55,26 +58,48 @@ class _InputFieldState extends State<InputField> {
                 size: 24,
               ),
         labelText: widget.lbltxt,
-        labelStyle: const TextStyle(
-          color: Colors.black,
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-        ),
+        labelStyle: widget.isBlogsTextField!
+            ? const TextStyle(
+                color: primaryColor,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              )
+            : const TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
         hintText: widget.hnttxt,
-        border: const UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.black,
-            width: 1.0,
-          ), // Default border color
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-        ),
-        focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.black,
-            width: 1.0,
-          ), // Focused border color
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-        ),
+        border: widget.isBlogsTextField!
+            ? const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.black,
+                  width: 1.0,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+              )
+            : const UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.black,
+                  width: 1.0,
+                ), // Default border color
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+              ),
+        focusedBorder: widget.isBlogsTextField!
+            ? const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: primaryColor,
+                  width: 1.0,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+              )
+            : const UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.black,
+                  width: 1.0,
+                ), // Focused border color
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+              ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 20.0),
       ),
     );

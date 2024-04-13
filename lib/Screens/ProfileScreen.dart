@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
@@ -11,7 +13,7 @@ import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfleScreen extends StatefulWidget {
-  const ProfleScreen({Key? key}) : super(key: key);
+  const ProfleScreen({super.key});
 
   @override
   State<ProfleScreen> createState() => _ProfleScreenState();
@@ -80,7 +82,7 @@ class _ProfleScreenState extends State<ProfleScreen> {
                   radius: 45,
                   backgroundImage: _user?.photoURL != null
                       ? NetworkImage(_user!.photoURL!)
-                      : AssetImage('assets/images/avatar.png')
+                      : const AssetImage('assets/images/avatar.png')
                           as ImageProvider<Object>?,
                 ),
                 const SizedBox(
@@ -107,13 +109,13 @@ class _ProfleScreenState extends State<ProfleScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
+                    SizedBox(
                       width: 330,
                       height: 60,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemCount: data2.length,
-                        itemBuilder: (context, index) => Container(
+                        itemBuilder: (context, index) => SizedBox(
                           width: 100,
                           height: 60,
                           child: Column(
@@ -171,7 +173,8 @@ class _ProfleScreenState extends State<ProfleScreen> {
                             "onClick": () => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => MySavedResultsPage(),
+                                    builder: (context) =>
+                                        const MySavedResultsPage(),
                                   ),
                                 ),
                           },
@@ -252,7 +255,7 @@ class _ProfleScreenState extends State<ProfleScreen> {
 class CustomColumn extends StatelessWidget {
   final List<Map<String, dynamic>> data;
 
-  const CustomColumn({Key? key, required this.data}) : super(key: key);
+  const CustomColumn({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -262,7 +265,8 @@ class CustomColumn extends StatelessWidget {
       children: [
         for (var item in data)
           Padding(
-            padding: EdgeInsets.only(top: 5, bottom: 10, left: 10, right: 4),
+            padding:
+                const EdgeInsets.only(top: 5, bottom: 10, left: 10, right: 4),
             child: InkWell(
               onTap: item["onClick"],
               child: ListTile(
@@ -286,7 +290,7 @@ class CustomColumn extends StatelessWidget {
                 trailing: Icon(
                   item["rightIcon"] as IconData,
                   size: 28,
-                  color: Color.fromARGB(255, 87, 85, 85),
+                  color: const Color.fromARGB(255, 87, 85, 85),
                 ),
               ),
             ),

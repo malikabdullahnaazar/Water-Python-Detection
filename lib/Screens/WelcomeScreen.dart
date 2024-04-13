@@ -1,4 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// ignore_for_file: file_names, use_build_context_synchronously
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
 import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
@@ -8,7 +10,7 @@ import 'LoginScreen.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  WelcomeScreen({Key? key}) : super(key: key);
+  WelcomeScreen({super.key});
 
   final FirebaseServices _auth = FirebaseServices();
 
@@ -17,6 +19,7 @@ class WelcomeScreen extends StatelessWidget {
     void signInWithGoogle() async {
       try {
         bool user = await _auth.signInWithGoogle(context);
+        // ignore: unnecessary_null_comparison
         if (user != null) {
           const snackBar = SnackBar(
             content: Text('Logged in successfully'),
@@ -24,11 +27,13 @@ class WelcomeScreen extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => HomeScreen2()),
+            MaterialPageRoute(builder: (context) => const HomeScreen2()),
           );
         }
       } catch (e) {
-        print('Error occurred while signing in with Google: $e');
+        if (kDebugMode) {
+          print('Error occurred while signing in with Google: $e');
+        }
       }
     }
 

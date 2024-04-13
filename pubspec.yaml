@@ -53,6 +53,8 @@ dependencies:
   font_awesome_icon_class: ^0.0.6
   # ultralytics_yolo: ^0.0.2
   path_provider: ^2.1.2
+  uuid: ^4.3.3
+  provider: ^6.1.2
 
     
 

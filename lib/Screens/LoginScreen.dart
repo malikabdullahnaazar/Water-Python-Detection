@@ -1,8 +1,9 @@
+// ignore_for_file: use_build_context_synchronously, file_names
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
 import 'package:water_pathogen_detection_system/Screens/SignUpScreen2.dart';
-import 'package:water_pathogen_detection_system/commonUtils/Buton.dart';
 import 'package:water_pathogen_detection_system/commonUtils/InputField.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
@@ -17,8 +18,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   late FirebaseServices _auth;
   bool _isLoading = false;
 
@@ -44,11 +45,13 @@ class _LoginScreenState extends State<LoginScreen> {
       User? user = await _auth.signInwithEmailAndpassword(email, password);
       if (user != null) {
         Navigator.pushReplacement(
+            // ignore: duplicate_ignore
+            // ignore: use_build_context_synchronously
             context, // Use pushReplacement instead of push
             MaterialPageRoute(builder: (context) => const HomeScreen2()));
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text('Login Successful'),
-          backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+          backgroundColor: Color.fromARGB(255, 99, 95, 61),
           showCloseIcon: true,
         ));
       } else {
@@ -62,13 +65,15 @@ class _LoginScreenState extends State<LoginScreen> {
         _isLoading = false;
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Invalid Credentials or Check Internet Connection'),
-          backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+          backgroundColor: Color.fromARGB(255, 99, 95, 61),
           showCloseIcon: true,
         ),
       );
-      print('abcd${e.toString()}');
+      if (kDebugMode) {
+        print('abcd${e.toString()}');
+      }
       _auth.showErrorMessageSnackbar(e.toString());
     }
   }

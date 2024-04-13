@@ -1,11 +1,13 @@
+// ignore_for_file: file_names, use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirebaseServices {
-  GoogleAuthProvider _googleauthprovider = GoogleAuthProvider();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -71,7 +73,7 @@ class FirebaseServices {
     ScaffoldMessenger.of(context!).showSnackBar(
       SnackBar(
         content: Text('Error: $errorMessage'),
-        duration: Duration(seconds: 5),
+        duration: const Duration(seconds: 5),
         backgroundColor: Colors.red,
       ),
     );
@@ -80,19 +82,21 @@ class FirebaseServices {
   Future<bool> signOut(context) async {
     try {
       await _auth.signOut();
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Logout Successfully'),
-        backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+        backgroundColor: Color.fromARGB(255, 99, 95, 61),
         showCloseIcon: true,
       ));
       return true;
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Logout Faild'),
-        backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+        backgroundColor: Color.fromARGB(255, 99, 95, 61),
         showCloseIcon: true,
       ));
-      print("aaaa${e.toString()}");
+      if (kDebugMode) {
+        print("aaaa${e.toString()}");
+      }
       return false;
     }
   }
@@ -104,33 +108,11 @@ class FirebaseServices {
           email: email, password: password);
       return credential.user;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
       SnackBar(content: Text(e.toString()));
       return null;
     }
   }
-
-  // Future<UserCredential?> signInWithGoogle() async {
-  //   try {
-  //     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
-  //     if (googleUser == null) {
-  //       // User canceled the sign-in process
-  //       return null;
-  //     }
-
-  //     final GoogleSignInAuthentication googleAuth =
-  //         await googleUser.authentication;
-
-  //     final OAuthCredential credential = GoogleAuthProvider.credential(
-  //       accessToken: googleAuth.accessToken,
-  //       idToken: googleAuth.idToken,
-  //     );
-
-  //     return await _auth.signInWithCredential(credential);
-  //   } catch (e) {
-  //     print("Error signing in with Google: $e");
-  //     return null;
-  //   }
-  // }
 }

@@ -1,6 +1,7 @@
-import 'dart:io';
-import 'dart:typed_data';
+// ignore_for_file: file_names
 
+import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
 import 'package:water_pathogen_detection_system/Screens/PictureScreen.dart';
@@ -39,7 +40,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => BlogScreen()));
+                              builder: (context) => const Blogs()));
                     },
                     icon: const Icon(Icons.article_outlined)),
                 label: 'Blogs'),
@@ -94,66 +95,63 @@ class _HomeScreen2State extends State<HomeScreen2> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 130, left: 27),
-                child: Container(
-                    child: Card(
-                        elevation: 8,
-                        shadowColor: Colors.grey,
-                        child: Container(
-                            width: 300,
-                            height: 170,
-                            decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                )),
-                            child: Padding(
-                                padding: EdgeInsets.only(left: 10),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Clean Water Sharp Tech Detecting Danger, Ensuring Safety!",
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.w900,
-                                          color: Colors.black),
-                                    ),
-                                    const SizedBox(height: 20),
-                                    Container(
-                                      width: 130,
-                                      height: 50,
-                                      decoration: const BoxDecoration(
-                                        gradient: LinearGradient(colors: [
-                                          primaryColor,
-                                          secondaryColor
-                                        ]),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                      ),
-                                      child: Align(
-                                          alignment: Alignment.center,
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          BlogScreen()));
-                                            },
-                                            child: const Text(
-                                              "Learn more",
-                                              style: TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          )),
-                                    )
-                                  ],
-                                ))))),
+                padding: const EdgeInsets.only(top: 130, left: 27),
+                child: Card(
+                    elevation: 8,
+                    shadowColor: Colors.grey,
+                    child: Container(
+                        width: 300,
+                        height: 170,
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            )),
+                        child: Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Clean Water Sharp Tech Detecting Danger, Ensuring Safety!",
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.black),
+                                ),
+                                const SizedBox(height: 20),
+                                Container(
+                                  width: 130,
+                                  height: 50,
+                                  decoration: const BoxDecoration(
+                                    gradient: LinearGradient(
+                                        colors: [primaryColor, secondaryColor]),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                  child: Align(
+                                      alignment: Alignment.center,
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const Blogs()));
+                                        },
+                                        child: const Text(
+                                          "Learn more",
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      )),
+                                )
+                              ],
+                            )))),
               ),
             ],
           ),
@@ -309,7 +307,8 @@ class _HomeScreen2State extends State<HomeScreen2> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 20, right: 20, top: 40),
+                        padding:
+                            const EdgeInsets.only(left: 20, right: 20, top: 40),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -334,7 +333,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                BlogScreen()));
+                                                const Blogs()));
                                   },
                                   child: const Text(
                                     "See all",
@@ -348,14 +347,14 @@ class _HomeScreen2State extends State<HomeScreen2> {
                         ),
                       ),
                       Padding(
-                          padding:
-                              EdgeInsets.only(left: 10, right: 20, top: 10),
+                          padding: const EdgeInsets.only(
+                              left: 10, right: 20, top: 10),
                           child: GestureDetector(
                             onTap: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => BlogScreen()));
+                                      builder: (context) => const Blogs()));
                             },
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -363,20 +362,19 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                 Container(
                                   width: 70,
                                   height: 70,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                       image: DecorationImage(
                                           image: AssetImage(
                                               'assets/images/img_image_16.png'),
                                           fit: BoxFit.fill)),
                                 ),
-                                Container(
-                                    child: Text(
+                                const Text(
                                   "The 25 Healthiest Fruits you can Eat,\nAccording to a Nutritionist",
                                   style: TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black),
-                                ))
+                                )
                               ],
                             ),
                           ))
@@ -389,10 +387,13 @@ class _HomeScreen2State extends State<HomeScreen2> {
     );
   }
 
+  // Performs the action of picking an image from the device's gallery.
   Future pickImage() async {
     final returnImage =
         await ImagePicker().pickImage(source: ImageSource.gallery);
-    print(returnImage!.path);
+    if (kDebugMode) {
+      print(returnImage!.path);
+    }
     if (returnImage != null) {
       setState(() {
         selectedImage = File(returnImage.path);
@@ -403,10 +404,12 @@ class _HomeScreen2State extends State<HomeScreen2> {
                 builder: (context) =>
                     PictureScreen(image: image, selectedImage: selectedImage)));
       });
-    } else
+    } else {
       return;
+    }
   }
 
+  // A function that picks an image from the camera. It uses ImagePicker to select an image from the camera source. If an image is returned, it sets the selectedImage and image variables accordingly and navigates to the PictureScreen page with the selected image. If no image is returned, it does nothing.
   Future pickImageFromCamera() async {
     final returnImage =
         await ImagePicker().pickImage(source: ImageSource.camera);
@@ -420,7 +423,8 @@ class _HomeScreen2State extends State<HomeScreen2> {
                 builder: (context) =>
                     PictureScreen(image: image, selectedImage: selectedImage)));
       });
-    } else
+    } else {
       return;
+    }
   }
 }

@@ -1,37 +1,55 @@
+// ignore_for_file: unnecessary_import, depend_on_referenced_packages, file_names
+
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 import 'package:image/image.dart' as img;
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
-import 'dart:io' as io;
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 import 'package:flutter/services.dart';
 
 class PictureScreen extends StatefulWidget {
   final Uint8List? image;
   final File? selectedImage;
-
-  const PictureScreen({Key? key, this.image, this.selectedImage})
-      : super(key: key);
+  const PictureScreen({super.key, this.image, this.selectedImage});
 
   @override
   State<PictureScreen> createState() => _PictureScreenState();
 }
 
 class _PictureScreenState extends State<PictureScreen> {
-  List<dynamic> _results = [];
+  final List<dynamic> _results = [];
+
+  final String _labelsFileName = 'assets/labels.txt';
+  late List<String> labels;
   late Interpreter _interpreter;
   @override
   void initState() {
     super.initState();
     loadModel().then((_) {
-      print("Model loaded successfully");
+      if (kDebugMode) {
+        print("Model loaded successfully");
+      }
     }).catchError((error) {
-      print("Error loading model: $error");
+      if (kDebugMode) {
+        print("Error loading model: $error");
+      }
     });
+  }
+
+  Future<void> loadLabels() async {
+    labels = await FileUtil.loadLabels(_labelsFileName);
+    if (labels.isNotEmpty) {
+      if (kDebugMode) {
+        print('Labels loaded successfully');
+      }
+    } else {
+      if (kDebugMode) {
+        print('Unable to load labels');
+      }
+    }
   }
 
   List<List<List<num>>> _preProcess(img.Image image) {
@@ -64,33 +82,43 @@ class _PictureScreenState extends State<PictureScreen> {
 
   Future<void> imageClassification(String imagepath) async {
     try {
-      print("Started image classification...");
-      img.Image? image = await _loadImage(imagepath);
+      if (kDebugMode) {
+        print("Started image classification...");
+      }
+      img.Image? image = await _loadImage("assets/1790.png");
       final input = _preProcess(image!);
       // Correctly set up the output buffer to match the model's expected output shape
       final outputBuffer =
           TensorBuffer.createFixedSize([1, 73, 2100], TfLiteType.float32);
       _interpreter.run([input], outputBuffer);
-      var a = outputBuffer.getDoubleList();
-      var labels = await rootBundle.loadString('assets/labels.txt');
-      List<String> labelList = labels.split('\n');
-      List<double> confidences = a.map((value) => value.abs()).toList();
-      int maxIndex = a.indexOf(a.reduce((a, b) => a > b ? a : b));
-      String label = labelList[maxIndex];
-      double confidence = confidences[maxIndex];
-      int predictionTime = DateTime.now().millisecondsSinceEpoch -
-          DateTime.now().millisecondsSinceEpoch;
-      print('Prediction time: $predictionTime ms');
-      print('Prediction: $label (${confidence.toStringAsFixed(3)})');
+      var outputsList = outputBuffer.getDoubleList();
+      for (int i = 0; i < outputsList.length; i += 6) {
+        // Each prediction is assumed to consist of 6 elements
+        final score = outputsList[
+            i + 4]; // The score is assumed to be at the 5th position
+        if (score > 0.5) {
+          // Applying a threshold to filter predictions
+          final labelIndex = outputsList[i + 5]
+              .toInt(); // The label index is assumed to be at the 6th position
+          final label = labels[labelIndex];
+          if (kDebugMode) {
+            print("prediction: label $label");
+          }
+        }
+      }
     } catch (error) {
-      print('Error during image classification: $error');
+      if (kDebugMode) {
+        print('Error during image classification: $error');
+      }
     }
   }
 
   Future<img.Image?> _loadImage(String imagePath) async {
     final File imageFile = File(imagePath);
     if (!await imageFile.exists()) {
-      print('File does not exist: $imagePath');
+      if (kDebugMode) {
+        print('File does not exist: $imagePath');
+      }
       return null;
     }
     final Uint8List imageData = await imageFile.readAsBytes();
@@ -174,10 +202,7 @@ class _PictureScreenState extends State<PictureScreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    child: Text(
-                        _results.isNotEmpty ? '$_results' : 'no prediction'),
-                  )
+                  Text(_results.isNotEmpty ? '$_results' : 'no prediction')
                 ],
               ),
             ),

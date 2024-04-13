@@ -1,6 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:faker/faker.dart';
-import 'dart:math';
 
 class SavedResult {
   final String imagePath;
@@ -17,7 +18,10 @@ class SavedResult {
 }
 
 class MySavedResultsPage extends StatefulWidget {
+  const MySavedResultsPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MySavedResultsPageState createState() => _MySavedResultsPageState();
 }
 
@@ -66,11 +70,11 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                Text('Filter by Date:'),
-                SizedBox(width: 10),
+                const Text('Filter by Date:'),
+                const SizedBox(width: 10),
                 ElevatedButton(
                   onPressed: () async {
                     DateTime? pickedDate = await showDatePicker(
@@ -88,22 +92,22 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
                       });
                     }
                   },
-                  child: Text('Select Date'),
+                  child: const Text('Select Date'),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 SingleChildScrollView(
                   child: ElevatedButton(
                     onPressed: () {
                       showRandomResults();
                     },
-                    child: Text('Random'),
+                    child: const Text('Random'),
                   ),
                 ),
               ],
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: searchController,
               onChanged: (value) {
@@ -115,7 +119,7 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
               decoration: InputDecoration(
                 labelText: 'Search by Text',
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.clear),
+                  icon: const Icon(Icons.clear),
                   onPressed: () {
                     setState(() {
                       searchController.clear();
@@ -134,7 +138,7 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
                 SavedResult result = filteredResults()[index];
 
                 return Card(
-                  margin: EdgeInsets.all(8.0),
+                  margin: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: Image.asset(
                       result.imagePath,
@@ -146,7 +150,7 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Suggestions:'),
+                        const Text('Suggestions:'),
                         for (String suggestion in result.suggestions)
                           Text('- $suggestion'),
                         Text('Date: ${result.date.toLocal()}'),
@@ -162,6 +166,7 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
     );
   }
 
+  // Generate fake data based on the given count.
   List<SavedResult> generateFakeData(int count) {
     List<SavedResult> fakeData = [];
 
@@ -181,10 +186,11 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
     return fakeData;
   }
 
+  // Generate random suggestions and return them as a list of strings.
   List<String> generateRandomSuggestions() {
     List<String> suggestions = [];
 
-    int suggestionCount = faker.randomGenerator.integer(5) + 1;
+    int suggestionCount = faker.randomGenerator.integer(5) + 10;
 
     for (int i = 0; i < suggestionCount; i++) {
       suggestions.add(faker.lorem
