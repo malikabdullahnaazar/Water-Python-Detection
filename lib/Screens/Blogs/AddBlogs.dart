@@ -3,6 +3,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/FireStore.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 import 'package:water_pathogen_detection_system/commonUtils/InputField.dart';
@@ -26,6 +27,7 @@ class _BlogsState extends State<AddBlogs> {
 
   File? selectedImage;
   Uint8List? image;
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -36,6 +38,9 @@ class _BlogsState extends State<AddBlogs> {
 
   uploadBlogData() async {
     try {
+      setState(() {
+        _isLoading = true;
+      });
       if (image != null) {
         String res = await _firestore.uploadBlogs(
           _descriptionController.text.capitalize(),
@@ -43,10 +48,17 @@ class _BlogsState extends State<AddBlogs> {
           _titleController.text.capitalize(),
         );
         ShowSnackBar(res, context);
+        Navigator.pop(context);
       } else {
+        setState(() {
+          _isLoading = false;
+        });
         ShowSnackBar("Please Select Image", context);
       }
     } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
       ShowSnackBar(e.toString(), context);
     }
   }
@@ -188,14 +200,19 @@ class _BlogsState extends State<AddBlogs> {
                               secondaryColor,
                             ]),
                           ),
-                          child: const Center(
-                              child: Text(
-                            'Upload',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                color: Colors.white),
-                          )),
+                          child: Center(
+                              child: _isLoading
+                                  ? LoadingAnimationWidget.staggeredDotsWave(
+                                      color: Colors.white,
+                                      size: 20,
+                                    )
+                                  : const Text(
+                                      'Upload',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20,
+                                          color: Colors.white),
+                                    )),
                         ),
                       ),
                     ])))));

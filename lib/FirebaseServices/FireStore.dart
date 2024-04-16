@@ -2,17 +2,19 @@
 
 import "package:cloud_firestore/cloud_firestore.dart";
 import 'package:firebase_auth/firebase_auth.dart';
-import 'dart:typed_data';
+import 'package:flutter/foundation.dart';
+import 'package:uuid/uuid.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/Storage.dart';
 import 'package:water_pathogen_detection_system/Screens/User/BlogsUser.dart';
-import 'package:uuid/uuid.dart';
 
 class FirestoreMethods {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth auth = FirebaseAuth.instance;
+
   Future<String> uploadBlogs(
       String description, Uint8List file, String title) async {
-    String res = "Some error occurred";
+    String res = "Some error can be occur";
+
     try {
       String photoUrl = await StorageMethod().BlogImage("Blogs", file, true);
       String postId = const Uuid().v1();
@@ -23,15 +25,32 @@ class FirestoreMethods {
         datePublished: DateTime.now(),
         postUrl: photoUrl,
       );
-      await _firestore
-          .collection("Blogs posts")
-          .doc(auth.currentUser!.uid)
-          .set(post.ToJSON());
+      await _firestore.collection("Blogs posts").doc(postId).set(post.ToJSON());
       res = "Success";
     } catch (err) {
       res = err.toString();
       return res;
     }
     return res;
+  }
+
+  Future<bool> deleteBlogPost(String postId) async {
+    try {
+      // Get the document reference for the post using postId
+      final postRef = _firestore.collection("Blogs posts").doc(postId);
+
+      // Get the post data to retrieve the photoUrl
+
+      // Delete the document from Firestore
+      await postRef.delete();
+      return true;
+    } catch (err) {
+      if (kDebugMode) {
+        print("Error deleting post: $err");
+      }
+      return false;
+
+      // Handle error as needed
+    }
   }
 }

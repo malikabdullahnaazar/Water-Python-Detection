@@ -362,6 +362,9 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                 return const Center(
                                     child: CircularProgressIndicator());
                               }
+                              if (snapshot.data!.docs.isEmpty) {
+                                return const Text("No Data!");
+                              }
                               var document = snapshot.data!.docs.first.data()
                                   as Map<String, dynamic>;
                               return GestureDetector(
@@ -370,10 +373,12 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => SingleBlog(
-                                              description:
-                                                  document['Description'],
-                                              title: document['Title'],
-                                              photoUrl: document['PostUrl'])));
+                                                description:
+                                                    document['Description'],
+                                                title: document['Title'],
+                                                photoUrl: document['PostUrl'],
+                                                postId: document['PostId'],
+                                              )));
                                 },
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -396,12 +401,23 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.black),
                                           ),
-                                          Text(
-                                            document['Description'],
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w300,
-                                                color: Colors.grey[600]),
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: Text(
+                                                  document['Description']
+                                                          .split(' ')
+                                                          .take(10)
+                                                          .join(' ') +
+                                                      '...',
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                      color: Colors.grey[600]),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),

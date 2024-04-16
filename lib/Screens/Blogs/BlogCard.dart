@@ -40,9 +40,11 @@ class _BlogsCardState extends State<BlogsCard> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => SingleBlog(
-                              photoUrl: widget.snap["PostUrl"],
-                              title: widget.snap["Description"],
-                              description: widget.snap["Title"])));
+                                photoUrl: widget.snap["PostUrl"],
+                                title: widget.snap["Description"],
+                                description: widget.snap["Title"],
+                                postId: widget.snap["PostId"],
+                              )));
                 },
                 child: Container(
                   width: 130,
@@ -91,9 +93,12 @@ class _BlogsCardState extends State<BlogsCard> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Text(
-                              "Posted: 23/12/2021",
-                              style: TextStyle(
+                            Text(
+                              widget.snap["DatePublished"]
+                                  .toDate()
+                                  .toString()
+                                  .substring(0, 10),
+                              style: const TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 14,
