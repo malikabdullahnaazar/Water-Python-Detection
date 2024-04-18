@@ -30,7 +30,7 @@ class SingleBlog extends StatelessWidget {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text("Confirm Delete"),
-          content: const Text("Are you sure you want to delete this record?"),
+          content: const Text("Are you sure you want to delete this Blog?"),
           actions: <Widget>[
             TextButton(
               onPressed: () {
@@ -80,7 +80,7 @@ class SingleBlog extends StatelessWidget {
           style: const TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
-            color: primaryColor,
+            color: Colors.black,
           ),
         ),
         actions: _auth.currentUser?.email == admin_id
@@ -121,7 +121,7 @@ class SingleBlog extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: primaryColor,
+                  color: Colors.black,
                   letterSpacing: 1,
                 ),
               ),
@@ -133,7 +133,7 @@ class SingleBlog extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
-                    color: primaryColor,
+                    color: Colors.black,
                   ),
                 ),
               ),

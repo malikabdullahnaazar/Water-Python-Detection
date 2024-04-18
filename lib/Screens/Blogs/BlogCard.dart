@@ -41,8 +41,8 @@ class _BlogsCardState extends State<BlogsCard> {
                       MaterialPageRoute(
                           builder: (context) => SingleBlog(
                                 photoUrl: widget.snap["PostUrl"],
-                                title: widget.snap["Description"],
-                                description: widget.snap["Title"],
+                                description: widget.snap["Description"],
+                                title: widget.snap["Title"],
                                 postId: widget.snap["PostId"],
                               )));
                 },

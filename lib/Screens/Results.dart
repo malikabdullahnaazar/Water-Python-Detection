@@ -1,62 +1,70 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, library_private_types_in_public_api
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:faker/faker.dart';
-
-class SavedResult {
-  final String imagePath;
-  final String predictedText;
-  final List<String> suggestions;
-  final DateTime date;
-
-  SavedResult({
-    required this.imagePath,
-    required this.predictedText,
-    required this.suggestions,
-    required this.date,
-  });
-}
 
 class MySavedResultsPage extends StatefulWidget {
   const MySavedResultsPage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _MySavedResultsPageState createState() => _MySavedResultsPageState();
 }
 
 class _MySavedResultsPageState extends State<MySavedResultsPage> {
-  late List<SavedResult> savedResults;
-  late List<SavedResult>
-      filteredResultsList; // New list to hold filtered results
-
-  DateTime selectedDate = DateTime.now();
-  TextEditingController searchController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final TextEditingController _searchController = TextEditingController();
+  String _searchTerm = '';
+  DateTime? _selectedDate;
 
   @override
   void initState() {
     super.initState();
-    savedResults = generateFakeData(100);
-    filteredResultsList =
-        savedResults; // Initialize filteredResultsList with all results
   }
 
-  List<SavedResult> filteredResults() {
-    return filteredResultsList
-        .where((result) =>
-            result.date.isAfter(selectedDate) &&
-            (searchController.text.isEmpty ||
-                result.predictedText
-                    .toLowerCase()
-                    .contains(searchController.text.toLowerCase())))
-        .toList();
+  Future<QuerySnapshot<Map<String, dynamic>>> _getPredictions(
+      {bool? isSafe}) async {
+    var query = _firestore
+        .collection("Predictions")
+        .where('userId', isEqualTo: _auth.currentUser!.uid);
+
+    if (_searchTerm.isNotEmpty) {
+      String searchLowercase = _searchTerm.toLowerCase();
+      query = query
+          .where('label', isGreaterThanOrEqualTo: searchLowercase)
+          .where('label', isLessThan: searchLowercase.toUpperCase());
+    }
+
+    if (_selectedDate != null) {
+      query = query.where('predictionDate', isEqualTo: _selectedDate);
+    }
+
+    if (isSafe != null) {
+      query = query.where('prediction', isEqualTo: isSafe);
+    }
+    query = query.orderBy('predictionDate', descending: true);
+
+    return query.get();
   }
 
-  void showRandomResults() {
-    setState(() {
-      searchController.clear();
-      selectedDate = DateTime.now();
-      filteredResultsList = generateFakeData(100);
+  void _showDatePicker() {
+    showDatePicker(
+      context: context,
+      initialDate: _selectedDate ?? DateTime.now().toLocal(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime.now().toLocal(),
+    ).then((selectedDate) {
+      if (selectedDate != null) {
+        setState(() {
+          _selectedDate =
+              DateTime(selectedDate.year, selectedDate.month, selectedDate.day);
+          if (kDebugMode) {
+            print(_selectedDate);
+          }
+        });
+      }
     });
   }
 
@@ -64,140 +72,116 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-            'Saved Results (${filteredResults().length})'), // Show the count in the title
+        title: const Text('Saved Results'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.calendar_today),
+            onPressed: _showDatePicker,
+          ),
+        ],
       ),
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                const Text('Filter by Date:'),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () async {
-                    DateTime? pickedDate = await showDatePicker(
-                      context: context,
-                      initialDate: selectedDate,
-                      firstDate: DateTime(2000),
-                      lastDate: DateTime.now(),
-                    );
-
-                    if (pickedDate != null && pickedDate != selectedDate) {
-                      setState(() {
-                        selectedDate = pickedDate;
-                        filteredResultsList =
-                            filteredResults(); // Update filteredResultsList on date change
-                      });
-                    }
-                  },
-                  child: const Text('Select Date'),
-                ),
-                const SizedBox(width: 10),
-                SingleChildScrollView(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      showRandomResults();
-                    },
-                    child: const Text('Random'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
             child: TextField(
-              controller: searchController,
-              onChanged: (value) {
-                setState(() {
-                  filteredResultsList =
-                      filteredResults(); // Update filteredResultsList on search change
-                });
-              },
+              controller: _searchController,
               decoration: InputDecoration(
-                labelText: 'Search by Text',
+                labelText: 'Search Predictions',
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.clear),
                   onPressed: () {
+                    _searchController.clear();
                     setState(() {
-                      searchController.clear();
-                      filteredResultsList =
-                          filteredResults(); // Update filteredResultsList on clear
+                      _searchTerm = '';
                     });
                   },
                 ),
               ),
+              onChanged: (value) {
+                setState(() {
+                  _searchTerm = value;
+                });
+              },
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: filteredResults().length,
-              itemBuilder: (context, index) {
-                SavedResult result = filteredResults()[index];
-
-                return Card(
-                  margin: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                    leading: Image.asset(
-                      result.imagePath,
-                      width: 50,
-                      height: 50,
-                      fit: BoxFit.cover,
-                    ),
-                    title: Text(result.predictedText),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('Suggestions:'),
-                        for (String suggestion in result.suggestions)
-                          Text('- $suggestion'),
-                        Text('Date: ${result.date.toLocal()}'),
-                      ],
-                    ),
-                  ),
-                );
+            child: FutureBuilder<QuerySnapshot>(
+              future: _getPredictions(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else if (snapshot.connectionState ==
+                    ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.data!.docs.isEmpty) {
+                    return Center(
+                      child: Image.asset(
+                        'assets/images/nodata.png',
+                      ), // Replace with your asset's path
+                    );
+                  } else {
+                    return RefreshIndicator(
+                      onRefresh: () async {
+                        setState(() {
+                          _selectedDate = null;
+                          // Reset any other filters as needed
+                        });
+                        await _getPredictions(); // Refetch the data
+                      },
+                      child: ListView.builder(
+                        itemCount: snapshot.data!.docs.length,
+                        itemBuilder: (context, index) {
+                          DocumentSnapshot document =
+                              snapshot.data!.docs[index];
+                          bool isSafe = document['prediction']
+                              as bool; // Assuming 'prediction' is a bool
+                          return Card(
+                            margin: const EdgeInsets.all(8.0),
+                            child: ListTile(
+                              leading: Image.network(
+                                document['photoUrl'],
+                                width: 50,
+                                height: 50,
+                                fit: BoxFit.cover,
+                              ),
+                              title: Text(document['label']),
+                              subtitle: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Confidence: ${document['confidence']}'),
+                                  Text(
+                                      'Date: ${document['predictionDate'].toDate().toLocal().toString().substring(0, 10)}'),
+                                ],
+                              ),
+                              trailing: Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 4),
+                                decoration: BoxDecoration(
+                                  color: isSafe ? Colors.green : Colors.red,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Text(
+                                  isSafe ? 'Safe' : 'Danger',
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    );
+                  }
+                } else {
+                  return const Center(child: CircularProgressIndicator());
+                }
               },
             ),
           ),
         ],
       ),
     );
-  }
-
-  // Generate fake data based on the given count.
-  List<SavedResult> generateFakeData(int count) {
-    List<SavedResult> fakeData = [];
-
-    for (int i = 0; i < count; i++) {
-      fakeData.add(
-        SavedResult(
-          imagePath: 'assets/images/logo-removebg-preview.png',
-          predictedText:
-              faker.lorem.words(3).join(' '), // Generate a random sentence
-          suggestions: generateRandomSuggestions(),
-          date: DateTime.now()
-              .subtract(Duration(days: faker.randomGenerator.integer(30))),
-        ),
-      );
-    }
-
-    return fakeData;
-  }
-
-  // Generate random suggestions and return them as a list of strings.
-  List<String> generateRandomSuggestions() {
-    List<String> suggestions = [];
-
-    int suggestionCount = faker.randomGenerator.integer(5) + 10;
-
-    for (int i = 0; i < suggestionCount; i++) {
-      suggestions.add(faker.lorem
-          .words(2)
-          .join(' ')); // Generate a random two-word suggestion
-    }
-
-    return suggestions;
   }
 }

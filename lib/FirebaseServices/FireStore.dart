@@ -10,6 +10,39 @@ import 'package:water_pathogen_detection_system/Screens/User/BlogsUser.dart';
 class FirestoreMethods {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth auth = FirebaseAuth.instance;
+  Future<void> storePrediction(
+      String label, double confidence, Uint8List picture) async {
+    try {
+      String photoUrl =
+          await StorageMethod().BlogImage("Predictions", picture, true);
+      String predictionId = const Uuid().v1();
+
+      // Additional data you may want to store
+      DateTime predictionDate = DateTime.now();
+      String userId = auth.currentUser!.uid; // Assuming user authentication
+
+      // Create a model or map to store the prediction data
+      Map<String, dynamic> predictionData = {
+        'label': label,
+        'confidence': confidence,
+        'photoUrl': photoUrl,
+        'predictionId': predictionId,
+        'predictionDate': predictionDate,
+        'userId': userId,
+        // Add more fields as needed
+      };
+
+      await _firestore
+          .collection("Predictions")
+          .doc(predictionId)
+          .set(predictionData);
+    } catch (err) {
+      if (kDebugMode) {
+        print("Error storing prediction: $err");
+      }
+      // Handle error as needed
+    }
+  }
 
   Future<String> uploadBlogs(
       String description, Uint8List file, String title) async {
