@@ -24,7 +24,7 @@ class _PictureScreenState extends State<PictureScreen> {
   Future<void> loadModel() async {
     final res = await _vision.loadYoloModel(
         labels: 'assets/labels.txt',
-        modelPath: 'assets/best_float32.tflite',
+        modelPath: 'assets/yolov8n.tflite',
         modelVersion: "yolov8",
         quantization: false,
         numThreads: 2,
