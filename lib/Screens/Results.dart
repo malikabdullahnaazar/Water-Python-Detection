@@ -1,13 +1,15 @@
-// ignore_for_file: file_names, library_private_types_in_public_api
+// ignore_for_file: file_names, library_private_types_in_public_api, use_build_context_synchronously
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:water_pathogen_detection_system/FirebaseServices/FireStore.dart';
 import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
 import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
 import 'package:water_pathogen_detection_system/Screens/ProfileScreen.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
+import 'package:water_pathogen_detection_system/commonUtils/SnakBar.dart';
 
 class MySavedResultsPage extends StatefulWidget {
   const MySavedResultsPage({super.key});
@@ -21,6 +23,7 @@ class _MySavedResultsPageState extends State<MySavedResultsPage>
   final FirebaseAuth _auth = FirebaseAuth.instance;
   late final TabController _tabController;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirestoreMethods _firestoremethod = FirestoreMethods();
   final TextEditingController _searchController = TextEditingController();
   String _searchTerm = '';
   DateTime? _selectedDate;
@@ -154,14 +157,23 @@ class _MySavedResultsPageState extends State<MySavedResultsPage>
                               as bool; // Assuming 'prediction' is a bool
                           return Card(
                             margin: const EdgeInsets.all(8.0),
+                            elevation: 2,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
                             child: ListTile(
+                              hoverColor: Colors.blue[50],
                               leading: Image.network(
                                 document['photoUrl'],
                                 width: 50,
                                 height: 50,
                                 fit: BoxFit.cover,
                               ),
-                              title: Text(document['label']),
+                              title: Text(
+                                document['label'],
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
+                              ),
                               subtitle: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -170,17 +182,33 @@ class _MySavedResultsPageState extends State<MySavedResultsPage>
                                       'Date: ${document['predictionDate'].toDate().toLocal().toString().substring(0, 10)}'),
                                 ],
                               ),
-                              trailing: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 4),
-                                decoration: BoxDecoration(
-                                  color: isSafe ? Colors.green : Colors.red,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Text(
-                                  isSafe ? 'Safe' : 'Danger',
-                                  style: const TextStyle(color: Colors.white),
-                                ),
+                              trailing: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8, vertical: 0),
+                                    decoration: BoxDecoration(
+                                      color: isSafe ? Colors.green : Colors.red,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Text(
+                                      isSafe ? 'Safe' : 'Danger',
+                                      style:
+                                          const TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.delete,
+                                      color: Colors.red,
+                                    ),
+                                    onPressed: () {
+                                      _showDeleteDialog(
+                                          context, document['predictionId']);
+                                    },
+                                  ),
+                                ],
                               ),
                             ),
                           );
@@ -229,6 +257,40 @@ class _MySavedResultsPageState extends State<MySavedResultsPage>
           }
         },
       ),
+    );
+  }
+
+  _showDeleteDialog(BuildContext context, result) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Delete Prediction'),
+          content:
+              const Text('Are you sure you want to delete this prediction?'),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: const Text('Delete'),
+              onPressed: () async {
+                bool res = await _firestoremethod.deletePrediction(result);
+                if (res) {
+                  ShowSnackBar("Prediction deleted successfully!", context);
+                  _getPredictions();
+                }
+                _getPredictions();
+
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

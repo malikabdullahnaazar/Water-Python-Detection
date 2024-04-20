@@ -32,31 +32,20 @@ class ResultPage extends StatelessWidget {
               title: Text('${results[index]['tag']}'),
               subtitle: Text(
                   'Confidence: ${results[index]['box'][4].toStringAsFixed(2)}%'),
-              trailing: Column(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.delete),
-                    onPressed: () {
-                      _showDeleteDialog(context, results[index]);
-                    },
-                  ),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: double.parse(
-                                  results[index]['box'][4].toStringAsFixed(2)) >
-                              0.5
-                          ? Colors.green
-                          : Colors.red,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      results[index]['box'][4].toStringAsFixed(2),
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                  )
-                ],
+              trailing: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: double.parse(
+                              results[index]['box'][4].toStringAsFixed(2)) >
+                          0.5
+                      ? Colors.green
+                      : Colors.red,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  results[index]['box'][4].toStringAsFixed(2),
+                  style: const TextStyle(color: Colors.white),
+                ),
               ),
             ),
           );
@@ -113,39 +102,5 @@ class ResultPage extends StatelessWidget {
       // Tag is not in the list of labels
       return false;
     }
-  }
-
-  _showDeleteDialog(BuildContext context, result) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Delete Prediction'),
-          content:
-              const Text('Are you sure you want to delete this prediction?'),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Cancel'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              child: const Text('Delete'),
-              onPressed: () async {
-                bool res =
-                    await _firestore.deletePrediction(result['predictionId']);
-                if (res) {
-                  ShowSnackBar("Prediction deleted successfully!", context);
-                }
-                ShowSnackBar("Error deleting prediction!", context);
-
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
   }
 }

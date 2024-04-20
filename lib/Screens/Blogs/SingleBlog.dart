@@ -88,7 +88,7 @@ class SingleBlog extends StatelessWidget {
                 IconButton(
                   icon: const Icon(
                     Icons.delete,
-                    color: primaryColor,
+                    color: Colors.red,
                   ),
                   onPressed: () {
                     _deleteRecord(postId, context);
