@@ -1,77 +1,75 @@
+// ignore_for_file: unnecessary_import, depend_on_referenced_packages, file_names, avoid_print
+
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ultralytics_yolo/ultralytics_yolo.dart';
-import 'package:ultralytics_yolo/yolo_model.dart';
+import 'package:water_pathogen_detection_system/Screens/ResultPage.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
-import 'dart:io' as io;
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_vision/flutter_vision.dart';
 
 class PictureScreen extends StatefulWidget {
   final Uint8List? image;
   final File? selectedImage;
-
-  const PictureScreen({Key? key, this.image, this.selectedImage})
-      : super(key: key);
+  const PictureScreen({super.key, this.image, this.selectedImage});
 
   @override
   State<PictureScreen> createState() => _PictureScreenState();
 }
 
 class _PictureScreenState extends State<PictureScreen> {
-  late ObjectDetector _objectDetector;
+  late FlutterVision _vision;
   List<dynamic> _results = [];
+  Future<void> loadModel() async {
+    final res = await _vision.loadYoloModel(
+        labels: 'assets/labels.txt',
+        modelPath: 'assets/best_float32.tflite',
+        modelVersion: "yolov8",
+        quantization: false,
+        numThreads: 2,
+        useGpu: false);
+    return res;
+  }
+
+  Future<void> imageClassification(File image) async {
+    Uint8List imageBytes = await image.readAsBytes();
+    var recognitions = await _vision.yoloOnImage(
+        bytesList: imageBytes,
+        imageHeight: 640, // Replace with actual image height
+        imageWidth: 480, // Replace with actual image width
+        iouThreshold: 0.8,
+        confThreshold: 0.4,
+        classThreshold: 0.5);
+    print("recognitions$recognitions");
+
+    setState(() {
+      _results = recognitions;
+    });
+  }
 
   @override
   void initState() {
     super.initState();
-    loadModel().then((_) {
-      print("Model loaded successfully");
+    _vision = FlutterVision();
+    final rs = loadModel().then((_) {
+      print("Model loaded successfully ");
     }).catchError((error) {
       print("Error loading model: $error");
     });
+    if (kDebugMode) {
+      print("ls$rs");
+    }
   }
 
-  Future<void> loadModel() async {
-    final modelPath = await _copy('assets/best_int8.tflite');
-    final metadataPath = await _copy('assets/metadata.yaml');
-    final model = LocalYoloModel(
-      id: '',
-      task: Task.detect,
-      format: Format.tflite,
-      modelPath: modelPath,
-      metadataPath: metadataPath,
+  void _navigateToResultPage(List results, Uint8List image) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) =>
+            ResultPage(results: results, selectedimage: image),
+      ),
     );
-
-    _objectDetector = ObjectDetector(model: model);
-    await _objectDetector.loadModel();
-  }
-
-  Future<String> _copy(String assetPath) async {
-    final path = '${(await getApplicationSupportDirectory()).path}/$assetPath';
-    await io.Directory(dirname(path)).create(recursive: true);
-    final file = io.File(path);
-    if (!await file.exists()) {
-      final byteData = await rootBundle.load(assetPath);
-      await file.writeAsBytes(byteData.buffer
-          .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
-    }
-    return file.path;
-  }
-
-  Future<void> imageClassification(String imagepath) async {
-    try {
-      print("Prediction started");
-      final res = await _objectDetector.detect(imagePath: imagepath);
-      setState(() {
-        _results = res!;
-        print("Prediction: $res");
-      });
-    } catch (error) {
-      print(error);
-    }
   }
 
   @override
@@ -130,8 +128,24 @@ class _PictureScreenState extends State<PictureScreen> {
                         ),
                   const SizedBox(height: 20),
                   InkWell(
-                    onTap: () =>
-                        imageClassification(widget.selectedImage!.path),
+                    onTap: () {
+                      // Show loading indicator
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        },
+                      );
+                      // Perform image classification
+                      imageClassification(widget.selectedImage!)
+                          .then((results) {
+                        // Hide loading indicator
+                        Navigator.pop(context); // Close loading dialog
+                        // Navigate to ResultPage and pass the results
+                        _navigateToResultPage(_results, widget.image!);
+                      });
+                    },
                     child: Container(
                       height: 55,
                       width: 300,
@@ -151,10 +165,6 @@ class _PictureScreenState extends State<PictureScreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    child: Text(
-                        _results.isNotEmpty ? '$_results' : 'no prediction'),
-                  )
                 ],
               ),
             ),

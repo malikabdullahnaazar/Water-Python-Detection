@@ -1,9 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 
 class FAQ extends StatelessWidget {
-  FAQ({Key? key});
+  FAQ({super.key});
 
   final List<Map<String, dynamic>> data = [
     {
@@ -99,7 +101,7 @@ class FAQ extends StatelessWidget {
                               size: 20,
                               color: Theme.of(context).primaryColor,
                             ),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             Expanded(
                               child: Text(
                                 data[index]["question"],

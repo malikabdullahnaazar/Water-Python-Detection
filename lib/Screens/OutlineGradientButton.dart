@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 library outline_gradient_button;
 
 import 'package:flutter/material.dart';
@@ -59,10 +61,8 @@ class OutlineGradientButton extends StatelessWidget {
       borderRadius: _borderRadius,
       child: InkWell(
         borderRadius: _borderRadius,
-        highlightColor:
-            inkWell ? Colors.green : Colors.transparent,
-        splashColor:
-            inkWell ? Colors.green : Colors.transparent,
+        highlightColor: inkWell ? Colors.green : Colors.transparent,
+        splashColor: inkWell ? Colors.green : Colors.transparent,
         onTap: onTap,
         onLongPress: onLongPress,
         onDoubleTap: onDoubleTap,

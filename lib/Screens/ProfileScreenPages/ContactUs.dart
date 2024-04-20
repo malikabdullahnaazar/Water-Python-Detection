@@ -1,9 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
 
 class ContactUs extends StatelessWidget {
-  const ContactUs({Key? key});
+  const ContactUs({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class ContactUs extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Column(
@@ -66,13 +68,13 @@ class ContactUs extends StatelessWidget {
                     Radius.circular(10),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 8, left: 8, bottom: 10),
+                child: const Padding(
+                  padding: EdgeInsets.only(top: 8, left: 8, bottom: 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         "Customer Support",
                         style: TextStyle(
                           fontSize: 16,
@@ -80,78 +82,74 @@ class ContactUs extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      Container(
+                      SizedBox(height: 10),
+                      SizedBox(
                         width: 200,
                         child: Row(
                           children: [
-                            const CircleAvatar(
+                            CircleAvatar(
                               child: Icon(
                                 FontAwesomeIcons.phone,
                                 size: 20,
                                 color: Colors.black,
                               ),
                             ),
-                            const SizedBox(width: 10),
-                            Container(
-                              child: const Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Contact Number",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                            SizedBox(width: 10),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Contact Number",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.black,
                                   ),
-                                  Text(
-                                    "+923175001831",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                ),
+                                Text(
+                                  "+923175001831",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.black,
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      Container(
+                      SizedBox(height: 10),
+                      SizedBox(
                         width: 400,
                         child: Row(
                           children: [
-                            const CircleAvatar(
+                            CircleAvatar(
                               child: Icon(
                                 Icons.email,
                                 size: 20,
                                 color: Colors.black,
                               ),
                             ),
-                            const SizedBox(width: 10),
-                            Container(
-                              child: const Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Email Address",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                            SizedBox(width: 10),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Email Address",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.black,
                                   ),
-                                  Text(
-                                    "pathogenhelp@gmail.com",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                ),
+                                Text(
+                                  "pathogenhelp@gmail.com",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.black,
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -173,13 +171,13 @@ class ContactUs extends StatelessWidget {
                     Radius.circular(10),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 8, left: 8, bottom: 10),
+                child: const Padding(
+                  padding: EdgeInsets.only(top: 8, left: 8, bottom: 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         "Social Media",
                         style: TextStyle(
                           fontSize: 16,
@@ -187,78 +185,74 @@ class ContactUs extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      Container(
+                      SizedBox(height: 10),
+                      SizedBox(
                         width: 200,
                         child: Row(
                           children: [
-                            const CircleAvatar(
+                            CircleAvatar(
                               child: Icon(
                                 FontAwesomeIcons.instagram,
                                 size: 20,
                                 color: Colors.black,
                               ),
                             ),
-                            const SizedBox(width: 10),
-                            Container(
-                              child: const Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Instagram",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                            SizedBox(width: 10),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Instagram",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.black,
                                   ),
-                                  Text(
-                                    "pathogonDetection",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                ),
+                                Text(
+                                  "pathogonDetection",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.black,
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      Container(
+                      SizedBox(height: 10),
+                      SizedBox(
                         width: 400,
                         child: Row(
                           children: [
-                            const CircleAvatar(
+                            CircleAvatar(
                               child: Icon(
                                 FontAwesomeIcons.facebookF,
                                 size: 20,
                                 color: Colors.black,
                               ),
                             ),
-                            const SizedBox(width: 10),
-                            Container(
-                              child: const Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Facebook",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                            SizedBox(width: 10),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Facebook",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.black,
                                   ),
-                                  Text(
-                                    "PathogenDetection",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                ),
+                                Text(
+                                  "PathogenDetection",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.black,
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -282,7 +276,7 @@ class ContactUs extends StatelessWidget {
                         width: 70,
                         color: Colors.black,
                         height: 70),
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10),
                     Row(
                       children: [
                         Icon(

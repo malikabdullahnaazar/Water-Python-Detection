@@ -1,25 +1,28 @@
+// ignore_for_file: file_names, use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
 import 'package:water_pathogen_detection_system/Screens/LoginScreen.dart';
 import 'package:water_pathogen_detection_system/commonUtils/InputField.dart';
-import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
 import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class RegScreen extends StatefulWidget {
-  const RegScreen({Key? key}) : super(key: key);
+  const RegScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _RegScreenState createState() => _RegScreenState();
 }
 
 class _RegScreenState extends State<RegScreen> {
-  TextEditingController _userController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _confirmPasswordController = TextEditingController();
-  FirebaseServices _auth = FirebaseServices();
+  final TextEditingController _userController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+  final FirebaseServices _auth = FirebaseServices();
   bool _isLoading = false;
 
   @override
@@ -48,7 +51,7 @@ class _RegScreenState extends State<RegScreen> {
         confirmPassword.isEmpty) {
       // Show appropriate Snack Bar based on validation result
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("All fields are required"),
         ),
       );
@@ -60,7 +63,7 @@ class _RegScreenState extends State<RegScreen> {
 
     if (password != confirmPassword) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("Passwords do not match"),
         ),
       );
@@ -74,7 +77,7 @@ class _RegScreenState extends State<RegScreen> {
     User? user = await _auth.signUpwithEmailAndpassword(email, password);
     if (user != null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("Successfully registered"),
         ),
       );
@@ -83,14 +86,14 @@ class _RegScreenState extends State<RegScreen> {
         MaterialPageRoute(builder: (context) => const LoginScreen()),
         (route) => false,
       );
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Registration Successful'),
-        backgroundColor: const Color.fromARGB(255, 99, 95, 61),
+        backgroundColor: Color.fromARGB(255, 99, 95, 61),
         showCloseIcon: true,
       ));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("Error: Try again"),
         ),
       );
@@ -255,7 +258,7 @@ class _RegScreenState extends State<RegScreen> {
                                   color: Colors.black,
                                   height: 70,
                                 ),
-                                const SizedBox(height: 10),
+                                SizedBox(height: 10),
                                 Text(
                                   '© 2024 Water Pathogen Detection. All rights reserved.',
                                   style: TextStyle(

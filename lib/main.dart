@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection_system/Screens/LoginScreen.dart';
-import 'package:water_pathogen_detection_system/Screens/WelcomeScreen.dart';
+import 'package:water_pathogen_detection_system/Screens/Introduction_Screen.dart';
 import 'package:water_pathogen_detection_system/firebase_options.dart';
 
 void main() async {
@@ -15,7 +15,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             // If the user is logged in, navigate to HomeScreen
             return snapshot.data != null && snapshot.data == true
                 ? const HomeScreen2()
-                : WelcomeScreen();
+                : const IntroductionScreens();
           } else {
             // Show a loading indicator while checking login status
             return const CircularProgressIndicator();
@@ -55,7 +55,9 @@ class MyApp extends StatelessWidget {
       return user != null ? true : false;
     } catch (e) {
       // Handle any errors that might occur while checking login status
-      print('Error checking login status: $e');
+      if (kDebugMode) {
+        print('Error checking login status: $e');
+      }
       return false;
     }
   }

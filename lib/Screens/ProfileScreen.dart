@@ -1,17 +1,21 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
+import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
+import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
+import 'package:water_pathogen_detection_system/Screens/Introduction_Screen.dart';
 import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/ContactUs.dart';
 import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/FAQ.dart';
 import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/Help.dart';
 import 'package:water_pathogen_detection_system/Screens/Results.dart';
 import 'package:water_pathogen_detection_system/Screens/SettingsPage.dart';
-import 'package:water_pathogen_detection_system/Screens/WelcomeScreen.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfleScreen extends StatefulWidget {
-  const ProfleScreen({Key? key}) : super(key: key);
+  const ProfleScreen({super.key});
 
   @override
   State<ProfleScreen> createState() => _ProfleScreenState();
@@ -59,6 +63,39 @@ class _ProfleScreenState extends State<ProfleScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Colors.black,
+        unselectedFontSize: 16,
+        selectedFontSize: 16,
+        currentIndex: 2,
+        selectedItemColor: primaryColor,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.article_outlined), label: 'Blogs'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen2()));
+              break;
+            case 1:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Blogs()));
+              break;
+            case 2:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ProfleScreen()));
+              break;
+          }
+        },
+      ),
       body: Column(
         children: [
           Container(
@@ -80,7 +117,7 @@ class _ProfleScreenState extends State<ProfleScreen> {
                   radius: 45,
                   backgroundImage: _user?.photoURL != null
                       ? NetworkImage(_user!.photoURL!)
-                      : AssetImage('assets/images/avatar.png')
+                      : const AssetImage('assets/images/avatar.png')
                           as ImageProvider<Object>?,
                 ),
                 const SizedBox(
@@ -107,13 +144,13 @@ class _ProfleScreenState extends State<ProfleScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
+                    SizedBox(
                       width: 330,
                       height: 60,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemCount: data2.length,
-                        itemBuilder: (context, index) => Container(
+                        itemBuilder: (context, index) => SizedBox(
                           width: 100,
                           height: 60,
                           child: Column(
@@ -151,91 +188,96 @@ class _ProfleScreenState extends State<ProfleScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 39),
                 Expanded(
                   child: SingleChildScrollView(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
+                    child: SingleChildScrollView(
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
+                          color: Colors.white,
                         ),
-                        color: Colors.white,
-                      ),
-                      child: CustomColumn(
-                        data: [
-                          {
-                            "icon": Icons.favorite_rounded,
-                            "title": "My Saved",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => MySavedResultsPage(),
+                        child: CustomColumn(
+                          data: [
+                            {
+                              "icon": Icons.favorite_rounded,
+                              "title": "My Saved",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const MySavedResultsPage(),
+                                    ),
                                   ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.settings,
-                            "title": "Setting",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const SettingsPage(),
-                                  ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.contact_mail,
-                            "title": "Contact us",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const ContactUs(),
-                                  ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.question_answer,
-                            "title": "FAQ",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => FAQ(),
-                                  ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.help,
-                            "title": "Help",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Help(),
-                                  ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.logout,
-                            "title": "Logout",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () async {
-                              _auth = FirebaseServices();
-                              _auth.signOut(context);
-
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => WelcomeScreen(),
-                                ),
-                              );
                             },
-                          },
-                        ],
+                            {
+                              "icon": Icons.settings,
+                              "title": "Setting",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SettingsPage(),
+                                    ),
+                                  ),
+                            },
+                            {
+                              "icon": Icons.contact_mail,
+                              "title": "Contact us",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const ContactUs(),
+                                    ),
+                                  ),
+                            },
+                            {
+                              "icon": Icons.question_answer,
+                              "title": "FAQ",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FAQ(),
+                                    ),
+                                  ),
+                            },
+                            {
+                              "icon": Icons.help,
+                              "title": "Help",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Help(),
+                                    ),
+                                  ),
+                            },
+                            {
+                              "icon": Icons.logout,
+                              "title": "Logout",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () async {
+                                _auth = FirebaseServices();
+                                _auth.signOut(context);
+
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const IntroductionScreens(),
+                                  ),
+                                );
+                              },
+                            },
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -252,7 +294,7 @@ class _ProfleScreenState extends State<ProfleScreen> {
 class CustomColumn extends StatelessWidget {
   final List<Map<String, dynamic>> data;
 
-  const CustomColumn({Key? key, required this.data}) : super(key: key);
+  const CustomColumn({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -262,7 +304,8 @@ class CustomColumn extends StatelessWidget {
       children: [
         for (var item in data)
           Padding(
-            padding: EdgeInsets.only(top: 5, bottom: 10, left: 10, right: 4),
+            padding:
+                const EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 4),
             child: InkWell(
               onTap: item["onClick"],
               child: ListTile(
@@ -286,7 +329,7 @@ class CustomColumn extends StatelessWidget {
                 trailing: Icon(
                   item["rightIcon"] as IconData,
                   size: 28,
-                  color: Color.fromARGB(255, 87, 85, 85),
+                  color: const Color.fromARGB(255, 87, 85, 85),
                 ),
               ),
             ),

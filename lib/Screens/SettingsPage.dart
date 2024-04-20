@@ -1,8 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 
 class SettingsPage extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const SettingsPage({Key? key});
 
   @override
@@ -33,17 +36,17 @@ class SettingsPage extends StatelessWidget {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [primaryColor, secondaryColor],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
         ),
-        child: SingleChildScrollView(
+        child: const SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 80), // Spacer for AppBar
+              SizedBox(height: 80), // Spacer for AppBar
               CardSection(
                 title: "Notification Settings",
                 icon: FontAwesomeIcons.bell,
@@ -57,6 +60,7 @@ class SettingsPage extends StatelessWidget {
               ),
               CardSection(
                 title: "Appearance",
+                // ignore: deprecated_member_use
                 icon: FontAwesomeIcons.paintBrush,
                 details: [
                   {"label": "Theme", "value": "Dark Mode"},
@@ -81,11 +85,11 @@ class CardSection extends StatelessWidget {
   final List<Map<String, String>> details;
 
   const CardSection({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     required this.details,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +98,7 @@ class CardSection extends StatelessWidget {
       shadowColor: Colors.black,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(
             Radius.circular(10),
@@ -143,7 +147,7 @@ class CardSection extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         )
                       ],
