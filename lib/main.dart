@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection_system/Screens/WelcomeScreen.dart';
+import 'package:water_pathogen_detection_system/Screens/Introduction_Screen.dart';
 import 'package:water_pathogen_detection_system/firebase_options.dart';
 
 void main() async {
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             // If the user is logged in, navigate to HomeScreen
             return snapshot.data != null && snapshot.data == true
                 ? const HomeScreen2()
-                : WelcomeScreen();
+                : const IntroductionScreens();
           } else {
             // Show a loading indicator while checking login status
             return const CircularProgressIndicator();

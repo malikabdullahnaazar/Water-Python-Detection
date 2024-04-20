@@ -188,92 +188,95 @@ class _ProfleScreenState extends State<ProfleScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 39),
                 Expanded(
                   child: SingleChildScrollView(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
+                    child: SingleChildScrollView(
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
+                          color: Colors.white,
                         ),
-                        color: Colors.white,
-                      ),
-                      child: CustomColumn(
-                        data: [
-                          {
-                            "icon": Icons.favorite_rounded,
-                            "title": "My Saved",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const MySavedResultsPage(),
+                        child: CustomColumn(
+                          data: [
+                            {
+                              "icon": Icons.favorite_rounded,
+                              "title": "My Saved",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const MySavedResultsPage(),
+                                    ),
                                   ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.settings,
-                            "title": "Setting",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const SettingsPage(),
-                                  ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.contact_mail,
-                            "title": "Contact us",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const ContactUs(),
-                                  ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.question_answer,
-                            "title": "FAQ",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => FAQ(),
-                                  ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.help,
-                            "title": "Help",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Help(),
-                                  ),
-                                ),
-                          },
-                          {
-                            "icon": Icons.logout,
-                            "title": "Logout",
-                            "rightIcon": Icons.chevron_right,
-                            "onClick": () async {
-                              _auth = FirebaseServices();
-                              _auth.signOut(context);
-
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => WelcomeScreen(),
-                                ),
-                              );
                             },
-                          },
-                        ],
+                            {
+                              "icon": Icons.settings,
+                              "title": "Setting",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SettingsPage(),
+                                    ),
+                                  ),
+                            },
+                            {
+                              "icon": Icons.contact_mail,
+                              "title": "Contact us",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const ContactUs(),
+                                    ),
+                                  ),
+                            },
+                            {
+                              "icon": Icons.question_answer,
+                              "title": "FAQ",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FAQ(),
+                                    ),
+                                  ),
+                            },
+                            {
+                              "icon": Icons.help,
+                              "title": "Help",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Help(),
+                                    ),
+                                  ),
+                            },
+                            {
+                              "icon": Icons.logout,
+                              "title": "Logout",
+                              "rightIcon": Icons.chevron_right,
+                              "onClick": () async {
+                                _auth = FirebaseServices();
+                                _auth.signOut(context);
+
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => WelcomeScreen(),
+                                  ),
+                                );
+                              },
+                            },
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -301,7 +304,7 @@ class CustomColumn extends StatelessWidget {
         for (var item in data)
           Padding(
             padding:
-                const EdgeInsets.only(top: 5, bottom: 10, left: 10, right: 4),
+                const EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 4),
             child: InkWell(
               onTap: item["onClick"],
               child: ListTile(

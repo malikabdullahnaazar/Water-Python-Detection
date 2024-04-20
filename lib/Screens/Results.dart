@@ -4,6 +4,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
+import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
+import 'package:water_pathogen_detection_system/Screens/ProfileScreen.dart';
+import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 
 class MySavedResultsPage extends StatefulWidget {
   const MySavedResultsPage({super.key});
@@ -191,6 +195,39 @@ class _MySavedResultsPageState extends State<MySavedResultsPage>
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Colors.black,
+        unselectedFontSize: 16,
+        selectedFontSize: 16,
+        currentIndex: 0,
+        selectedItemColor: primaryColor,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.article_outlined), label: 'Blogs'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen2()));
+              break;
+            case 1:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Blogs()));
+              break;
+            case 2:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ProfleScreen()));
+              break;
+          }
+        },
       ),
     );
   }

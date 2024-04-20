@@ -56,23 +56,29 @@ class _BlogsScreenState extends State<Blogs> {
         title: const Text("Blogs"),
       ),
       backgroundColor: Colors.white,
-      body: StreamBuilder(
-          stream:
-              FirebaseFirestore.instance.collection("Blogs posts").snapshots(),
-          builder: ((context,
-              AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(
-                  child: CircularProgressIndicator(
-                color: Colors.white,
-              ));
-            }
-            return ListView.builder(
-                itemCount: snapshot.data?.docs.length,
-                itemBuilder: ((context, index) => BlogsCard(
-                      snap: snapshot.data!.docs[index].data(),
-                    )));
-          })),
+      body: RefreshIndicator(
+        onRefresh: () async {
+          setState(() {});
+        },
+        child: StreamBuilder(
+            stream: FirebaseFirestore.instance
+                .collection("Blogs posts")
+                .snapshots(),
+            builder: ((context,
+                AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                    child: CircularProgressIndicator(
+                  color: Colors.white,
+                ));
+              }
+              return ListView.builder(
+                  itemCount: snapshot.data?.docs.length,
+                  itemBuilder: ((context, index) => BlogsCard(
+                        snap: snapshot.data!.docs[index].data(),
+                      )));
+            })),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.black,
         unselectedFontSize: 16,

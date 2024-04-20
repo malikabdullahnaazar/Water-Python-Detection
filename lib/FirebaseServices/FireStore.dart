@@ -10,6 +10,25 @@ import 'package:water_pathogen_detection_system/Screens/User/BlogsUser.dart';
 class FirestoreMethods {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth auth = FirebaseAuth.instance;
+  Future<bool> deletePrediction(String predictionId) async {
+    try {
+      // Get the document reference for the prediction using predictionId
+      final predictionRef =
+          _firestore.collection("Predictions").doc(predictionId);
+
+      // Delete the document from Firestore
+      await predictionRef.delete();
+      return true;
+    } catch (err) {
+      if (kDebugMode) {
+        print("Error deleting prediction: $err");
+      }
+      return false;
+
+      // Handle error as needed
+    }
+  }
+
   Future<String> storePrediction(
       String label, double confidence, Uint8List picture, prediction) async {
     String res = "Some error can be occur";

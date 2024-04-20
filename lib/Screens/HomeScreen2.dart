@@ -262,6 +262,13 @@ class _HomeScreen2State extends State<HomeScreen2> {
                             ),
                             const SizedBox(width: 8),
                             InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const MySavedResultsPage()));
+                              },
                               child: Card(
                                   elevation: 8,
                                   shadowColor: Colors.black,
@@ -288,15 +295,8 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                             child: const Icon(Icons.leaderboard,
                                                 size: 22)),
                                         const SizedBox(height: 4),
-                                        InkWell(
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const MySavedResultsPage()));
-                                          },
-                                          child: const Text(
+                                        const InkWell(
+                                          child: Text(
                                             'Results',
                                             style: TextStyle(
                                               color: Colors.black,
