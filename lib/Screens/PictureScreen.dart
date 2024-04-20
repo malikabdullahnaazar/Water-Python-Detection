@@ -1,14 +1,12 @@
-// ignore_for_file: unnecessary_import, depend_on_referenced_packages, file_names
+// ignore_for_file: unnecessary_import, depend_on_referenced_packages, file_names, avoid_print
 
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:tflite_flutter/tflite_flutter.dart';
-import 'package:image/image.dart' as img;
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
-import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_vision/flutter_vision.dart';
 
 class PictureScreen extends StatefulWidget {
   final Uint8List? image;
@@ -20,110 +18,47 @@ class PictureScreen extends StatefulWidget {
 }
 
 class _PictureScreenState extends State<PictureScreen> {
-  final List<dynamic> _results = [];
+  late FlutterVision _vision;
+  List<dynamic> _results = [];
+  Future<void> loadModel() async {
+    final res = await _vision.loadYoloModel(
+        labels: 'assets/labels.txt',
+        modelPath: 'assets/best_float32.tflite',
+        modelVersion: "yolov8",
+        quantization: false,
+        numThreads: 2,
+        useGpu: false);
+    return res;
+  }
 
-  final String _labelsFileName = 'assets/labels.txt';
-  late List<String> labels;
-  late Interpreter _interpreter;
-  @override
-  void initState() {
-    super.initState();
-    loadModel().then((_) {
-      if (kDebugMode) {
-        print("Model loaded successfully");
-      }
-    }).catchError((error) {
-      if (kDebugMode) {
-        print("Error loading model: $error");
-      }
+  Future<void> imageClassification(File image) async {
+    Uint8List imageBytes = await image.readAsBytes();
+    var recognitions = await _vision.yoloOnImage(
+        bytesList: imageBytes,
+        imageHeight: 640, // Replace with actual image height
+        imageWidth: 480, // Replace with actual image width
+        iouThreshold: 0.8,
+        confThreshold: 0.4,
+        classThreshold: 0.5);
+    print("recognitions$recognitions");
+
+    setState(() {
+      _results = recognitions;
     });
   }
 
-  Future<void> loadLabels() async {
-    labels = await FileUtil.loadLabels(_labelsFileName);
-    if (labels.isNotEmpty) {
-      if (kDebugMode) {
-        print('Labels loaded successfully');
-      }
-    } else {
-      if (kDebugMode) {
-        print('Unable to load labels');
-      }
+  @override
+  void initState() {
+    super.initState();
+    _vision = FlutterVision();
+    final rs = loadModel().then((_) {
+      print("Model loaded successfully ");
+    }).catchError((error) {
+      print("Error loading model: $error");
+    });
+    if (kDebugMode) {
+      print("ls$rs");
     }
-  }
-
-  List<List<List<num>>> _preProcess(img.Image image) {
-    final imgResized = img.copyResize(image, width: 640, height: 480);
-
-    return convertImageToMatrix(imgResized);
-  }
-
-  List<List<List<num>>> convertImageToMatrix(img.Image image) {
-    return List.generate(
-      image.height,
-      (y) => List.generate(
-        image.width,
-        (x) {
-          final pixel = image.getPixel(x, y);
-          // Extract RGB components from the pixel
-          final int r = img.getRed(pixel);
-          final int g = img.getGreen(pixel);
-          final int b = img.getBlue(pixel);
-          // Normalize the RGB components to the range [0, 1]
-          return [r / 255.0, g / 255.0, b / 255.0];
-        },
-      ),
-    );
-  }
-
-  Future<void> loadModel() async {
-    _interpreter = await Interpreter.fromAsset('best_float32.tflite');
-  }
-
-  Future<void> imageClassification(String imagepath) async {
-    try {
-      if (kDebugMode) {
-        print("Started image classification...");
-      }
-      img.Image? image = await _loadImage(imagepath);
-      final input = _preProcess(image!);
-      // Correctly set up the output buffer to match the model's expected output shape
-      final outputBuffer =
-          TensorBuffer.createFixedSize([1, 73, 2100], TfLiteType.float32);
-      _interpreter.run([input], outputBuffer);
-      var outputsList = outputBuffer.getDoubleList();
-      print(outputBuffer);
-      // for (int i = 0; i < outputsList.length; i += 6) {
-      //   // Each prediction is assumed to consist of 6 elements
-      //   final score = outputsList[
-      //       i + 4]; // The score is assumed to be at the 5th position
-      //   if (score > 0.5) {
-      //     // Applying a threshold to filter predictions
-      //     final labelIndex = outputsList[i + 5]
-      //         .toInt(); // The label index is assumed to be at the 6th position
-      //     final label = labels[labelIndex];
-      //     if (kDebugMode) {
-      //       print("prediction: label $label");
-      //     }
-      //   }
-      // }
-    } catch (error) {
-      if (kDebugMode) {
-        print('Error during image classification: $error');
-      }
-    }
-  }
-
-  Future<img.Image?> _loadImage(String imagePath) async {
-    final File imageFile = File(imagePath);
-    if (!await imageFile.exists()) {
-      if (kDebugMode) {
-        print('File does not exist: $imagePath');
-      }
-      return null;
-    }
-    final Uint8List imageData = await imageFile.readAsBytes();
-    return img.decodeImage(imageData);
   }
 
   @override
@@ -182,8 +117,7 @@ class _PictureScreenState extends State<PictureScreen> {
                         ),
                   const SizedBox(height: 20),
                   InkWell(
-                    onTap: () =>
-                        imageClassification(widget.selectedImage!.path),
+                    onTap: () => imageClassification(widget.selectedImage!),
                     child: Container(
                       height: 55,
                       width: 300,
