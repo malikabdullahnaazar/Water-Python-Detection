@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:introduction_screen/introduction_screen.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
 import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
 import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
@@ -12,7 +11,6 @@ import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/FAQ.d
 import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/Help.dart';
 import 'package:water_pathogen_detection_system/Screens/Results.dart';
 import 'package:water_pathogen_detection_system/Screens/SettingsPage.dart';
-import 'package:water_pathogen_detection_system/Screens/WelcomeScreen.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
