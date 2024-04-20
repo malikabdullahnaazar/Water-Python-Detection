@@ -1,0 +1,2598 @@
+[{
+    "scientific_name": "Escherichia coli",
+    "common_name": "E. coli",
+    "description": "A bacterium commonly found in the lower intestine of warm-blooded organisms.",
+    "classification": {
+      "kingdom": "Bacteria",
+      "phylum": "Proteobacteria",
+      "class": "Gammaproteobacteria",
+      "order": "Enterobacterales",
+      "family": "Enterobacteriaceae",
+      "genus": "Escherichia",
+      "species": "E. coli"
+    },
+    "habitat": "Freshwater, intestinal tract of animals",
+    "pathogenicity": true,
+    "health_effects": "Causes symptoms ranging from none to severe abdominal cramps, diarrhea, and vomiting.",
+    "mode_of_transmission": "Fecal-oral route, through contaminated food or water and person-to-person contact.",
+    "incubation_period": "1-10 days",
+    "diseases_caused": ["Gastroenteritis", "Urinary tract infections", "Neonatal meningitis"],
+    "prevalence": "Common worldwide, especially in areas with inadequate sanitation.",
+    "detection_methods": ["Culture techniques", "Polymerase chain reaction (PCR)", "Enzyme immunoassays"],
+    "treatment_options": ["Hydration and electrolyte replacement", "Antibiotics in severe cases"],
+    "prevention_strategies": ["Proper food handling", "Handwashing", "Water treatment"],
+    "regulatory_standards": "Regulated by health agencies such as the FDA and EPA to limit exposure in food and water.",
+    "references": [
+      "https://www.cdc.gov/ecoli/index.html",
+      "https://www.who.int/news-room/fact-sheets/detail/e-coli"
+    ],
+    "images": [
+      "https://example.com/images/ecoli.jpg",
+      "https://example.com/images/ecoli_microscope.jpg"
+    ],
+    "virulence_factors": ["Shiga toxin", "Type 1 fimbriae", "Flagella"],
+    "environmental_impact": "Can indicate fecal contamination of water bodies and affect aquatic life.",
+    "economic_impact": "Significant cost implications for healthcare and food industries due to infection outbreaks.",
+    "survival_and_resistance": "Can survive for several weeks in water and soil; some strains have developed antibiotic resistance."
+  },
+    {
+        "scientific_name": "Gomphonema drutelingense",
+        "common_name": "Gomphonema drutelingense",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+          "kingdom": "Chromista",
+          "phylum": "Bacillariophyta",
+          "class": "Bacillariophyceae",
+          "order": "Cymbellales",
+          "family": "Gomphonemataceae",
+          "genus": "Gomphonema",
+          "species": "Gomphonema drutelingense"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+          "https://www.algaebase.org/search/species/detail/?species_id=25093",
+          "https://www.diatoms.org/species/gomphonema-drutelingense"
+        ],
+        "images": [
+          "https://example.com/images/gomphonema_drutelingense.jpg",
+          "https://example.com/images/gomphonema_drutelingense_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+      },
+      {
+        "scientific_name": "Encyonema ventricosum",
+        "common_name": "Encyonema ventricosum",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+          "kingdom": "Chromista",
+          "phylum": "Bacillariophyta",
+          "class": "Bacillariophyceae",
+          "order": "Cymbellales",
+          "family": "Encyonemataceae",
+          "genus": "Encyonema",
+          "species": "Encyonema ventricosum"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+          "https://www.algaebase.org/search/species/detail/?species_id=25107",
+          "https://www.diatoms.org/species/encyonema-ventricosum"
+        ],
+        "images": [
+          "https://example.com/images/encyonema_ventricosum.jpg",
+          "https://example.com/images/encyonema_ventricosum_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+      },
+      {
+        "scientific_name": "Achnanthidium biasolettianum",
+        "common_name": "Achnanthidium biasolettianum",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+          "kingdom": "Chromista",
+          "phylum": "Bacillariophyta",
+          "class": "Bacillariophyceae",
+          "order": "Achnanthales",
+          "family": "Achnanthidiaceae",
+          "genus": "Achnanthidium",
+          "species": "Achnanthidium biasolettianum"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+          "https://www.algaebase.org/search/species/detail/?species_id=25110",
+          "https://www.diatoms.org/species/achnanthidium-biasolettianum"
+        ],
+        "images": [
+          "https://example.com/images/achnanthidium_biasolettianum.jpg",
+          "https://example.com/images/achnanthidium_biasolettianum_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+      },
+      {
+        "scientific_name": "Gomphonema olivaceum",
+        "common_name": "Gomphonema olivaceum",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+          "kingdom": "Chromista",
+          "phylum": "Bacillariophyta",
+          "class": "Bacillariophyceae",
+          "order": "Cymbellales",
+          "family": "Gomphonemataceae",
+          "genus": "Gomphonema",
+          "species": "Gomphonema olivaceum"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+          "https://www.algaebase.org/search/species/detail/?species_id=25112",
+          "https://www.diatoms.org/species/gomphonema-olivaceum"
+        ],
+        "images": [
+          "https://example.com/images/gomphonema_olivaceum.jpg",
+          "https://example.com/images/gomphonema_olivaceum_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+      },
+      {
+        "scientific_name": "Cymbella cantonatii",
+        "common_name": "Cymbella cantonatii",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+          "kingdom": "Chromista",
+          "phylum": "Bacillariophyta",
+          "class": "Bacillariophyceae",
+          "order": "Cymbellales",
+          "family": "Cymbellaceae",
+          "genus": "Cymbella",
+          "species": "Cymbella cantonatii"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25113",
+            "https://www.diatoms.org/species/cymbella-cantonatii"
+            ],
+            "images": [
+            "https://example.com/images/cymbella_cantonatii.jpg",
+            "https://example.com/images/cymbella_cantonatii_microscope.jpg"
+            ],
+            "virulence_factors": "N/A",
+            "environmental_impact": "Important primary producer in freshwater ecosystems.",
+            "economic_impact": "None",
+            "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+            },
+            {
+            "scientific_name": "Achnanthidium minutissimum",
+            "common_name": "Achnanthidium minutissimum",
+            "description": "A diatom commonly found in freshwater habitats.",
+            "classification": {
+            "kingdom": "Chromista",
+            "phylum": "Bacillariophyta",
+            "class": "Bacillariophyceae",
+            "order": "Achnanthales",
+            "family": "Achnanthidiaceae",
+            "genus": "Achnanthidium",
+            "species": "Achnanthidium minutissimum"
+            },
+            "habitat": "Freshwater, attached to rocks and other substrates",
+            "pathogenicity": false,
+            "health_effects": "None",
+            "mode_of_transmission": "N/A",
+            "incubation_period": "N/A",
+            "diseases_caused": "None",
+            "prevalence": "Common in freshwater habitats worldwide",
+            "detection_methods": "Microscopy",
+            "treatment_options": "N/A",
+            "prevention_strategies": "N/A",
+            "regulatory_standards": "N/A",
+            "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25114",
+            "https://www.diatoms.org/species/achnanthidium-minutissimum"
+            ],
+            "images": [
+            "https://example.com/images/achnanthidium_minutissimum.jpg",
+            "https://example.com/images/achnanthidium_minutissimum_microscope.jpg"
+            ],
+            "virulence_factors": "N/A",
+            "environmental_impact": "Important primary producer in freshwater ecosystems.",
+            "economic_impact": "None",
+            "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+            },
+            {
+            "scientific_name": "Navicula cryptotenella",
+            "common_name": "Navicula cryptotenella",
+            "description": "A diatom commonly found in freshwater habitats.",
+            "classification": {
+            "kingdom": "Chromista",
+            "phylum": "Bacillariophyta",
+            "class": "Bacillariophyceae",
+            "order": "Naviculales",
+            "family": "Naviculaceae",
+            "genus": "Navicula",
+            "species": "Navicula cryptotenella"
+            },
+            "habitat": "Freshwater, attached to rocks and other substrates",
+            "pathogenicity": false,
+            "health_effects": "None",
+            "mode_of_transmission": "N/A",
+            "incubation_period": "N/A",
+            "diseases_caused": "None",
+            "prevalence": "Common in freshwater habitats worldwide",
+            "detection_methods": "Microscopy",
+            "treatment_options": "N/A",
+            "prevention_strategies": "N/A",
+            "regulatory_standards": "N/A",
+            "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25115",
+            "https://www.diatoms.org/species/navicula-cryptotenella"
+            ],
+            "images": [
+            "https://example.com/images/navicula_cryptotenella.jpg",
+            "https://example.com/images/navicula_cryptotenella_microscope.jpg"
+            ],
+            "virulence_factors": "N/A",
+            "environmental_impact": "Important primary producer in freshwater ecosystems.",
+            "economic_impact": "None",
+            "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+            },
+            {
+            "scientific_name": "Adlafia minuscula",
+            "common_name": "Adlafia minuscula",
+            "description": "A diatom commonly found in freshwater habitats.",
+            "classification": {
+            "kingdom": "Chromista",
+            "phylum": "Bacillariophyta",
+            "class": "Bacillariophyceae",
+            "order": "Cymbellales",
+            "family": "Cymbellaceae",
+            "genus": "Adlafia",
+            "species": "Adlafia minuscula"
+            },
+            "habitat": "Freshwater, attached to rocks and other substrates",
+            "pathogenicity": false,
+            "health_effects": "None",
+            "mode_of_transmission": "N/A",
+            "incubation_period": "N/A",
+            "diseases_caused": "None",
+            "prevalence": "Common in freshwater habitats worldwide",
+            "detection_methods": "Microscopy",
+            "treatment_options": "N/A",
+            "prevention_strategies": "N/A",
+            "regulatory_standards": "N/A",
+            "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25116",
+            "https://www.diatoms.org/species/adlafia-minuscula"
+            ],
+            "images": [
+            "https://example.com/images/adlafia_minuscula.jpg",
+            "https://example.com/images/adlafia_minuscula_microscope.jpg"
+            ],
+            "virulence_factors": "N/A",
+            "environmental_impact": "Important primary producer in freshwater ecosystems.",
+            "economic_impact": "None",
+            "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+            },
+            {
+            "scientific_name": "Encyonema silesiacum",
+            "common_name": "Encyonema silesiacum",
+            "description": "A diatom commonly found in freshwater habitats.",
+            "classification": {
+            "kingdom": "Chromista",
+            "phylum": "Bacillariophyta",
+            "class": "Bacillariophyceae",
+            "order": "Cymbellales",
+            "family": "Encyonemataceae",
+            "genus": "Encyonema",
+            "species": "Encyonema silesiacum"
+            },
+            "habitat": "Freshwater, attached to rocks and other substrates",
+            "pathogenicity": false,
+            "health_effects": "None",
+            "mode_of_transmission": "N/A",
+            "incubation_period": "N/A",
+            "diseases_caused": "None",
+            "prevalence": "Common in freshwater habitats worldwide",
+            "detection_methods": "Microscopy",
+            "treatment_options": "N/A",
+            "prevention_strategies": "N/A",
+            "regulatory_standards": "N/A",
+            "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25117",
+            "https://www.diatoms.org/species/encyonema-silesiacum"
+            ],
+            "images": [
+            "https://example.com/images/encyonema_silesiacum.jpg",
+            "https://example.com/images/encyonema_silesiacum_microscope.jpg"
+            ],
+            "virulence_factors": "N/A",
+            "environmental_impact": "Important primary producer in freshwater ecosystems.",
+            "economic_impact": "None",
+            "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+            },
+            {
+            "scientific_name": "Diatoma moniliformis",
+            "common_name": "Diatoma moniliformis",
+            "description": "A diatom commonly found in freshwater habitats.",
+            "classification": {
+            "kingdom": "Chromista",
+            "phylum": "Bacillariophyta",
+            "class": "Bacillariophyceae",
+            "order": "Fragilariales",
+            "family": "Fragilariaceae",
+            "genus": "Diatoma",
+            "species": "Diatoma moniliformis"
+            },
+            "habitat": "Freshwater, planktonic",
+            "pathogenicity": false,
+            "health_effects": "None",
+            "mode_of_transmission": "N/A",
+            "incubation_period": "N/A",
+            "diseases_caused": "None",
+            "prevalence": "Common in freshwater habitats worldwide",
+            "detection_methods": "Microscopy",
+            "treatment_options": "N/A",
+            "prevention_strategies": "N/A",
+            "regulatory_standards": "N/A",
+            "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25118",
+            "https://www.diatoms.org/species/diatoma-moniliformis"
+            ],
+            "images": [
+            "https://example.com/images/diatoma_moniliformis.jpg",
+            "https://example.com/images/diatoma_moniliformis_microscope.jpg"
+            ],
+            "virulence_factors": "N/A",
+            "environmental_impact": "Important primary producer in freshwater ecosystems.",
+            "economic_impact": "None",
+            "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+            },
+            {
+            "scientific_name": "Gomphonema minutum",
+            "common_name": "Gomphonema minutum",
+            "description": "A diatom commonly found in freshwater habitats.",
+            "classification": {
+            "kingdom": "Chromista",
+            "phylum": "Bacillariophyta",
+            "class": "Bacillariophyceae",
+            "order": "Cymbellales",
+            "family": "Gomphonemataceae",
+            "genus": "Gomphonema",
+            "species": "Gomphonema minutum"
+            },
+            "habitat": "Freshwater, attached to rocks and other substrates",
+            "pathogenicity": false,
+            "health_effects": "None",
+            "mode_of_transmission": "N/A",
+            "incubation_period": "N/A",
+            "diseases_caused": "None",
+            "prevalence": "Common in freshwater habitats worldwide",
+            "detection_methods": "Microscopy",
+            "treatment_options": "N/A",
+            "prevention_strategies": "N/A",
+            "regulatory_standards": "N/A",
+            "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25119",
+            "https://www.diatoms.org/species/gomphonema-minutum"
+            ],
+            "images": [
+            "https://example.com/images/gomphonema_minutum.jpg",
+            "https://example.com/images/gomphonema_minutum_microscope.jpg"
+            ],
+            "virulence_factors": "N/A",
+            "environmental_impact": "Important primary producer in freshwater ecosystems.",
+            "economic_impact": "None",
+            "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+            },
+            {
+            "scientific_name": "Nitzschia linearis",
+            "common_name": "Nitzschia linearis",
+            "description": "A diatom commonly found in freshwater and marine habitats.",
+            "classification": {
+            "kingdom": "Chromista",
+            "phylum": "Bacillariophyta",
+            "class": "Bacillariophyceae",
+            "order": "Bacillariales",
+            "family": "Nitzschiaceae",
+            "genus": "Nitzschia",
+            "species": "Nitzschia linearis"
+            },
+            "habitat": "Freshwater and marine, planktonic",
+            "pathogenicity": false,
+            "health_effects": "None",
+            "mode_of_transmission": "N/A",
+            "incubation_period": "N/A",
+            "diseases_caused": "None",
+            "prevalence": "Common in freshwater and marine habitats worldwide",
+            "detection_methods": "Microscopy",
+            "treatment_options": "N/A",
+            "prevention_strategies": "N/A",
+            "regulatory_standards": "N/A",
+            "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25120",
+            "https://www.diatoms.org/species/nitzschia-linearis"
+            ],
+            "images": [
+            "https://example.com/images/nitzschia_linearis.jpg",
+            "https://example.com/images/nitzschia_linearis_microscope.jpg"
+            ],
+            "virulence_factors": "N/A",
+            "environmental_impact": "Important primary producer in aquatic ecosystems.",
+            "economic_impact": "None",
+            "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+            },
+            {
+            "scientific_name": "Navicula capitatoradiata",
+            "common_name": "Navicula capitatoradiata",
+            "description": "A diatom commonly found in freshwater habitats.",
+            "classification": {
+            "kingdom": "Chromista",
+            "phylum": "Bacillariophyta",
+            "class": "Bacillariophyceae",
+            "order": "Naviculales",
+            "family": "Naviculaceae",
+            "genus": "Navicula",
+            "species": "Navicula capitatoradiata"
+            },
+            "habitat": "Freshwater, attached to rocks and other substrates",
+            "pathogenicity": false,
+            "health_effects": "None",
+            "mode_of_transmission": "N/A",
+            "incubation_period": "N/A",
+            "diseases_caused": "None",
+            "prevalence": "Common in freshwater habitats worldwide",
+            "detection_methods": "Microscopy",
+            "treatment_options": "N/A",
+            "prevention_strategies": "N/A",
+            "regulatory_standards": "N/A",
+            "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25121",
+            "https://www.diatoms.org/species/navicula-capitatoradiata"
+            ],
+            "images": [
+            "https://example.com/images/navicula_capitatoradiata.jpg",
+            "https://example.com/images/navicula_capitatoradiata_microscope.jpg"
+            ],
+            "virulence_factors": "N/A",
+            "environmental_impact": "Important primary producer in freshwater ecosystems.",
+            "economic_impact": "None",
+            "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+            },
+            {
+            "scientific_name": "Didymosphenia geminata",
+            "common_name": "Didymosphenia geminata",
+            "description": "A diatom commonly found in freshwater habitats.",
+            "classification": {
+            "kingdom": "Chromista",
+            "phylum": "Bacillariophyta",
+            "class": "Bacillariophyceae",
+            "order": "Cymbellales",
+            "family": "Gomphonemataceae",
+            "genus": "Didymosphenia",
+            "species": "Didymosphenia geminata"
+            },
+            "habitat": "Freshwater, attached to rocks and other substrates",
+            "pathogenicity": false,
+            "health_effects": "None",
+            "mode_of_transmission": "N/A",
+            "incubation_period": "N/A",
+            "diseases_caused": "None",
+            "prevalence": "Common in freshwater habitats worldwide",
+            "detection_methods": "Microscopy",
+            "treatment_options": "N/A",
+            "prevention_strategies": "N/A",
+            "regulatory_standards": "N/A",
+            "references": [
+            "https://www.algaebase.org/search/species/detail/?species_id=25122",
+            "https://www.diatoms.org/species/didymosphenia-geminata"
+            ],
+            "images": ["https://example.com/images/didymosphenia_geminata.jpg",
+            "https://example. images/didymosphenia_geminata_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Cymbella excisa var. procera",
+        "common_name": "Cymbella excisa var. procera",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Cymbellales",
+        "family": "Cymbellaceae",
+        "genus": "Cymbella",
+        "species": "Cymbella excisa",
+        "variety": "procera"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25123",
+        "https://www.diatoms.org/species/cymbella-excisa-var-procera"
+        ],
+        "images": [
+        "https://example.com/images/cymbella_excisa_var_procera.jpg",
+        "https://example.com/images/cymbella_excisa_var_procera_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Cymbella excisa",
+        "common_name": "Cymbella excisa",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Cymbellales",
+        "family": "Cymbellaceae",
+        "genus": "Cymbella",
+        "species": "Cymbella excisa"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25124",
+        "https://www.diatoms.org/species/cymbella-excisa"
+        ],
+        "images": [
+        "https://example.com/images/cymbella_excisa.jpg",
+        "https://example.com/images/cymbella_excisa_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Gomphonema tergestinum",
+        "common_name": "Gomphonema tergestinum",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Cymbellales",
+        "family": "Gomphonemataceae",
+        "genus": "Gomphonema",
+        "species": "Gomphonema tergestinum"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25125",
+        "https://www.diatoms.org/species/gomphonema-tergestinum"
+        ],
+        "images": [
+        "https://example.com/images/gomphonema_tergestinum.jpg",
+        "https://example.com/images/gomphonema_tergestinum_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Fragilaria recapitellata",
+        "common_name": "Fragilaria recapitellata",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Fragilariales",
+        "family": "Fragilariaceae",
+        "genus": "Fragilaria",
+        "species": "Fragilaria recapitellata"
+        },
+        "habitat": "Freshwater, planktonic",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25126",
+        "https://www.diatoms.org/species/fragilaria-recapitellata"
+        ],
+        "images": [
+        "https://example.com/images/fragilaria_recapitellata.jpg",
+        "https://example.com/images/fragilaria_recapitellata_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Amphora pediculus",
+        "common_name": "Amphora pediculus",
+        "description": "A diatom commonly found in freshwater and marine habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Cymbellales",
+        "family": "Amphoraceae",
+        "genus": "Amphora",
+        "species": "Amphora pediculus"
+        },
+        "habitat": "Freshwater and marine, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater and marine habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25127",
+        "https://www.diatoms.org/species/amphora-pediculus"
+        ],
+        "images": [
+        "https://example.com/images/amphora_pediculus.jpg",
+        "https://example.com/images/amphora_pediculus_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in aquatic ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Planothidium lanceolatum",
+        "common_name": "Planothidium lanceolatum",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Cymbellales",
+        "family": "Gomphonemataceae",
+        "genus": "Planothidium",
+        "species": "Planothidium lanceolatum"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25128",
+        "https://www.diatoms.org/species/planothidium-lanceolatum"
+        ],
+        "images": [
+        "https://example.com/images/planothidium_lanceolatum.jpg",
+        "https://example.com/images/planothidium_lanceolatum_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Halamphora veneta",
+        "common_name": "Halamphora veneta",
+        "description": "A diatom commonly found in freshwater and marine habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Cymbellales",
+        "family": "Gomphonemataceae",
+        "genus": "Halamphora",
+        "species": "Halamphora veneta"
+        },
+        "habitat": "Freshwater and marine, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater and marine habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25129",
+        "https://www.diatoms.org/species/halamphora-veneta"
+        ],
+        "images": [
+        "https://example.com/images/halamphora_veneta.jpg",
+        "https://example.com/images/halamphora_veneta_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in aquatic ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Navicula tripunctata",
+        "common_name": "Navicula tripunctata",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Naviculales",
+        "family": "Naviculaceae",
+        "genus": "Navicula",
+        "species": "Navicula tripunctata"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25130",
+        "https://www.diatoms.org/species/navicula-tripunctata"
+        ],
+        "images": [
+        "https://example.com/images/navicula_tripunctata.jpg",
+        "https://example.com/images/navicula_tripunctata_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Cymbopleura amphicephala",
+        "common_name": "Cymbopleura amphicephala",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Cymbellales",
+        "family": "Cymbellaceae",
+        "genus": "Cymbopleura",
+        "species": "Cymbopleura amphicephala"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25131",
+        "https://www.diatoms.org/species/cymbopleura-amphicephala"
+        ],
+        "images": [
+        "https://example.com/images/cymbopleura_amphicephala.jpg",
+        "https://example.com/images/cymbopleura_amphicephala_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        { "scientific_name": "Diploneis fontanella",
+        "common_name": "Diploneis fontanella",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Naviculales",
+        "family": "Naviculaceae",
+        "genus": "Diploneis",
+        "species": "Diploneis fontanella"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25132",
+        "https://www.diatoms.org/species/diploneis-fontanella"
+        ],
+        "images": [
+        "https://example.com/images/diploneis_fontanella.jpg",
+        "https://example.com/images/diploneis_fontanella_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Gomphonema micropus",
+        "common_name": "Gomphonema micropus",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Cymbellales",
+        "family": "Gomphonemataceae",
+        "genus": "Gomphonema",
+        "species": "Gomphonema micropus"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25133",
+        "https://www.diatoms.org/species/gomphonema-micropus"
+        ],
+        "images": [
+        "https://example.com/images/gomphonema_micropus.jpg",
+        "https://example.com/images/gomphonema_micropus_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Nitzschia palea",
+        "common_name": "Nitzschia palea",
+        "description": "A diatom commonly found in freshwater and marine habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Bacillariales",
+        "family": "Nitzschiaceae",
+        "genus": "Nitzschia",
+        "species": "Nitzschia palea"
+        },
+        "habitat": "Freshwater and marine, planktonic",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater and marine habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25134",
+        "https://www.diatoms.org/species/nitzschia-palea"
+        ],
+        "images": [
+        "https://example.com/images/nitzschia_palea.jpg",
+        "https://example.com/images/nitzschia_palea_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in aquatic ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Pantocsekiella ocellata",
+        "common_name": "Pantocsekiella ocellata",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Cymbellales",
+        "family": "Gomphonemataceae",
+        "genus": "Pantocsekiella",
+        "species": "Pantocsekiella ocellata"
+        },
+        "habitat": "Freshwater, attached to rocks and other substrates",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.algaebase.org/search/species/detail/?species_id=25135",
+        "https://www.diatoms.org/species/pantocsekiella-ocellata"
+        ],
+        "images": [
+        "https://example.com/images/pantocsekiella_ocellata.jpg",
+        "https://example.com/images/pantocsekiella_ocellata_microscope.jpg"
+        ],
+        "virulence_factors": "N/A",
+        "environmental_impact": "Important primary producer in freshwater ecosystems.",
+        "economic_impact": "None",
+        "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+        },
+        {
+        "scientific_name": "Denticula kuetzingii",
+        "common_name": "Denticula kuetzingii",
+        "description": "A diatom commonly found in freshwater habitats.",
+        "classification": {
+        "kingdom": "Chromista",
+        "phylum": "Bacillariophyta",
+        "class": "Bacillariophyceae",
+        "order": "Fragilariales",
+        "family": "Fragilariaceae",
+        "genus": "Denticula",
+        "species": "Denticula kuetzingii"
+        },
+        "habitat": "Freshwater, planktonic",
+        "pathogenicity": false,
+        "health_effects": "None",
+        "mode_of_transmission": "N/A",
+        "incubation_period": "N/A",
+        "diseases_caused": "None",
+        "prevalence": "Common in freshwater habitats worldwide",
+        "detection_methods": "Microscopy",
+        "treatment_options": "N/A",
+        "prevention_strategies": "N/A",
+        "regulatory_standards": "N/A",
+        "references": [
+        "https://www.diatoms.org/species/denticula-kuetzingii"
+    ],
+    "images": [
+    "https://example.com/images/denticula_kuetzingii.jpg",
+    "https://example.com/images/denticula_kuetzingii_microscope.jpg"
+    ],
+    "virulence_factors": "N/A",
+    "environmental_impact": "Important primary producer in freshwater ecosystems.",
+    "economic_impact": "None",
+    "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+    },
+    {
+    "scientific_name": "Navicula trivialis",
+    "common_name": "Navicula trivialis",
+    "description": "A diatom commonly found in freshwater habitats.",
+    "classification": {
+    "kingdom": "Chromista",
+    "phylum": "Bacillariophyta",
+    "class": "Bacillariophyceae",
+    "order": "Naviculales",
+    "family": "Naviculaceae",
+    "genus": "Navicula",
+    "species": "Navicula trivialis"
+    },
+    "habitat": "Freshwater, attached to rocks and other substrates",
+    "pathogenicity": false,
+    "health_effects": "None",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": "None",
+    "prevalence": "Common in freshwater habitats worldwide",
+    "detection_methods": "Microscopy",
+    "treatment_options": "N/A",
+    "prevention_strategies": "N/A",
+    "regulatory_standards": "N/A",
+    "references": [
+    "https://www.algaebase.org/search/species/detail/?species_id=25137",
+    "https://www.diatoms.org/species/navicula-trivialis"
+    ],
+    "images": [
+    "https://example.com/images/navicula_trivialis.jpg",
+    "https://example.com/images/navicula_trivialis_microscope.jpg"
+    ],
+    "virulence_factors": "N/A",
+    "environmental_impact": "Important primary producer in freshwater ecosystems.",
+    "economic_impact": "None",
+    "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+    },
+    {
+    "scientific_name": "Navicula cryptotenelloides",
+    "common_name": "Navicula cryptotenelloides",
+    "description": "A diatom commonly found in freshwater habitats.",
+    "classification": {
+    "kingdom": "Chromista",
+    "phylum": "Bacillariophyta",
+    "class": "Bacillariophyceae",
+    "order": "Naviculales",
+    "family": "Naviculaceae",
+    "genus": "Navicula",
+    "species": "Navicula cryptotenelloides"
+    },
+    "habitat": "Freshwater, attached to rocks and other substrates",
+    "pathogenicity": false,
+    "health_effects": "None",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": "None",
+    "prevalence": "Common in freshwater habitats worldwide",
+    "detection_methods": "Microscopy",
+    "treatment_options": "N/A",
+    "prevention_strategies": "N/A",
+    "regulatory_standards": "N/A",
+    "references": [
+    "https://www.algaebase.org/search/species/detail/?species_id=25138",
+    "https://www.diatoms.org/species/navicula-cryptotenelloides"
+    ],
+    "images": [
+    "https://example.com/images/navicula_cryptotenelloides.jpg",
+    "https://example.com/images/navicula_cryptotenelloides_microscope.jpg"
+    ],
+    "virulence_factors": "N/A",
+    "environmental_impact": "Important primary producer in freshwater ecosystems.",
+    "economic_impact": "None",
+    "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+    },
+    {
+    "scientific_name": "Nitzschia hantzschiana",
+    "common_name": "Nitzschia hantzschiana",
+    "description": "A diatom commonly found in freshwater and marine habitats.",
+    "classification": {
+    "kingdom": "Chromista",
+    "phylum": "Bacillariophyta",
+    "class": "Bacillariophyceae",
+    "order": "Bacillariales",
+    "family": "Nitzschiaceae",
+    "genus": "Nitzschia",
+    "species": "Nitzschia hantzschiana"
+    },
+    "habitat": "Freshwater and marine, planktonic",
+    "pathogenicity": false,
+    "health_effects": "None",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": "None",
+    "prevalence": "Common in freshwater and marine habitats worldwide",
+    "detection_methods": "Microscopy",
+    "treatment_options": "N/A",
+    "prevention_strategies": "N/A",
+    "regulatory_standards": "N/A",
+    "references": [
+    "https://www.algaebase.org/search/species/detail/?species_id=25139",
+    "https://www.diatoms.org/species/nitzschia-hantzschiana"
+    ],
+    "images": [
+    "https://example.com/images/nitzschia_hantzschiana.jpg",
+    "https://example.com/images/nitzschia_hantzschiana_microscope.jpg"
+    ],
+    "virulence_factors": "N/A",
+    "environmental_impact": "Important primary producer in aquatic ecosystems.",
+    "economic_impact": "None",
+    "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+    },
+    {
+    "scientific_name": "Halamphora paraveneta",
+    "common_name": "Halamphora paraveneta",
+    "description": "A diatom commonly found in freshwater and marine habitats.",
+    "classification": {
+    "kingdom": "Chromista",
+    "phylum": "Bacillariophyta",
+    "class": "Bacillariophyceae",
+    "order": "Cymbellales",
+    "family": "Gomphonemataceae",
+    "genus": "Halamphora",
+    "species": "Halamphora paraveneta"
+    },
+    "habitat": "Freshwater and marine, attached to rocks and other substrates",
+    "pathogenicity": false,
+    "health_effects": "None",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": "None",
+    "prevalence": "Common in freshwater and marine habitats worldwide",
+    "detection_methods": "Microscopy",
+    "treatment_options": "N/A",
+    "prevention_strategies": "N/A",
+    "regulatory_standards": "N/A",
+    "references": [
+    "https://www.algaebase.org/search/species/detail/?species_id=25140",
+    "https://www.diatoms.org/species/halamphora-paraveneta"
+    ],
+    "images": [
+    "https://example.com/images/halamphora_paraveneta.jpg",
+    "https://example.com/images/halamphora_paraveneta_microscope.jpg"
+    ],
+    "virulence_factors": "N/A",
+    "environmental_impact": "Important primary producer in aquatic ecosystems.",
+    "economic_impact": "None",
+    "survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+    },
+    {
+    "scientific_name": "Navicula cryptocephala",
+    "common_name": "Navicula cryptocephala",
+    "description": "A diatom commonly found in freshwater habitats.",
+    "classification": {
+    "kingdom": "Chromista",
+    "phylum": "Bacillariophyta",
+    "class": "Bacillariophyceae",
+    "order": "Naviculales",
+    "family": "Naviculaceae",
+    "genus": "Navicula",
+    "Navicula": "N. cryptocephala",
+"species": "Navicula cryptocephala"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25141",
+"https://www.diatoms.org/species/navicula-cryptocephala"
+],
+"images": [
+"https://example.com/images/navicula_cryptocephala.jpg",
+"https://example.com/images/navicula_cryptocephala_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Hantzschiana abundans",
+"common_name": "Hantzschiana abundans",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Hantzschiana",
+"species": "Hantzschiana abundans"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25142",
+"https://www.diatoms.org/species/hantzschiana-abundans"
+],
+"images": [
+"https://example.com/images/hantzschiana_abundans.jpg",
+"https://example.com/images/hantzschiana_abundans_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Cymbella excisa var. subcapitata",
+"common_name": "Cymbella excisa var. subcapitata",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Cymbellaceae",
+"genus": "Cymbella",
+"species": "Cymbella excisa",
+"variety": "subcapitata"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25143",
+"https://www.diatoms.org/species/cymbella-excisa-var-subcapitata"
+],
+"images": [
+"https://example.com/images/cymbella_excisa_var_subcapitata.jpg",
+"https://example.com/images/cymbella_excisa_var_subcapitata_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Epithemia goeppertiana",
+"common_name": "Epithemia goeppertiana",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Rhopalodiales",
+"family": "Rhopalodiaceae",
+"genus": "Epithemia",
+"species": "Epithemia goeppertiana"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25144",
+"https://www.diatoms.org/species/epithemia-goeppertiana"
+],
+"images": [
+"https://example.com/images/epithemia_goeppertiana.jpg",
+"https://example.com/images/epithemia_goeppertiana_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Luticola nivalis",
+"common_name": "Luticola nivalis",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Luticola",
+"species": "Luticola nivalis"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25145",
+"https://www.diatoms.org/species/luticola-nivalis"
+],
+"images": [
+"https://example.com/images/luticola_nivalis.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Frustulia vulgaris",
+"common_name": "Frustulia vulgaris",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Fragilariales",
+"family": "Fragilariaceae",
+"genus": "Frustulia",
+"species": "Frustulia vulgaris"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25146",
+"https://www.diatoms.org/species/frustulia-vulgaris"
+],
+"images": [
+"https://example.com/images/frustulia_vulgaris.jpg",
+"https://example.com/images/frustulia_vulgaris_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Epithemia argus",
+"common_name": "Epithemia argus",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Rhopalodiales",
+"family": "Rhopalodiaceae",
+"genus": "Epithemia",
+"species": "Epithemia argus"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25147",
+"https://www.diatoms.org/species/epithemia-argus"
+],
+"images": [
+"https://example.com/images/epithemia_argus.jpg",
+"https://example.com/images/epithemia_argus_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Pinnularia brebissonii",
+"common_name": "Pinnularia brebissonii",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Pinnularia",
+"species": "Pinnularia brebissonii"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25148",
+"https://www.diatoms.org/species/pinnularia-brebissonii"
+],
+"images": [
+"https://example.com/images/pinnularia_brebissonii.jpg",
+"https://example.com/images/pinnularia_brebissonii_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Cocconeis pseudolineata",
+"common_name": "Cocconeis pseudolineata",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Cymbellaceae",
+"genus": "Cocconeis",
+"species": "Cocconeis pseudolineata"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25149",
+"https://www.diatoms.org/species/cocconeis-pseudolineata"
+],
+"images": [
+"https://example.com/images/cocconeis_pseudolineata.jpg",
+"https://example.com/images/cocconeis_pseudolineata_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Nitzschia archibaldii",
+"common_name": "Nitzschia archibaldii",
+"description": "A diatom commonly found in freshwater and marine habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Bacillariales",
+"family": "Nitzschiaceae",
+"genus": "Nitzschia",
+"species": "Nitzschia archibaldii"
+},
+"habitat": "Freshwater and marine, planktonic",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater and marine habitats worldwide",
+"detection_methods": "Microscopy",
+"options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25150",
+"https://www.diatoms.org/species/nitzschia-archibaldii"
+],
+"images": [
+"https://example.com/images/nitzschia_archibaldii.jpg",
+"https://example.com/images/nitzschia_archibaldii_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in aquatic ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Humidophila perpusilla",
+"common_name": "Humidophila perpusilla",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Humidophila",
+"species": "Humidophila perpusilla"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25151",
+"https://www.diatoms.org/species/humidophila-perpusilla"
+],
+"images": [
+"https://example.com/images/humidophila_perpusilla.jpg",
+"https://example.com/images/humidophila_perpusilla_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Planothidium frequentissimum",
+"common_name": "Planothidium frequentissimum",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Planothidium",
+"species": "Planothidium frequentissimum"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25152",
+"https://www.diatoms.org/species/planothidium-frequentissimum"
+],
+"images": [
+"https://example.com/images/planothidium_frequentissimum.jpg",
+"https://example.com/images/planothidium_frequentissimum_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Surirella brebissonii var. kuetzingii",
+"common_name": "Surirella brebissonii var. kuetzingii",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Surirellales",
+"family": "Surirellaceae",
+"genus": "Surirella",
+"species": "Surirella brebissonii",
+"variety": "kuetzingii"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25153",
+"https://www.diatoms.org/species/surirella-brebissonii-var-kuetzingii"
+],
+"images": [
+"https://example.com/images/surirella_brebissonii_var_kuetzingii.jpg",
+"https://example.com/images/surirella_brebissonii_var_kuetzingii_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Meridion circulare",
+"common_name": "Meridion circulare",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Fragilariales",
+"family": "Fragilariaceae",
+"genus": "Meridion",
+"species": "Meridion circulare"
+},
+"habitat": "Freshwater, planktonic",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25154",
+"https://www.diatoms.org/species/meridion-circulare"
+],
+"images": [
+"https://example.com/images/meridion_circulare.jpg",
+"https://example.com/images/meridion_circulare_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Gomphonema calcifugum",
+"common_name": "Gomphonema calcifugum",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Gomphonema",
+"species": "Gomphonema calcifugum"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25155",
+"https://www.diatoms.org/species/gomphonema-calcifugum"
+],
+"images": [
+"https://example.com/images/gomphonema_calcifugum.jpg",
+"https://example.com/images/gomphonema_calcifugum_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Gomphonema pumilum var. rigidum",
+"common_name": "Gomphonema pumilum var. rigidum",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Gomphonema",
+"species": "Gomphonema pumilum",
+"variety": "rigidum"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25156",
+"https://www.diatoms.org/species/gomphonema-pumilum-var-rigidum"
+],
+"images": [
+"https://example.com/images/gomphonema_pumilum_var_rigidum.jpg",
+"https://example.com/images/gomphonema_pumilum_var_rigidum_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Gomphonema supertergestinum",
+"common_name": "Gomphonema supertergestinum",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Gomphonema",
+"species": "Gomphonema supertergestinum"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25157",
+"https://www.diatoms.org/species/gomphonema-supertergestinum"
+],
+"images": [
+"https://example.com/images/gomphonema_supertergestinum.jpg",
+"https://example.com/images/gomphonema_supertergestinum_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Surella minuta",
+"common_name": "Surella minuta",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Surirellales",
+"family": "Surirellaceae",
+"genus": "Surella",
+"species": "Surella minuta"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25158",
+"https://www.diatoms.org/species/surella-minuta"
+],
+"images": [
+"https://example.com/images/surella_minuta.jpg",
+"https://example.com/images/surella_minuta_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Gomphonema minuta",
+"common_name": "Gomphonema minuta",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Gomphonema",
+"species": "Gomphonema minuta"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"images": [
+"https://example.com/images/gomphonema_minuta.jpg",
+"https://example.com/images/gomphonema_minuta_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Gomphonema exilissimum",
+"common_name": "Gomphonema exilissimum",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Gomphonema",
+"species": "Gomphonema exilissimum"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25160",
+"https://www.diatoms.org/species/gomphonema-exilissimum"
+],
+"images": [
+"https://example.com/images/gomphonema_exilissimum.jpg",
+"https://example.com/images/gomphonema_exilissimum_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Navicula reichardtiana",
+"common_name": "Navicula reichardtiana",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Navicula",
+"species": "Navicula reichardtiana"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25161",
+"https://www.diatoms.org/species/navicula-reichardtiana"
+],
+"images": [
+"https://example.com/images/navicula_reichardtiana.jpg",
+"https://example.com/images/navicula_reichardtiana_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Navicula upsaliensis",
+"common_name": "Navicula upsaliensis",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Navicula",
+"species": "Navicula upsaliensis"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25162",
+"https://www.diatoms.org/species/navicula-upsaliensis"
+],
+"images": [
+"https://example.com/images/navicula_upsaliensis.jpg",
+"https://example.com/images/navicula_upsaliensis_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Navicula gregaria",
+"common_name": "Navicula gregaria",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Navicula",
+"species": "Navicula gregaria"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25163",
+"https://www.diatoms.org/species/navicula-gregaria"
+],
+"images": [
+"https://example.com/images/navicula_gregaria.jpg",
+"https://example.com/images/navicula_gregaria_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Amphora inariensis",
+"common_name": "Amphora inariensis",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Amphoraceae",
+"genus": "Amphora",
+"species": "Amphora inariensis"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25164",
+"https://www.diatoms.org/species/amphora-inariensis"
+],
+"images": [
+"https://example.com/images/amphora_inariensis.jpg",
+"https://example.com/images/amphora_inariensis_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Navicula moskalii",
+"common_name": "Navicula moskalii",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Navicula",
+"species": "Navicula moskalii"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25165",
+"https://www.diatoms.org/species/navicula-moskalii"
+],
+"images": [
+"https://example.com/images/navicula_moskalii.jpg",
+"https://example.com/images/navicula_moskalii_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Neidiomorpha binodiformis",
+"common_name": "Neidiomorpha binodiformis",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Neidiomorpha",
+"species": "Neidiomorpha binodiformis"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25166",
+"https://www.diatoms.org/species/neidiomorpha-binodiformis"
+],
+"images": [
+"https://example.com/images/neidiomorpha_binodiformis.jpg",
+"https://example.com/images/neidiomorpha_binodiformis_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Navicula lanceolata",
+"common_name": "Navicula lanceolata",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Navicula",
+"species": "Navicula lanceolata"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25167",
+"https://www.diatoms.org/species/navicula-lanceolata"
+],
+"images": [
+"https://example.com/images/navicula_lanceolata.jpg",
+"https://example.com/images/navicula_lanceolata_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Stauroneis blazenciciae",
+"common_name": "Stauroneis blazenciciae",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Stauroneis",
+"species": "Stauroneis blazenciciae"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25168",
+"https://www.diatoms.org/species/stauroneis-blazenciciae"
+],
+"images": [
+"https://example.com/images/stauroneis_blazenciciae.jpg",
+"https://example.com/images/stauroneis_blazenciciae_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions.",
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Nitzschia recta",
+"common_name": "Nitzschia recta",
+"description": "A diatom commonly found in freshwater and marine habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Bacillariales",
+"family": "Nitzschiaceae",
+"genus": "Nitzschia",
+"species": "Nitzschia recta"
+},
+"habitat": "Freshwater and marine, planktonic",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater and marine habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25169",
+"https://www.diatoms.org/species/nitzschia-recta"
+],
+"images": [
+"https://example.com/images/nitzschia_recta.jpg",
+"https://example.com/images/nitzschia_recta_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in aquatic ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Rhoicosphenia abbreviata",
+"common_name": "Rhoicosphenia abbreviata",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Fragilariales",
+"family": "Fragilariaceae",
+"genus": "Rhoicosphenia",
+"species": "Rhoicosphenia abbreviata"
+},
+"habitat": "Freshwater, planktonic",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25170",
+"https://www.diatoms.org/species/rhoicosphenia-abbreviata"
+],
+"images": [
+"https://example.com/images/rhoicosphenia_abbreviata.jpg",
+"https://example.com/images/rhoicosphenia_abbreviata_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Diatoma mesodon",
+"common_name": "Diatoma mesodon",
+"description": "A diatom commonly found in freshwater and marine habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Fragilariales",
+"family": "Fragilariaceae",
+"genus": "Diatoma",
+"species": "Diatoma mesodon"
+},
+"habitat": "Freshwater and marine, planktonic",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater and marine habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25171",
+"https://www.diatoms.org/species/diatoma-mesodon"
+],
+"images": [
+"https://example.com/images/diatoma_mesodon.jpg",
+"https://example.com/images/diatoma_mesodon_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in aquatic ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Humidophila contenta",
+"common_name": "Humidophila contenta",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Humidophila",
+"species": "Humidophila contenta"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25172",
+"https://www.diatoms.org/species/humidophila-contenta"
+],
+"images": [
+"https://example.com/images/humidophila_contenta.jpg",
+"https://example.com/images/humidophila_contenta_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Sellaphora radiosa",
+"common_name": "Sellaphora radiosa",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Sellaphora",
+"species": "Sellaphora radiosa"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25173",
+"https://www.diatoms.org/species/sellaphora-radiosa"
+],
+"images": [
+"https://example.com/images/sellaphora_radiosa.jpg",
+"https://example.com/images/sellaphora_radiosa_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Sellaphora saugerresii",
+"common_name": "Sellaphora saugerresii",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Sellaphora",
+"species": "Sellaphora saugerresii"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25174",
+"https://www.diatoms.org/species/sellaphora-saugerresii"
+],
+"images": [
+"https://example.com/images/sellaphora_saugerresii.jpg",
+"https://example.com/images/sellaphora_saugerresii_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Gomphonema pumilum",
+"common_name": "Gomphonema pumilum",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Cymbellales",
+"family": "Gomphonemataceae",
+"genus": "Gomphonema",
+"species": "Gomphonema pumilum"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25175",
+"https://www.diatoms.org/species/gomphonema-pumilum"
+],
+"images": [
+"https://example.com/images/gomphonema_pumilum.jpg",
+"https://example.com/images/gomphonema_pumilum_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Caloneis lancettula",
+"common_name": "Caloneis lancettula",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Caloneis",
+"species": "Caloneis lancettula"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25176",
+"https://www.diatoms.org/species/caloneis-lancettula"
+],
+"images": [
+"https://example.com/images/caloneis_lancettula.jpg",
+"https://example.com/images/caloneis_lancettula_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+},
+{
+"scientific_name": "Navicula novaesiberica",
+"common_name": "Navicula novaesiberica",
+"description": "A diatom commonly found in freshwater habitats.",
+"classification": {
+"kingdom": "Chromista",
+"phylum": "Bacillariophyta",
+"class": "Bacillariophyceae",
+"order": "Naviculales",
+"family": "Naviculaceae",
+"genus": "Navicula",
+"species": "Navicula novaesiberica"
+},
+"habitat": "Freshwater, attached to rocks and other substrates",
+"pathogenicity": false,
+"health_effects": "None",
+"mode_of_transmission": "N/A",
+"incubation_period": "N/A",
+"diseases_caused": "None",
+"prevalence": "Common in freshwater habitats worldwide",
+"detection_methods": "Microscopy",
+"treatment_options": "N/A",
+"prevention_strategies": "N/A",
+"regulatory_standards": "N/A",
+"references": [
+"https://www.algaebase.org/search/species/detail/?species_id=25177",
+"https://www.diatoms.org/species/navicula-novaesiberica"
+],
+"images": [
+"https://example.com/images/navicula_novaesiberica.jpg",
+"https://example.com/images/navicula_novaesiberica_microscope.jpg"
+],
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions.",
+"virulence_factors": "N/A",
+"environmental_impact": "Important primary producer in freshwater ecosystems.",
+"economic_impact": "None",
+"survival_and_resistance": "Tolerant to a wide range of environmental conditions."
+}
+
+
+]
