@@ -1,4 +1,40 @@
-[
+[{
+    "scientific_name": "Escherichia coli",
+    "common_name": "E. coli",
+    "description": "A bacterium commonly found in the lower intestine of warm-blooded organisms.",
+    "classification": {
+      "kingdom": "Bacteria",
+      "phylum": "Proteobacteria",
+      "class": "Gammaproteobacteria",
+      "order": "Enterobacterales",
+      "family": "Enterobacteriaceae",
+      "genus": "Escherichia",
+      "species": "E. coli"
+    },
+    "habitat": "Freshwater, intestinal tract of animals",
+    "pathogenicity": true,
+    "health_effects": "Causes symptoms ranging from none to severe abdominal cramps, diarrhea, and vomiting.",
+    "mode_of_transmission": "Fecal-oral route, through contaminated food or water and person-to-person contact.",
+    "incubation_period": "1-10 days",
+    "diseases_caused": ["Gastroenteritis", "Urinary tract infections", "Neonatal meningitis"],
+    "prevalence": "Common worldwide, especially in areas with inadequate sanitation.",
+    "detection_methods": ["Culture techniques", "Polymerase chain reaction (PCR)", "Enzyme immunoassays"],
+    "treatment_options": ["Hydration and electrolyte replacement", "Antibiotics in severe cases"],
+    "prevention_strategies": ["Proper food handling", "Handwashing", "Water treatment"],
+    "regulatory_standards": "Regulated by health agencies such as the FDA and EPA to limit exposure in food and water.",
+    "references": [
+      "https://www.cdc.gov/ecoli/index.html",
+      "https://www.who.int/news-room/fact-sheets/detail/e-coli"
+    ],
+    "images": [
+      "https://example.com/images/ecoli.jpg",
+      "https://example.com/images/ecoli_microscope.jpg"
+    ],
+    "virulence_factors": ["Shiga toxin", "Type 1 fimbriae", "Flagella"],
+    "environmental_impact": "Can indicate fecal contamination of water bodies and affect aquatic life.",
+    "economic_impact": "Significant cost implications for healthcare and food industries due to infection outbreaks.",
+    "survival_and_resistance": "Can survive for several weeks in water and soil; some strains have developed antibiotic resistance."
+  },
     {
         "scientific_name": "Gomphonema drutelingense",
         "common_name": "Gomphonema drutelingense",
