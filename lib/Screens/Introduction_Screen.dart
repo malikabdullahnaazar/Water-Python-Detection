@@ -3,8 +3,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
 import 'package:water_pathogen_detection_system/Screens/WelcomeScreen.dart';
+import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 
 class IntroductionScreens extends StatelessWidget {
   const IntroductionScreens({super.key});
@@ -12,27 +12,41 @@ class IntroductionScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Water Pathogen Detection '),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.info),
+            onPressed: () {
+              // Add your info action here
+            },
+          ),
+        ],
+      ),
       body: IntroductionScreen(
           pages: [
             PageViewModel(
-              title: 'Title of 1st Page',
-              body: 'Body of 1st Page',
-              image: buildImage("images/image_1.png"),
+              title: 'Detecting Waterborne Pathogens',
+              body:
+                  'Our system uses advanced machine learning techniques to identify and classify harmful pathogens in water, ensuring the safety of your water supply.',
+              image: buildImage("assets/images/intro1.png"),
               //getPageDecoration, a method to customise the page style
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Title of 2nd Page',
-              body: 'Body of 2nd Page',
-              image: buildImage("images/image_2.png"),
+              title: 'AI-Powered Water Quality Assurance',
+              body:
+                  'Leveraging the power of artificial intelligence, our system can accurately detect and quantify the presence of waterborne pathogens, providing real-time insights for water quality management.',
+              image: buildImage("assets/images/intro1.png"),
               //getPageDecoration, a method to customise the page style
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Title of 3rd Page',
-              body: 'Body of 3rd Page',
-              image: buildImage("images/image_3.png"),
+              title: 'Ensuring Clean Water for Al',
+              body:
+                  'Our innovative solution employs cutting-edge technology to monitor and analyze water samples, enabling the rapid identification of pathogenic microorganisms, a crucial step in maintaining clean and safe water.',
+              image: buildImage("assets/images/intro1.png"),
               //getPageDecoration, a method to customise the page style
               decoration: getPageDecoration(),
             ),
