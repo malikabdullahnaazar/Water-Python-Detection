@@ -1,0 +1,578 @@
+[{
+    "scientific_name": "Escherichia coli",
+    "common_name": "E. coli",
+    "description": "A bacterium commonly found in the lower intestine of warm-blooded organisms.",
+    "classification": {
+      "kingdom": "Bacteria",
+      "phylum": "Proteobacteria",
+      "class": "Gammaproteobacteria",
+      "order": "Enterobacterales",
+      "family": "Enterobacteriaceae",
+      "genus": "Escherichia",
+      "species": "E. coli"
+    },
+    "habitat": "Freshwater, intestinal tract of animals",
+    "pathogenicity": true,
+    "health_effects": "Causes symptoms ranging from none to severe abdominal cramps, diarrhea, and vomiting.",
+    "mode_of_transmission": "Fecal-oral route, through contaminated food or water and person-to-person contact.",
+    "incubation_period": "1-10 days",
+    "diseases_caused": ["Gastroenteritis", "Urinary tract infections", "Neonatal meningitis"],
+    "prevalence": "Common worldwide, especially in areas with inadequate sanitation.",
+    "detection_methods": ["Culture techniques", "Polymerase chain reaction (PCR)", "Enzyme immunoassays"],
+    "treatment_options": ["Hydration and electrolyte replacement", "Antibiotics in severe cases"],
+    "prevention_strategies": ["Proper food handling", "Handwashing", "Water treatment"],
+    "regulatory_standards": "Regulated by health agencies such as the FDA and EPA to limit exposure in food and water.",
+    "references": [
+      "https://www.cdc.gov/ecoli/index.html",
+      "https://www.who.int/news-room/fact-sheets/detail/e-coli"
+    ],
+    "images": [
+      "https://example.com/images/ecoli.jpg",
+      "https://example.com/images/ecoli_microscope.jpg"
+    ],
+    "virulence_factors": ["Shiga toxin", "Type 1 fimbriae", "Flagella"],
+    "environmental_impact": "Can indicate fecal contamination of water bodies and affect aquatic life.",
+    "economic_impact": "Significant cost implications for healthcare and food industries due to infection outbreaks.",
+    "survival_and_resistance": "Can survive for several weeks in water and soil; some strains have developed antibiotic resistance."
+  },
+  
+  {
+    "scientific_name": "Gomphonema drutelingense",
+    "common_name": "N/A",
+    "description": "Placeholder description for Gomphonema drutelingense.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Cymbellales",
+      "family": "Gomphonemataceae",
+      "genus": "Gomphonema",
+      "species": "G. drutelingense"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/gdrutelingense.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Encyonema ventricosum",
+    "common_name": "N/A",
+    "description": "Placeholder description for Encyonema ventricosum.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Cymbellales",
+      "family": "Cymbellaceae",
+      "genus": "Encyonema",
+      "species": "E. ventricosum"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/eventricosum.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Achnanthidium biasolettianum",
+    "common_name": "N/A",
+    "description": "Placeholder description for Achnanthidium biasolettianum.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Achnanthales",
+      "family": "Achnanthidiaceae",
+      "genus": "Achnanthidium",
+      "species": "A. biasolettianum"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/abiasolettianum.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Gomphonema olivaceum",
+    "common_name": "N/A",
+    "description": "Placeholder description for Gomphonema olivaceum.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Cymbellales",
+      "family": "Gomphonemataceae",
+      "genus": "Gomphonema",
+      "species": "G. olivaceum"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/golivaceum.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Cymbella cantonatii",
+    "common_name": "N/A",
+    "description": "Placeholder description for Cymbella cantonatii.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Cymbellales",
+      "family": "Cymbellaceae",
+      "genus": "Cymbella",
+      "species": "C. cantonatii"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/ccantonatii.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Achnanthidium minutissimum",
+    "common_name": "N/A",
+    "description": "Placeholder description for Achnanthidium minutissimum.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Achnanthales",
+      "family": "Achnanthidiaceae",
+      "genus": "Achnanthidium",
+      "species": "A. minutissimum"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/aminutissimum.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Navicula cryptotenella",
+    "common_name": "N/A",
+    "description": "Placeholder description for Navicula cryptotenella.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Naviculales",
+      "family": "Naviculaceae",
+      "genus": "Navicula",
+      "species": "N. cryptotenella"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/ncryptotenella.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Adlafia minuscula",
+    "common_name": "N/A",
+    "description": "Placeholder description for Adlafia minuscula.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Naviculales",
+      "family": "Naviculaceae",
+      "genus": "Adlafia",
+      "species": "A. minuscula"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/aminuscula.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Encyonema silesiacum",
+    "common_name": "N/A",
+    "description": "Placeholder description for Encyonema silesiacum.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Cymbellales",
+      "family": "Cymbellaceae",
+      "genus": "Encyonema",
+      "species": "E. silesiacum"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/esilesiacum.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Diatoma moniliformis",
+    "common_name": "N/A",
+    "description": "Placeholder description for Diatoma moniliformis.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Fragilariales",
+      "family": "Fragilariaceae",
+      "genus": "Diatoma",
+      "species": "D. moniliformis"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/dmoniliformis.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Gomphonema minutum",
+    "common_name": "N/A",
+    "description": "Placeholder description for Gomphonema minutum.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Gomphonematales",
+      "family": "Gomphonemataceae",
+      "genus": "Gomphonema",
+      "species": "G. minutum"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/gminutum.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },{
+    "scientific_name": "Nitzschia linearis",
+    "common_name": "N/A",
+    "description": "Placeholder description for Nitzschia linearis.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Naviculales",
+      "family": "Nitzschiaceae",
+      "genus": "Nitzschia",
+      "species": "N. linearis"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/nlinearis.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Navicula capitatoradiata",
+    "common_name": "N/A",
+    "description": "Placeholder description for Navicula capitatoradiata.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Naviculales",
+      "family": "Naviculaceae",
+      "genus": "Navicula",
+      "species": "N. capitatoradiata"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/ncapitatoradiata.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },{
+    "scientific_name": "Didymosphenia geminata",
+    "common_name": "Didymo or Rock Snot",
+    "description": "Placeholder description for Didymosphenia geminata.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Cymbellales",
+      "family": "Cymbellaceae",
+      "genus": "Didymosphenia",
+      "species": "D. geminata"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/dgeminata.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  },
+  {
+    "scientific_name": "Cymbella excisa var. procera",
+    "common_name": "N/A",
+    "description": "Placeholder description for Cymbella excisa var. procera.",
+    "classification": {
+      "kingdom": "Protista",
+      "phylum": "Bacillariophyta",
+      "class": "Bacillariophyceae",
+      "order": "Cymbellales",
+      "family": "Cymbellaceae",
+      "genus": "Cymbella",
+      "species": "C. excisa",
+      "variety": "var. procera"
+    },
+    "habitat": "Placeholder habitat information.",
+    "pathogenicity": false,
+    "health_effects": "No known health effects to humans.",
+    "mode_of_transmission": "N/A",
+    "incubation_period": "N/A",
+    "diseases_caused": [],
+    "prevalence": "Placeholder prevalence information.",
+    "detection_methods": ["Microscopy"],
+    "treatment_options": ["N/A"],
+    "prevention_strategies": ["N/A"],
+    "regulatory_standards": "No known regulatory standards.",
+    "references": [
+      "https://example.com/reference1",
+      "https://example.com/reference2"
+    ],
+    "images": [
+      "https://example.com/images/cexcisavarprocera.jpg"
+    ],
+    "virulence_factors": [],
+    "environmental_impact": "Placeholder environmental impact information.",
+    "economic_impact": "Placeholder economic impact information.",
+    "survival_and_resistance": "Placeholder survival and resistance information."
+  }
+]
