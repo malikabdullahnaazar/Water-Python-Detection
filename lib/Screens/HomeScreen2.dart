@@ -28,35 +28,38 @@ class _HomeScreen2State extends State<HomeScreen2> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       bottomNavigationBar: BottomNavigationBar(
-          unselectedItemColor: Colors.black,
-          unselectedFontSize: 16,
-          selectedFontSize: 16,
-          items: [
-            BottomNavigationBarItem(
-                icon:
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
-                label: 'Home'),
-            BottomNavigationBarItem(
-                icon: IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Blogs()));
-                    },
-                    icon: const Icon(Icons.article_outlined)),
-                label: 'Blogs'),
-            BottomNavigationBarItem(
-                icon: IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ProfleScreen()));
-                    },
-                    icon: const Icon(Icons.person)),
-                label: 'Profile'),
-          ]),
+        unselectedItemColor: Colors.black,
+        unselectedFontSize: 16,
+        selectedFontSize: 16,
+        currentIndex: 0,
+        selectedItemColor: primaryColor,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.article_outlined), label: 'Blogs'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen2()));
+              break;
+            case 1:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Blogs()));
+              break;
+            case 2:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ProfleScreen()));
+              break;
+          }
+        },
+      ),
       body: Stack(
         children: [
           Stack(

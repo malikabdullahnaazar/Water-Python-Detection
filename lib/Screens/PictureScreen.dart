@@ -4,6 +4,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:water_pathogen_detection_system/Screens/ResultPage.dart';
 import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_vision/flutter_vision.dart';
@@ -59,6 +60,16 @@ class _PictureScreenState extends State<PictureScreen> {
     if (kDebugMode) {
       print("ls$rs");
     }
+  }
+
+  void _navigateToResultPage(List results, Uint8List image) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) =>
+            ResultPage(results: results, selectedimage: image),
+      ),
+    );
   }
 
   @override
@@ -117,7 +128,24 @@ class _PictureScreenState extends State<PictureScreen> {
                         ),
                   const SizedBox(height: 20),
                   InkWell(
-                    onTap: () => imageClassification(widget.selectedImage!),
+                    onTap: () {
+                      // Show loading indicator
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        },
+                      );
+                      // Perform image classification
+                      imageClassification(widget.selectedImage!)
+                          .then((results) {
+                        // Hide loading indicator
+                        Navigator.pop(context); // Close loading dialog
+                        // Navigate to ResultPage and pass the results
+                        _navigateToResultPage(_results, widget.image!);
+                      });
+                    },
                     child: Container(
                       height: 55,
                       width: 300,
@@ -137,7 +165,6 @@ class _PictureScreenState extends State<PictureScreen> {
                       ),
                     ),
                   ),
-                  Text(_results.isNotEmpty ? '$_results' : 'no prediction')
                 ],
               ),
             ),
