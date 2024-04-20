@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:water_pathogen_detection_system/FirebaseServices/FireStore.dart';
+import 'package:water_pathogen_detection_system/Screens/BacteriaDetailPage.dart';
 import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
 import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
 import 'package:water_pathogen_detection_system/Screens/ProfileScreen.dart';
@@ -155,60 +156,73 @@ class _MySavedResultsPageState extends State<MySavedResultsPage>
                               snapshot.data!.docs[index];
                           bool isSafe = document['prediction']
                               as bool; // Assuming 'prediction' is a bool
-                          return Card(
-                            margin: const EdgeInsets.all(8.0),
-                            elevation: 2,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: ListTile(
-                              hoverColor: Colors.blue[50],
-                              leading: Image.network(
-                                document['photoUrl'],
-                                width: 50,
-                                height: 50,
-                                fit: BoxFit.cover,
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BacteriaDetailsPage(
+                                            scientificName: document['label'],
+                                            image: document['photoUrl'],
+                                          )));
+                            },
+                            child: Card(
+                              margin: const EdgeInsets.all(8.0),
+                              elevation: 2,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
-                              title: Text(
-                                document['label'],
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              subtitle: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Confidence: ${document['confidence']}'),
-                                  Text(
-                                      'Date: ${document['predictionDate'].toDate().toLocal().toString().substring(0, 10)}'),
-                                ],
-                              ),
-                              trailing: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8, vertical: 0),
-                                    decoration: BoxDecoration(
-                                      color: isSafe ? Colors.green : Colors.red,
-                                      borderRadius: BorderRadius.circular(20),
+                              child: ListTile(
+                                hoverColor: Colors.blue[50],
+                                leading: Image.network(
+                                  document['photoUrl'],
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.cover,
+                                ),
+                                title: Text(
+                                  document['label'],
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                subtitle: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                        'Confidence: ${document['confidence']}'),
+                                    Text(
+                                        'Date: ${document['predictionDate'].toDate().toLocal().toString().substring(0, 10)}'),
+                                  ],
+                                ),
+                                trailing: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8, vertical: 0),
+                                      decoration: BoxDecoration(
+                                        color:
+                                            isSafe ? Colors.green : Colors.red,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Text(
+                                        isSafe ? 'Safe' : 'Danger',
+                                        style: const TextStyle(
+                                            color: Colors.white),
+                                      ),
                                     ),
-                                    child: Text(
-                                      isSafe ? 'Safe' : 'Danger',
-                                      style:
-                                          const TextStyle(color: Colors.white),
+                                    IconButton(
+                                      icon: const Icon(
+                                        Icons.delete,
+                                        color: Colors.red,
+                                      ),
+                                      onPressed: () {
+                                        _showDeleteDialog(
+                                            context, document['predictionId']);
+                                      },
                                     ),
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(
-                                      Icons.delete,
-                                      color: Colors.red,
-                                    ),
-                                    onPressed: () {
-                                      _showDeleteDialog(
-                                          context, document['predictionId']);
-                                    },
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           );
