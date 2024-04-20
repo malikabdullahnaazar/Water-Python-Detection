@@ -12,8 +12,10 @@ class MySavedResultsPage extends StatefulWidget {
   _MySavedResultsPageState createState() => _MySavedResultsPageState();
 }
 
-class _MySavedResultsPageState extends State<MySavedResultsPage> {
+class _MySavedResultsPageState extends State<MySavedResultsPage>
+    with SingleTickerProviderStateMixin {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  late final TabController _tabController;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final TextEditingController _searchController = TextEditingController();
   String _searchTerm = '';
@@ -22,13 +24,22 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    _searchController.dispose();
+    super.dispose();
   }
 
   Future<QuerySnapshot<Map<String, dynamic>>> _getPredictions(
-      {bool? isSafe}) async {
-    var query = _firestore
-        .collection("Predictions")
-        .where('userId', isEqualTo: _auth.currentUser!.uid);
+      {bool? isSafe, bool myPredictions = true}) async {
+    Query<Map<String, dynamic>> query = _firestore.collection("Predictions");
+    if (myPredictions) {
+      query = query.where('userId', isEqualTo: _auth.currentUser!.uid);
+    }
 
     if (_searchTerm.isNotEmpty) {
       String searchLowercase = _searchTerm.toLowerCase();
@@ -66,6 +77,91 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
         });
       }
     });
+  }
+
+  // Widget _buildTabBar() {
+  //   return TabBar(
+  //     controller: _tabController,
+  //     tabs: const [
+  //       Tab(text: 'My Predictions'),
+  //       Tab(text: 'All Predictions'),
+  //     ],
+  //   );
+  // }
+
+  Widget _buildTabBarView() {
+    return TabBarView(
+      controller: _tabController,
+      children: [
+        _buildPredictionList(myPredictions: true),
+        _buildPredictionList(myPredictions: false),
+      ],
+    );
+  }
+
+  Widget _buildPredictionList({required bool myPredictions}) {
+    return FutureBuilder<QuerySnapshot>(
+      future: _getPredictions(myPredictions: myPredictions),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (snapshot.hasError) {
+          return Center(child: Text('Error: ${snapshot.error}'));
+        } else if (snapshot.hasData && snapshot.data!.docs.isNotEmpty) {
+          return ListView.builder(
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (context, index) {
+              var document =
+                  snapshot.data!.docs[index].data() as Map<String, dynamic>;
+              bool isSafe = document['prediction']
+                  as bool; // Assuming 'prediction' is a bool
+              return Card(
+                margin: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: Image.network(
+                    document['photoUrl'] ??
+                        'default_image_placeholder.png', // Replace with your default image placeholder
+                    width: 50,
+                    height: 50,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      // Handle image load error
+                      return const Icon(Icons.error);
+                    },
+                  ),
+                  title: Text(document['label'] ?? 'Unknown'),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Confidence: ${document['confidence'] ?? 'N/A'}'),
+                      Text(
+                          'Date: ${document['predictionDate'].toDate().toLocal().toString().substring(0, 10)}'),
+                    ],
+                  ),
+                  trailing: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: isSafe ? Colors.green : Colors.red,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Text(
+                      isSafe ? 'Safe' : 'Danger',
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+        } else {
+          return Center(
+              child: Image.asset(
+            'assets/images/nodata.png',
+          )); // R
+        }
+      },
+    );
   }
 
   @override
@@ -179,6 +275,9 @@ class _MySavedResultsPageState extends State<MySavedResultsPage> {
                 }
               },
             ),
+          ),
+          Expanded(
+            child: _buildTabBarView(),
           ),
         ],
       ),

@@ -130,38 +130,11 @@ class WelcomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  height: 40,
-                  width: 80,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                  ),
-                  child: ShaderMask(
-                    blendMode: BlendMode.srcIn,
-                    shaderCallback: (Rect bounds) {
-                      return const LinearGradient(
-                        colors: <Color>[
-                          Colors.black,
-                          Colors.black,
-                        ],
-                      ).createShader(bounds);
-                    },
-                    child: const Icon(
-                      FontAwesomeIcons.facebookF,
-                      size: 24.0,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
                 InkWell(
                   onTap: () => signInWithGoogle(),
                   child: Container(
-                    height: 40,
-                    width: 80,
+                    height: 53,
+                    width: 320,
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.rectangle,
@@ -177,10 +150,16 @@ class WelcomeScreen extends StatelessWidget {
                           ],
                         ).createShader(bounds);
                       },
-                      child: const Icon(
-                        FontAwesomeIcons.google,
-                        size: 20.0,
-                      ),
+                      child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              FontAwesomeIcons.google,
+                              size: 20.0,
+                            ),
+                            Text("oogle Signin",
+                                style: TextStyle(fontSize: 20.0)),
+                          ]),
                     ),
                   ),
                 ),

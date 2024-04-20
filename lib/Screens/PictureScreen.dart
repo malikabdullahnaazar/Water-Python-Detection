@@ -53,7 +53,7 @@ class _PictureScreenState extends State<PictureScreen> {
   }
 
   List<List<List<num>>> _preProcess(img.Image image) {
-    final imgResized = img.copyResize(image, width: 320, height: 320);
+    final imgResized = img.copyResize(image, width: 640, height: 480);
 
     return convertImageToMatrix(imgResized);
   }
@@ -77,7 +77,7 @@ class _PictureScreenState extends State<PictureScreen> {
   }
 
   Future<void> loadModel() async {
-    _interpreter = await Interpreter.fromAsset('yolov8n_int8.tflite');
+    _interpreter = await Interpreter.fromAsset('best_float32.tflite');
   }
 
   Future<void> imageClassification(String imagepath) async {
@@ -85,27 +85,28 @@ class _PictureScreenState extends State<PictureScreen> {
       if (kDebugMode) {
         print("Started image classification...");
       }
-      img.Image? image = await _loadImage("assets/1790.png");
+      img.Image? image = await _loadImage(imagepath);
       final input = _preProcess(image!);
       // Correctly set up the output buffer to match the model's expected output shape
       final outputBuffer =
           TensorBuffer.createFixedSize([1, 73, 2100], TfLiteType.float32);
       _interpreter.run([input], outputBuffer);
       var outputsList = outputBuffer.getDoubleList();
-      for (int i = 0; i < outputsList.length; i += 6) {
-        // Each prediction is assumed to consist of 6 elements
-        final score = outputsList[
-            i + 4]; // The score is assumed to be at the 5th position
-        if (score > 0.5) {
-          // Applying a threshold to filter predictions
-          final labelIndex = outputsList[i + 5]
-              .toInt(); // The label index is assumed to be at the 6th position
-          final label = labels[labelIndex];
-          if (kDebugMode) {
-            print("prediction: label $label");
-          }
-        }
-      }
+      print(outputBuffer);
+      // for (int i = 0; i < outputsList.length; i += 6) {
+      //   // Each prediction is assumed to consist of 6 elements
+      //   final score = outputsList[
+      //       i + 4]; // The score is assumed to be at the 5th position
+      //   if (score > 0.5) {
+      //     // Applying a threshold to filter predictions
+      //     final labelIndex = outputsList[i + 5]
+      //         .toInt(); // The label index is assumed to be at the 6th position
+      //     final label = labels[labelIndex];
+      //     if (kDebugMode) {
+      //       print("prediction: label $label");
+      //     }
+      //   }
+      // }
     } catch (error) {
       if (kDebugMode) {
         print('Error during image classification: $error');
