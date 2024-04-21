@@ -252,7 +252,7 @@ class _RegScreenState extends State<RegScreen> {
                               children: [
                                 Image(
                                   image: AssetImage(
-                                    "assets/images/logo-removebg-preview.png",
+                                    "assets/images/logo.png",
                                   ),
                                   width: 70,
                                   color: Colors.black,

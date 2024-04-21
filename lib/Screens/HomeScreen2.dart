@@ -84,8 +84,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(100),
                           child: const Image(
-                            image: AssetImage(
-                                'assets/images/img_flutter_logo.gif'),
+                            image: AssetImage('assets/images/logo.png'),
                           )),
                     ),
                     const SizedBox(width: 10),

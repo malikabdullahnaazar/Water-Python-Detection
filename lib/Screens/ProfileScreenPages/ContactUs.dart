@@ -271,8 +271,7 @@ class ContactUs extends StatelessWidget {
                 child: Column(
                   children: [
                     Image(
-                        image: AssetImage(
-                            "assets/images/logo-removebg-preview.png"),
+                        image: AssetImage("assets/images/logo.png"),
                         width: 70,
                         color: Colors.black,
                         height: 70),

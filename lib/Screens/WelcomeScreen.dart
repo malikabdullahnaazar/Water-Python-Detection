@@ -49,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(top: 100.0),
               child: Image(
-                  image: AssetImage('assets/images/img_flutter_logo.gif'),
+                  image: AssetImage('assets/images/logo.png'),
                   height: 200,
                   width: 200),
             ),
