@@ -4,8 +4,8 @@ import "package:cloud_firestore/cloud_firestore.dart";
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
-import 'package:water_pathogen_detection_system/FirebaseServices/Storage.dart';
-import 'package:water_pathogen_detection_system/Screens/User/BlogsUser.dart';
+import 'package:Pathogen/FirebaseServices/Storage.dart';
+import 'package:Pathogen/Screens/User/BlogsUser.dart';
 
 class FirestoreMethods {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

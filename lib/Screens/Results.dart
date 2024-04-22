@@ -4,13 +4,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:water_pathogen_detection_system/FirebaseServices/FireStore.dart';
-import 'package:water_pathogen_detection_system/Screens/BacteriaDetailPage.dart';
-import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
-import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection_system/Screens/ProfileScreen.dart';
-import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
-import 'package:water_pathogen_detection_system/commonUtils/SnakBar.dart';
+import 'package:Pathogen/FirebaseServices/FireStore.dart';
+import 'package:Pathogen/Screens/BacteriaDetailPage.dart';
+import 'package:Pathogen/Screens/Blogs/Blogs.dart';
+import 'package:Pathogen/Screens/HomeScreen2.dart';
+import 'package:Pathogen/Screens/ProfileScreen.dart';
+import 'package:Pathogen/commonUtils/Constancts.dart';
+import 'package:Pathogen/commonUtils/SnakBar.dart';
 
 class MySavedResultsPage extends StatefulWidget {
   const MySavedResultsPage({super.key});

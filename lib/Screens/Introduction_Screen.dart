@@ -3,7 +3,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:water_pathogen_detection_system/Screens/WelcomeScreen.dart';
+import 'package:Pathogen/Screens/WelcomeScreen.dart';
 
 class IntroductionScreens extends StatelessWidget {
   const IntroductionScreens({super.key});

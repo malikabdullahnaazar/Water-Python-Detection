@@ -4,13 +4,13 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:water_pathogen_detection_system/FirebaseServices/FireStore.dart';
-import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
-import 'package:water_pathogen_detection_system/commonUtils/InputField.dart';
+import 'package:Pathogen/FirebaseServices/FireStore.dart';
+import 'package:Pathogen/commonUtils/Constancts.dart';
+import 'package:Pathogen/commonUtils/InputField.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:image_picker/image_picker.dart';
-import "package:water_pathogen_detection_system/commonUtils/SnakBar.dart";
-import "package:water_pathogen_detection_system/Extensions/Extension.dart";
+import "package:Pathogen/commonUtils/SnakBar.dart";
+import "package:Pathogen/Extensions/Extension.dart";
 
 class AddBlogs extends StatefulWidget {
   const AddBlogs({super.key});

@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
-import 'package:water_pathogen_detection_system/Screens/LoginScreen.dart';
-import 'package:water_pathogen_detection_system/commonUtils/InputField.dart';
-import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
+import 'package:Pathogen/FirebaseServices/FirebaseServices.dart';
+import 'package:Pathogen/Screens/LoginScreen.dart';
+import 'package:Pathogen/commonUtils/InputField.dart';
+import 'package:Pathogen/commonUtils/constancts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class RegScreen extends StatefulWidget {

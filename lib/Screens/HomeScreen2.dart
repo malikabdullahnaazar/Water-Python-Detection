@@ -3,13 +3,13 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
-import 'package:water_pathogen_detection_system/Screens/Blogs/SingleBlog.dart';
-import 'package:water_pathogen_detection_system/Screens/PictureScreen.dart';
+import 'package:Pathogen/Screens/Blogs/Blogs.dart';
+import 'package:Pathogen/Screens/Blogs/SingleBlog.dart';
+import 'package:Pathogen/Screens/PictureScreen.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:water_pathogen_detection_system/Screens/ProfileScreen.dart';
-import 'package:water_pathogen_detection_system/Screens/Results.dart';
-import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
+import 'package:Pathogen/Screens/ProfileScreen.dart';
+import 'package:Pathogen/Screens/Results.dart';
+import 'package:Pathogen/commonUtils/Constancts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomeScreen2 extends StatefulWidget {

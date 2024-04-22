@@ -2,16 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
-import 'package:water_pathogen_detection_system/Screens/Blogs/Blogs.dart';
-import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection_system/Screens/Introduction_Screen.dart';
-import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/ContactUs.dart';
-import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/FAQ.dart';
-import 'package:water_pathogen_detection_system/Screens/ProfileScreenPages/Help.dart';
-import 'package:water_pathogen_detection_system/Screens/Results.dart';
-import 'package:water_pathogen_detection_system/Screens/SettingsPage.dart';
-import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
+import 'package:Pathogen/FirebaseServices/FirebaseServices.dart';
+import 'package:Pathogen/Screens/Blogs/Blogs.dart';
+import 'package:Pathogen/Screens/HomeScreen2.dart';
+import 'package:Pathogen/Screens/Introduction_Screen.dart';
+import 'package:Pathogen/Screens/ProfileScreenPages/ContactUs.dart';
+import 'package:Pathogen/Screens/ProfileScreenPages/FAQ.dart';
+import 'package:Pathogen/Screens/ProfileScreenPages/Help.dart';
+import 'package:Pathogen/Screens/Results.dart';
+import 'package:Pathogen/Screens/SettingsPage.dart';
+import 'package:Pathogen/commonUtils/Constancts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfleScreen extends StatefulWidget {

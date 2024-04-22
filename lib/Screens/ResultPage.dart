@@ -3,10 +3,10 @@
 import 'dart:convert' show LineSplitter;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:water_pathogen_detection_system/FirebaseServices/FireStore.dart';
-import 'package:water_pathogen_detection_system/Screens/BacteriaDetailPage.dart';
-import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection_system/commonUtils/SnakBar.dart';
+import 'package:Pathogen/FirebaseServices/FireStore.dart';
+import 'package:Pathogen/Screens/BacteriaDetailPage.dart';
+import 'package:Pathogen/Screens/HomeScreen2.dart';
+import 'package:Pathogen/commonUtils/SnakBar.dart';
 
 class ResultPage extends StatelessWidget {
   final List results;

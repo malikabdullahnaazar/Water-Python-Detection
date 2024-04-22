@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
-import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
+import 'package:Pathogen/commonUtils/constancts.dart';
 
 class ContactUs extends StatelessWidget {
   const ContactUs({super.key});

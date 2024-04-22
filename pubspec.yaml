@@ -1,4 +1,4 @@
-name: water_pathogen_detection_system
+name: Pathogen
 description: The Water Pathogen Detection system is a comprehensive solution designed to identify and mitigate the presence of pathogens in water sources. This innovative technology addresses the critical need for ensuring the safety and quality of water for various applications, including drinking water, agricultural irrigation, and industrial processes.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

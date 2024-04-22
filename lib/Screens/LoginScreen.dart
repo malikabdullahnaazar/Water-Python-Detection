@@ -2,12 +2,12 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection_system/Screens/SignUpScreen2.dart';
-import 'package:water_pathogen_detection_system/commonUtils/InputField.dart';
+import 'package:Pathogen/Screens/HomeScreen2.dart';
+import 'package:Pathogen/Screens/SignUpScreen2.dart';
+import 'package:Pathogen/commonUtils/InputField.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
-import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
+import 'package:Pathogen/FirebaseServices/FirebaseServices.dart';
+import 'package:Pathogen/commonUtils/constancts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class LoginScreen extends StatefulWidget {

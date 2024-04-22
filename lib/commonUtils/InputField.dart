@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
+import 'package:Pathogen/commonUtils/Constancts.dart';
 
 class InputField extends StatefulWidget {
   final TextEditingController? controller;

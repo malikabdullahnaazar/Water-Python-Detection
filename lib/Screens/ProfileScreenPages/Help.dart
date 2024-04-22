@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:water_pathogen_detection_system/commonUtils/Constancts.dart';
+import 'package:Pathogen/commonUtils/Constancts.dart';
 
 class Help extends StatelessWidget {
   Help({super.key});

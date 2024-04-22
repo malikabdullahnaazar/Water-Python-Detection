@@ -2,9 +2,9 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:water_pathogen_detection_system/FirebaseServices/FirebaseServices.dart';
-import 'package:water_pathogen_detection_system/Screens/HomeScreen2.dart';
-import 'package:water_pathogen_detection_system/commonUtils/constancts.dart';
+import 'package:Pathogen/FirebaseServices/FirebaseServices.dart';
+import 'package:Pathogen/Screens/HomeScreen2.dart';
+import 'package:Pathogen/commonUtils/constancts.dart';
 import 'SignUpScreen2.dart';
 import 'LoginScreen.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
