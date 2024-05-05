@@ -70,20 +70,21 @@ class ResultPage extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () async {
+                late String res;
                 // Save results
                 for (var result in results) {
-                  String res = await _firestore.storePrediction(
+                  res = await _firestore.storePrediction(
                     result['tag'],
                     double.parse(result['box'][4].toStringAsFixed(2)),
                     selectedimage,
                     _getprediction(result),
                   );
-                  ShowSnackBar(res, context);
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomeScreen2()));
                 }
+                ShowSnackBar(res, context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeScreen2()));
               },
               child: const Text('Save Results'),
             ),
