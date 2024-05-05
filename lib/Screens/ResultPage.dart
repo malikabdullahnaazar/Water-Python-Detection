@@ -70,6 +70,25 @@ class ResultPage extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () async {
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (BuildContext context) {
+                    return const Dialog(
+                      child: Padding(
+                        padding: EdgeInsets.all(20),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            CircularProgressIndicator(),
+                            SizedBox(width: 20),
+                            Text("Saving Results..."),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                );
                 late String res;
                 // Save results
                 for (var result in results) {
@@ -80,6 +99,7 @@ class ResultPage extends StatelessWidget {
                     _getprediction(result),
                   );
                 }
+                Navigator.pop(context); // Close the progress dialog
                 ShowSnackBar(res, context);
                 Navigator.push(
                     context,
