@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, must_be_immutable, use_build_context_synchronously
 
-import 'dart:convert' show LineSplitter;
+import 'dart:convert' show LineSplitter, json;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:Pathogen/FirebaseServices/FireStore.dart';
@@ -70,6 +70,13 @@ class ResultPage extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () async {
+                for (var result in results) {
+                  var res = await _getprediction(result['tag']);
+                  print('res$res');
+                }
+
+                //
+
                 showDialog(
                   context: context,
                   barrierDismissible: false,
@@ -96,7 +103,7 @@ class ResultPage extends StatelessWidget {
                     result['tag'],
                     double.parse(result['box'][4].toStringAsFixed(2)),
                     selectedimage,
-                    _getprediction(result),
+                    _getprediction(result['tag']),
                   );
                 }
                 Navigator.pop(context); // Close the progress dialog
@@ -128,13 +135,14 @@ class ResultPage extends StatelessWidget {
     labels = const LineSplitter().convert(data);
   }
 
-  _getprediction(result) {
-    if (labels.contains(result['tag'])) {
-      // Tag is in the list of labels
-      return true;
-    } else {
-      // Tag is not in the list of labels
-      return false;
-    }
+  Future<bool> _getprediction(result) async {
+    String jsonString =
+        await rootBundle.loadString('assets/bacteria_data.json');
+    Map<String, dynamic> jsonData = json.decode(jsonString);
+    Map<String, dynamic>? matchingBacteria = jsonData['items'].firstWhere(
+      (entry) => entry['scientific_name'] == result,
+      orElse: () => null,
+    );
+    return matchingBacteria?['pathogenicity'];
   }
 }

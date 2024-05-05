@@ -35,16 +35,13 @@ class BacteriaDetailsPage extends StatelessWidget {
   }
 
   Future<Map<String, dynamic>?> _loadBacteriaData() async {
-    print("load json started");
     String jsonString =
         await rootBundle.loadString('assets/bacteria_data.json');
     Map<String, dynamic> jsonData = json.decode(jsonString);
-    print('Loaded JSON data: $jsonData');
     Map<String, dynamic>? matchingBacteria = jsonData['items'].firstWhere(
       (entry) => entry['scientific_name'] == scientificName,
       orElse: () => null,
     );
-    print('abc $matchingBacteria');
     return matchingBacteria;
   }
 

@@ -29,9 +29,11 @@ class FirestoreMethods {
     }
   }
 
-  Future<String> storePrediction(
-      String label, double confidence, Uint8List picture, prediction) async {
-    String res = "Some error can be occur";
+  Future<String> storePrediction(String label, double confidence,
+      Uint8List picture, Future<bool> prediction) async {
+    bool predictionResult = await prediction;
+    String res = "An error occurred while storing the predictions.";
+
     try {
       String photoUrl =
           await StorageMethod().BlogImage("Predictions", picture, true);
@@ -49,7 +51,7 @@ class FirestoreMethods {
         'predictionId': predictionId,
         'predictionDate': predictionDate,
         'userId': userId,
-        "prediction": prediction,
+        "prediction": predictionResult,
         // Add more fields as needed
       };
 
@@ -69,7 +71,7 @@ class FirestoreMethods {
 
   Future<String> uploadBlogs(
       String description, Uint8List file, String title) async {
-    String res = "Some error can be occur";
+    String res = "An error occurred while storing the Bolgs.";
 
     try {
       String photoUrl = await StorageMethod().BlogImage("Blogs", file, true);
