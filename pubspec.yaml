@@ -94,7 +94,7 @@ flutter:
     - assets/labels.txt
     - images/loginImage.jpg
     - assets/images/
-    - assets/
+    - assets/bacteria_data.json
     
 
   

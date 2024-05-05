@@ -163,7 +163,7 @@ class _MySavedResultsPageState extends State<MySavedResultsPage>
                                   MaterialPageRoute(
                                       builder: (context) => BacteriaDetailsPage(
                                             scientificName: document['label'],
-                                            image: document['photoUrl'],
+                                            imgurl: document['photoUrl'],
                                           )));
                             },
                             child: Card(
