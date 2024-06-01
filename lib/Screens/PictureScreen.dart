@@ -2,6 +2,8 @@
 
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:Pathogen/Screens/HomeScreen2.dart';
+import 'package:Pathogen/Screens/ResultPopupScreen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:Pathogen/Screens/ResultPage.dart';
@@ -134,16 +136,46 @@ class _PictureScreenState extends State<PictureScreen> {
                         context: context,
                         builder: (BuildContext context) {
                           return const Center(
-                              child: CircularProgressIndicator());
+                            child: CircularProgressIndicator(),
+                          );
                         },
                       );
+
                       // Perform image classification
                       imageClassification(widget.selectedImage!)
                           .then((results) {
                         // Hide loading indicator
-                        Navigator.pop(context); // Close loading dialog
-                        // Navigate to ResultPage and pass the results
-                        _navigateToResultPage(_results, widget.image!);
+                        Navigator.pop(context);
+
+                        // Determine if the classification was successful
+                        bool isSuccess = _results.isNotEmpty;
+
+                        // Show ResultPopupScreen for a few seconds
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            // Show the ResultPopupScreen
+                            return ResultPopupScreen(
+                              isSuccess: isSuccess,
+                              // Clean parameter should be passed if applicable
+                            );
+                          },
+                        );
+
+                        // Delay navigation to the Results page
+                        Future.delayed(Duration(seconds: 2), () {
+                          // Navigate to the Results page
+                          if (isSuccess) {
+                            Navigator.pop(
+                                context); // Dismiss the ResultPopupScreen
+                            _navigateToResultPage(_results, widget.image!);
+                          } else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomeScreen2()));
+                          }
+                        });
                       });
                     },
                     child: Container(

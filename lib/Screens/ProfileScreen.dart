@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:Pathogen/FirebaseServices/FirebaseServices.dart';
@@ -23,22 +24,49 @@ class ProfleScreen extends StatefulWidget {
 
 class _ProfleScreenState extends State<ProfleScreen> {
   late FirebaseServices _auth;
-  late User? _user;
+  final FirebaseAuth _auths = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  final List<Map<String, dynamic>> data2 = [
-    {"icon": Icons.leaderboard, "heading1": "Results", "heading2": "216"},
-    {"icon": Icons.check, "heading1": "Accuracy", "heading2": "100%"},
-    {"icon": Icons.verified_rounded, "heading1": "Detected", "heading2": "20"},
-  ];
+  late User? _user;
+  int _results = 0;
+  int _detected = 0;
+  double _accuracy = 0;
+
+  Future<void> _loadUserData() async {
+    Query<Map<String, dynamic>> resultsQuery = _firestore
+        .collection("Predictions")
+        .where('userId', isEqualTo: _auths.currentUser!.uid);
+
+    Query<Map<String, dynamic>> detectedQuery = _firestore
+        .collection("Predictions")
+        .where('userId', isEqualTo: _auths.currentUser!.uid);
+
+    QuerySnapshot<Map<String, dynamic>> resultsSnapshot =
+        await resultsQuery.get();
+    QuerySnapshot<Map<String, dynamic>> detectedSnapshot =
+        await detectedQuery.get();
+
+    int resultsCount = resultsSnapshot.docs.length;
+    int detectedCount = detectedSnapshot.docs.length;
+    double accuracy =
+        resultsCount > 0 ? (detectedCount / resultsCount) * 100 : 0;
+
+    setState(() {
+      _results = resultsCount;
+      _detected = detectedCount;
+      _accuracy = accuracy;
+    });
+  }
 
   @override
   void initState() {
     super.initState();
     _auth = FirebaseServices();
+    _loadUserprofileData();
     _loadUserData();
   }
 
-  void _loadUserData() {
+  void _loadUserprofileData() {
     User? currentUser = FirebaseAuth.instance.currentUser;
     setState(() {
       _user = currentUser;
@@ -145,23 +173,31 @@ class _ProfleScreenState extends State<ProfleScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 330,
+                      width: 350,
                       height: 60,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
-                        itemCount: data2.length,
+                        itemCount: 3,
                         itemBuilder: (context, index) => SizedBox(
                           width: 100,
                           height: 60,
                           child: Column(
                             children: [
                               Icon(
-                                data2[index]["icon"] as IconData,
+                                index == 0
+                                    ? Icons.leaderboard
+                                    : index == 1
+                                        ? Icons.check
+                                        : Icons.verified_rounded,
                                 size: 20,
                                 color: Colors.black,
                               ),
                               Text(
-                                data2[index]["heading1"],
+                                index == 0
+                                    ? "Results"
+                                    : index == 1
+                                        ? "Accuracy"
+                                        : "Detected",
                                 style: const TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
@@ -169,7 +205,11 @@ class _ProfleScreenState extends State<ProfleScreen> {
                                 ),
                               ),
                               Text(
-                                data2[index]["heading2"],
+                                index == 0
+                                    ? '$_results'
+                                    : index == 1
+                                        ? '$_accuracy%'
+                                        : '$_detected',
                                 style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -181,8 +221,8 @@ class _ProfleScreenState extends State<ProfleScreen> {
                         ),
                         separatorBuilder: (context, index) =>
                             const VerticalDivider(
-                          color: Colors.grey, // Customize the color as needed
-                          thickness: 1, // Customize the thickness as needed
+                          color: Colors.grey,
+                          thickness: 1,
                         ),
                       ),
                     ),

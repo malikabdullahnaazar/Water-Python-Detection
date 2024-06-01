@@ -14,7 +14,7 @@
       "species": "E. coli"
     },
     "habitat": "Freshwater, intestinal tract of animals",
-    "pathogenicity": true,
+    "pathogenicity": false,
     "health_effects": "Causes symptoms ranging from none to severe abdominal cramps, diarrhea, and vomiting.",
     "mode_of_transmission": "Fecal-oral route, through contaminated food or water and person-to-person contact.",
     "incubation_period": "1-10 days",
@@ -70,7 +70,7 @@
       "species": "Gomphonema drutelingense"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -107,7 +107,7 @@
       "species": "Encyonema ventricosum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -144,7 +144,7 @@
       "species": "Achnanthidium biasolettianum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -181,7 +181,7 @@
       "species": "Gomphonema olivaceum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -218,7 +218,7 @@
       "species": "Cymbella cantonatii"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -255,7 +255,7 @@
       "species": "Achnanthidium minutissimum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -292,7 +292,7 @@
       "species": "Navicula cryptotenella"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -329,7 +329,7 @@
       "species": "Adlafia minuscula"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -366,7 +366,7 @@
       "species": "Encyonema silesiacum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -403,7 +403,7 @@
       "species": "Diatoma moniliformis"
     },
     "habitat": "Freshwater, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -440,7 +440,7 @@
       "species": "Gomphonema minutum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -477,7 +477,7 @@
       "species": "Nitzschia linearis"
     },
     "habitat": "Freshwater and marine, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -514,7 +514,7 @@
       "species": "Navicula capitatoradiata"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -551,7 +551,7 @@
       "species": "Didymosphenia geminata"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -589,7 +589,7 @@
       "variety": "procera"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -626,7 +626,7 @@
       "species": "Cymbella excisa"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -663,7 +663,7 @@
       "species": "Gomphonema tergestinum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -700,7 +700,7 @@
       "species": "Fragilaria recapitellata"
     },
     "habitat": "Freshwater, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -737,7 +737,7 @@
       "species": "Amphora pediculus"
     },
     "habitat": "Freshwater and marine, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -774,7 +774,7 @@
       "species": "Planothidium lanceolatum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -811,7 +811,7 @@
       "species": "Halamphora veneta"
     },
     "habitat": "Freshwater and marine, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -848,7 +848,7 @@
       "species": "Navicula tripunctata"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -885,7 +885,7 @@
       "species": "Cymbopleura amphicephala"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -922,7 +922,7 @@
       "species": "Diploneis fontanella"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -959,7 +959,7 @@
       "species": "Gomphonema micropus"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -996,7 +996,7 @@
       "species": "Nitzschia palea"
     },
     "habitat": "Freshwater and marine, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1033,7 +1033,7 @@
       "species": "Pantocsekiella ocellata"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1070,7 +1070,7 @@
       "species": "Denticula kuetzingii"
     },
     "habitat": "Freshwater, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1106,7 +1106,7 @@
       "species": "Navicula trivialis"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1143,7 +1143,7 @@
       "species": "Navicula cryptotenelloides"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1180,7 +1180,7 @@
       "species": "Nitzschia hantzschiana"
     },
     "habitat": "Freshwater and marine, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1217,7 +1217,7 @@
       "species": "Halamphora paraveneta"
     },
     "habitat": "Freshwater and marine, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1255,7 +1255,7 @@
       "species": "Navicula cryptocephala"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1292,7 +1292,7 @@
       "species": "Hantzschiana abundans"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1330,7 +1330,7 @@
       "variety": "subcapitata"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1367,7 +1367,7 @@
       "species": "Epithemia goeppertiana"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1404,7 +1404,7 @@
       "species": "Luticola nivalis"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1440,7 +1440,7 @@
       "species": "Frustulia vulgaris"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1477,7 +1477,7 @@
       "species": "Epithemia argus"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1514,7 +1514,7 @@
       "species": "Pinnularia brebissonii"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1551,7 +1551,7 @@
       "species": "Cocconeis pseudolineata"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1588,7 +1588,7 @@
       "species": "Nitzschia archibaldii"
     },
     "habitat": "Freshwater and marine, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1625,7 +1625,7 @@
       "species": "Humidophila perpusilla"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1662,7 +1662,7 @@
       "species": "Planothidium frequentissimum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1700,7 +1700,7 @@
       "variety": "kuetzingii"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1737,7 +1737,7 @@
       "species": "Meridion circulare"
     },
     "habitat": "Freshwater, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1774,7 +1774,7 @@
       "species": "Gomphonema calcifugum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1812,7 +1812,7 @@
       "variety": "rigidum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1849,7 +1849,7 @@
       "species": "Gomphonema supertergestinum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1886,7 +1886,7 @@
       "species": "Surella minuta"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1923,7 +1923,7 @@
       "species": "Gomphonema minuta"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1956,7 +1956,7 @@
       "species": "Gomphonema exilissimum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -1993,7 +1993,7 @@
       "species": "Navicula reichardtiana"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2030,7 +2030,7 @@
       "species": "Navicula upsaliensis"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2067,7 +2067,7 @@
       "species": "Navicula gregaria"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2104,7 +2104,7 @@
       "species": "Amphora inariensis"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2141,7 +2141,7 @@
       "species": "Navicula moskalii"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2178,7 +2178,7 @@
       "species": "Neidiomorpha binodiformis"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2215,7 +2215,7 @@
       "species": "Navicula lanceolata"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2252,7 +2252,7 @@
       "species": "Stauroneis blazenciciae"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2293,7 +2293,7 @@
       "species": "Nitzschia recta"
     },
     "habitat": "Freshwater and marine, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2330,7 +2330,7 @@
       "species": "Rhoicosphenia abbreviata"
     },
     "habitat": "Freshwater, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2367,7 +2367,7 @@
       "species": "Diatoma mesodon"
     },
     "habitat": "Freshwater and marine, planktonic",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2404,7 +2404,7 @@
       "species": "Humidophila contenta"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2441,7 +2441,7 @@
       "species": "Sellaphora radiosa"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2478,7 +2478,7 @@
       "species": "Sellaphora saugerresii"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2515,7 +2515,7 @@
       "species": "Gomphonema pumilum"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2552,7 +2552,7 @@
       "species": "Caloneis lancettula"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
@@ -2589,7 +2589,7 @@
       "species": "Navicula novaesiberica"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": false,
+    "pathogenicity": true,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",
