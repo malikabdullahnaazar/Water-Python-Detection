@@ -50,9 +50,14 @@ class _MySavedResultsPageState extends State<MySavedResultsPage>
 
     if (_searchTerm.isNotEmpty) {
       String searchLowercase = _searchTerm.toLowerCase();
-      query = query
-          .where('label', isGreaterThanOrEqualTo: searchLowercase)
-          .where('label', isLessThan: searchLowercase.toUpperCase());
+      query = query.where(
+        'label',
+        isGreaterThanOrEqualTo: searchLowercase,
+      );
+      query = query.where(
+        'label',
+        isLessThanOrEqualTo: searchLowercase + '\uf8ff',
+      );
     }
 
     if (_selectedDate != null) {
@@ -91,38 +96,32 @@ class _MySavedResultsPageState extends State<MySavedResultsPage>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Saved Results'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.calendar_today),
-            onPressed: _showDatePicker,
-          ),
-        ],
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: _searchController,
-              decoration: InputDecoration(
-                labelText: 'Search Predictions',
-                suffixIcon: IconButton(
-                  icon: const Icon(Icons.clear),
-                  onPressed: () {
-                    _searchController.clear();
-                    setState(() {
-                      _searchTerm = '';
-                    });
-                  },
-                ),
-              ),
-              onChanged: (value) {
-                setState(() {
-                  _searchTerm = value;
-                });
-              },
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: TextField(
+          //     controller: _searchController,
+          //     decoration: InputDecoration(
+          //       labelText: 'Search Predictions',
+          //       suffixIcon: IconButton(
+          //         icon: const Icon(Icons.clear),
+          //         onPressed: () {
+          //           _searchController.clear();
+          //           setState(() {
+          //             _searchTerm = '';
+          //           });
+          //         },
+          //       ),
+          //     ),
+          //     onChanged: (value) {
+          //       setState(() {
+          //         _searchTerm = value;
+          //       });
+          //     },
+          //   ),
+          // ),
           Expanded(
             child: FutureBuilder<QuerySnapshot>(
               future: _getPredictions(),
