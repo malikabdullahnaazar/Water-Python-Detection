@@ -92,9 +92,19 @@ class BacteriaDetailsPage extends StatelessWidget {
               style: const TextStyle(fontSize: 18, color: Colors.deepOrange),
             ),
             const SizedBox(height: 20),
-            Text(
-              'Pathogenicity:\n ${data['pathogenicity']}',
-              style: const TextStyle(fontSize: 18, color: Colors.redAccent),
+            Row(
+              children: [
+                const Text(
+                  'Pathogenicity:',
+                  style: const TextStyle(fontSize: 18, color: Colors.redAccent),
+                ),
+                const SizedBox(
+                    width: 8), // Add some space between the text and the icon
+                data['pathogenicity'] == true
+                    ? const Icon(Icons.check_circle,
+                        color: Colors.green, size: 24)
+                    : const Icon(Icons.cancel, color: Colors.red, size: 24),
+              ],
             ),
             const SizedBox(height: 20),
             Text(
