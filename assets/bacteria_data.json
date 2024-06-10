@@ -1292,7 +1292,7 @@
       "species": "Hantzschiana abundans"
     },
     "habitat": "Freshwater, attached to rocks and other substrates",
-    "pathogenicity": true,
+    "pathogenicity": false,
     "health_effects": "None",
     "mode_of_transmission": "N/A",
     "incubation_period": "N/A",

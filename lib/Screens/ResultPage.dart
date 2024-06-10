@@ -87,9 +87,7 @@ class _ResultPageState extends State<ResultPage> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
-                            color: double.parse(widget.results[index]['box'][4]
-                                        .toStringAsFixed(2)) >
-                                    0.5
+                            color: predictionResults[index]
                                 ? Colors.green
                                 : Colors.red,
                             borderRadius: BorderRadius.circular(20),
@@ -158,7 +156,7 @@ class _ResultPageState extends State<ResultPage> {
                     result['tag'],
                     double.parse(result['box'][4].toStringAsFixed(2)),
                     widget.selectedimage,
-                    (await _getprediction(result['tag'])) as Future<bool>,
+                    (_getprediction(result['tag'])),
                   );
                 }
                 Navigator.pop(context); // Close the progress dialog
